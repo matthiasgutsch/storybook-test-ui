@@ -1,6 +1,6 @@
 
 > angular-v17-vite-storybook@0.0.0 build-storybook
-> ng run angular-v17-vite-storybook:build-storybook --output-dir=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn
+> ng run angular-v17-vite-storybook:build-storybook --output-dir=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR
 
 [0m
 [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m
@@ -21,143 +21,143 @@ TypeScript version used by Compodoc : 5.9.2
 
 TypeScript version of current project : 5.9.3
 
-Node.js version : v20.19.5
+Node.js version : v22.21.1
 
 Operating system : macOS Unknown
 
-[16:50:00] [33mNo configuration file found, switching to CLI flags.[39m
-[16:50:00] [32mUsing tsconfig file : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/.storybook/tsconfig.doc.json[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/.storybook/typings.d.ts[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/favicon.ico[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/index.html[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/main.ts[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/styles.css[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.css[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.html[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.ts[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.config.ts[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.routes.ts[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/Configure.mdx[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/button.component.ts[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/button.css[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/header.component.ts[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/header.css[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/page.component.ts[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/page.css[39m
-[16:50:00] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/user.ts[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/accessibility.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/accessibility.svg[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/addon-library.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/assets.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/avif-test-image.avif[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/context.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/discord.svg[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/docs.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/figma-plugin.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/github.svg[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/share.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/styling.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/testing.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/theming.png[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/tutorials.svg[39m
-[16:50:00] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/youtube.svg[39m
-[16:50:00] [32mSearching package.json file[39m
-[16:50:00] [32mpackage.json file found[39m
-[16:50:00] [32mProcessing package.json dependencies[39m
-[16:50:00] [32mSearching README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.md, TODO.md files[39m
-[16:50:00] [32mREADME.md file found[39m
-[16:50:00] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/CHANGELOG read[39m
-[16:50:00] [33mContinuing without CHANGELOG.md file[39m
-[16:50:00] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/CONTRIBUTING read[39m
-[16:50:00] [33mContinuing without CONTRIBUTING.md file[39m
-[16:50:00] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/LICENSE read[39m
-[16:50:00] [33mContinuing without LICENSE.md file[39m
-[16:50:00] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/TODO read[39m
-[16:50:00] [33mContinuing without TODO.md file[39m
-[16:50:00] [32mGet dependencies data[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/main.ts[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.ts[39m
-[16:50:00] [36mfound          : AppComponent[39m
-[16:50:00] [36m               : - imports:[39m
-[16:50:00] [36m               : 	- RouterOutlet[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.config.ts[39m
-[16:50:00] [36mfound          : appConfig[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.routes.ts[39m
-[16:50:00] [32mAnalysing routes definitions and clean them if necessary[39m
-[16:50:00] [36mfound          : routes[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/button.component.ts[39m
-[16:50:00] [36mfound          : ButtonComponent[39m
-[16:50:00] [36m               : - imports:[39m
-[16:50:00] [36m               : 	- CommonModule[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/header.component.ts[39m
-[16:50:00] [36mfound          : HeaderComponent[39m
-[16:50:00] [36m               : - imports:[39m
-[16:50:00] [36m               : 	- CommonModule[39m
-[16:50:00] [36m               : 	- ButtonComponent[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/page.component.ts[39m
-[16:50:00] [36mfound          : PageComponent[39m
-[16:50:00] [36m               : - imports:[39m
-[16:50:00] [36m               : 	- CommonModule[39m
-[16:50:00] [36m               : 	- HeaderComponent[39m
-[16:50:00] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/user.ts[39m
-[16:50:00] [36mfound          : User[39m
-[16:50:00] [32m-------------------[39m
-[16:50:00] [32mProject statistics [39m
-[16:50:00] [32m- component    : 4[39m
-[16:50:00] [32m- interface    : 1[39m
-[16:50:00] [32m-------------------[39m
-[16:50:00] [32mPrepare components[39m
-[16:50:00] [32m AppComponent has a templateUrl, include it[39m
-[16:50:00] [32m ButtonComponent has styleUrls, include them[39m
-[16:50:00] [32m HeaderComponent has styleUrls, include them[39m
-[16:50:00] [32m PageComponent has styleUrls, include them[39m
-[16:50:00] [32mPrepare modules[39m
-[16:50:00] [32mProcess routes[39m
-[16:50:00] [32mPrepare interfaces[39m
-[16:50:00] [32mPrepare miscellaneous[39m
-[16:50:00] [32mProcess documentation coverage report[39m
-[16:50:00] [32mGenerating documentation in export format json[39m
-[16:50:00] [32mDocumentation generated in ./ in 0.131 seconds[39m
-info => Cleaning outputDir: [36m../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn[39m
+[16:54:34] [33mNo configuration file found, switching to CLI flags.[39m
+[16:54:34] [32mUsing tsconfig file : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/.storybook/tsconfig.doc.json[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/.storybook/typings.d.ts[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/favicon.ico[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/index.html[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/main.ts[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/styles.css[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.css[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.html[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.ts[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.config.ts[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.routes.ts[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/Configure.mdx[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/button.component.ts[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/button.css[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/header.component.ts[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/header.css[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/page.component.ts[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/page.css[39m
+[16:54:34] [36mIncluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/user.ts[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/accessibility.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/accessibility.svg[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/addon-library.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/assets.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/avif-test-image.avif[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/context.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/discord.svg[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/docs.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/figma-plugin.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/github.svg[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/share.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/styling.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/testing.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/theming.png[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/tutorials.svg[39m
+[16:54:34] [33mExcluding      : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/assets/youtube.svg[39m
+[16:54:34] [32mSearching package.json file[39m
+[16:54:34] [32mpackage.json file found[39m
+[16:54:34] [32mProcessing package.json dependencies[39m
+[16:54:34] [32mSearching README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.md, TODO.md files[39m
+[16:54:34] [32mREADME.md file found[39m
+[16:54:34] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/CHANGELOG read[39m
+[16:54:34] [33mContinuing without CHANGELOG.md file[39m
+[16:54:34] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/CONTRIBUTING read[39m
+[16:54:34] [33mContinuing without CONTRIBUTING.md file[39m
+[16:54:34] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/LICENSE read[39m
+[16:54:34] [33mContinuing without LICENSE.md file[39m
+[16:54:34] [33mError during /Users/matthiasgutsch/Documents/git/angular-vite-storybook/TODO read[39m
+[16:54:34] [33mContinuing without TODO.md file[39m
+[16:54:34] [32mGet dependencies data[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/main.ts[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.component.ts[39m
+[16:54:34] [36mfound          : AppComponent[39m
+[16:54:34] [36m               : - imports:[39m
+[16:54:34] [36m               : 	- RouterOutlet[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.config.ts[39m
+[16:54:34] [36mfound          : appConfig[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/app/app.routes.ts[39m
+[16:54:34] [32mAnalysing routes definitions and clean them if necessary[39m
+[16:54:34] [36mfound          : routes[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/button.component.ts[39m
+[16:54:34] [36mfound          : ButtonComponent[39m
+[16:54:34] [36m               : - imports:[39m
+[16:54:34] [36m               : 	- CommonModule[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/header.component.ts[39m
+[16:54:34] [36mfound          : HeaderComponent[39m
+[16:54:34] [36m               : - imports:[39m
+[16:54:34] [36m               : 	- CommonModule[39m
+[16:54:34] [36m               : 	- ButtonComponent[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/page.component.ts[39m
+[16:54:34] [36mfound          : PageComponent[39m
+[16:54:34] [36m               : - imports:[39m
+[16:54:34] [36m               : 	- CommonModule[39m
+[16:54:34] [36m               : 	- HeaderComponent[39m
+[16:54:34] [32mparsing        : /Users/matthiasgutsch/Documents/git/angular-vite-storybook/src/stories/user.ts[39m
+[16:54:34] [36mfound          : User[39m
+[16:54:34] [32m-------------------[39m
+[16:54:34] [32mProject statistics [39m
+[16:54:34] [32m- component    : 4[39m
+[16:54:34] [32m- interface    : 1[39m
+[16:54:34] [32m-------------------[39m
+[16:54:34] [32mPrepare components[39m
+[16:54:34] [32m AppComponent has a templateUrl, include it[39m
+[16:54:34] [32m ButtonComponent has styleUrls, include them[39m
+[16:54:34] [32m HeaderComponent has styleUrls, include them[39m
+[16:54:34] [32m PageComponent has styleUrls, include them[39m
+[16:54:34] [32mPrepare modules[39m
+[16:54:34] [32mProcess routes[39m
+[16:54:34] [32mPrepare interfaces[39m
+[16:54:34] [32mPrepare miscellaneous[39m
+[16:54:34] [32mProcess documentation coverage report[39m
+[16:54:34] [32mGenerating documentation in export format json[39m
+[16:54:34] [32mDocumentation generated in ./ in 0.128 seconds[39m
+info => Cleaning outputDir: [36m../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR[39m
 
 info => Loading presets
 info => Building manager..
 info => Building preview..
-info => Copying static files: [36mpublic[39m at [36m../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn[39m
+info => Copying static files: [36mpublic[39m at [36m../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR[39m
 vite v7.2.4 building client environment for production...
 transforming...
 ✓ 396 modules transformed.
 rendering chunks...
 computing gzip size...
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/context-C0qIqeS4.png                        6.12 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/styling-Bk6zjRzU.png                        7.24 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/iframe.html                                       18.16 kB │ gzip:   5.10 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/docs---vsFbMi.png                          27.88 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/share-DGA-UcQf.png                         40.77 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/accessibility-W_h2acOZ.png                 42.34 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/figma-plugin-CH2hELiO.png                  44.25 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/theming-D6WJLNoW.png                       44.37 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/testing-cbzR9l9r.png                       49.31 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/addon-library-BWUCAmyN.png                467.37 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/iframe-tn0RQdqM.css                         0.00 kB │ gzip:   0.02 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/_commonjsHelpers-CV2jkJYL.js                0.23 kB │ gzip:   0.20 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/formatter-OMEEQ6HG-D1R395rW.js              0.26 kB │ gzip:   0.22 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/header.stories-Bs-4LoUc.js                  0.39 kB │ gzip:   0.28 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/index-n_Lxnqas.js                           0.66 kB │ gzip:   0.42 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/button.stories-DyqLZQkc.js                  0.85 kB │ gzip:   0.53 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/button.component-Cv_9KalE.js                1.38 kB │ gzip:   0.72 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/preload-helper-Cc2_yIPf.js                  1.38 kB │ gzip:   0.80 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/header.component-A-wXZi6_.js                2.14 kB │ gzip:   0.90 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/page.stories-CsR1zwxI.js                    4.13 kB │ gzip:   1.83 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/Configure-DWpA4GIi.js                      25.55 kB │ gzip:  11.09 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/vite-inject-mocker-entry.js                       29.77 kB │ gzip:  10.49 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/Color-64QXVMR3-BOrQzodO.js                 32.05 kB │ gzip:  12.08 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/matchers-ZRZBO4XZ-BllElMVc.js              32.85 kB │ gzip:  11.17 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/animations-YQC0Cs-C.js                     69.58 kB │ gzip:  20.89 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/syntaxhighlighter-CAVLW7PM-Dt-jylaI.js     83.43 kB │ gzip:  29.12 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/DocsRenderer-HT7GNKAR-BFclhhJq.js         199.73 kB │ gzip:  64.15 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/axe-CNzL2c8v.js                           615.02 kB │ gzip: 171.94 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/WithTooltip-SK46ZJ2J-xq1IkJmw.js          687.15 kB │ gzip: 222.92 kB
-../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn/assets/iframe-DImGHhpa.js                      1,943.94 kB │ gzip: 565.42 kB
-✓ built in 5.85s
-info => Output directory: /var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--2655-Ro1AhFdOPcXn
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/context-C0qIqeS4.png                        6.12 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/styling-Bk6zjRzU.png                        7.24 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/iframe.html                                       18.16 kB │ gzip:   5.10 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/docs---vsFbMi.png                          27.88 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/share-DGA-UcQf.png                         40.77 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/accessibility-W_h2acOZ.png                 42.34 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/figma-plugin-CH2hELiO.png                  44.25 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/theming-D6WJLNoW.png                       44.37 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/testing-cbzR9l9r.png                       49.31 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/addon-library-BWUCAmyN.png                467.37 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/iframe-tn0RQdqM.css                         0.00 kB │ gzip:   0.02 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/_commonjsHelpers-CV2jkJYL.js                0.23 kB │ gzip:   0.20 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/formatter-OMEEQ6HG-D0_um5BF.js              0.26 kB │ gzip:   0.22 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/header.stories-DgIsggE6.js                  0.39 kB │ gzip:   0.28 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/index-lDFmqe6L.js                           0.66 kB │ gzip:   0.42 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/button.stories-DAGf_7Qt.js                  0.85 kB │ gzip:   0.53 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/button.component-DYnuNErW.js                1.37 kB │ gzip:   0.72 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/preload-helper-Cc2_yIPf.js                  1.38 kB │ gzip:   0.80 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/header.component-DxZym-Rg.js                2.14 kB │ gzip:   0.90 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/page.stories-mKZV7r4w.js                    4.13 kB │ gzip:   1.83 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/Configure-9RmoDydz.js                      25.55 kB │ gzip:  11.09 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/vite-inject-mocker-entry.js                       29.77 kB │ gzip:  10.49 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/Color-64QXVMR3-DLc6W_Iq.js                 32.05 kB │ gzip:  12.08 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/matchers-ZRZBO4XZ-CH6IaM57.js              32.85 kB │ gzip:  11.17 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/animations-C3_xZoKk.js                     69.58 kB │ gzip:  20.89 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/syntaxhighlighter-CAVLW7PM-Dms9sYn0.js     83.43 kB │ gzip:  29.12 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/DocsRenderer-HT7GNKAR-Bt1YBuTX.js         199.73 kB │ gzip:  64.15 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/axe-CNzL2c8v.js                           615.02 kB │ gzip: 171.94 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/WithTooltip-SK46ZJ2J-cCgGh3EC.js          687.15 kB │ gzip: 222.92 kB
+../../../../../var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR/assets/iframe-C0mbTyP4.js                      1,943.94 kB │ gzip: 565.43 kB
+✓ built in 5.94s
+info => Output directory: /var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--3911-jTOvatMTAMBR
