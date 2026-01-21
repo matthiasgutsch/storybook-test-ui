@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@analogjs/storybook-angular';
-import { expect } from 'storybook/test';
+import { expect, within } from 'storybook/test';
 import { ButtonComponent } from './button.component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
@@ -53,10 +53,7 @@ export const Small: Story = {
 
 export const FilledForm: Story = {
   play: async ({ canvas, userEvent }) => {
-    // See https://storybook.js.org/docs/essentials/actions#automatically-matching-args to learn how to setup logging in the Actions panel
     await userEvent.click(canvas.getByRole('button'));
-
-    // 👇 Assert DOM structure
     await expect(canvas.getByText('Button')).toBeInTheDocument();
   },
 };
