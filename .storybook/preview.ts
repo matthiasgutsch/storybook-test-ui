@@ -6,6 +6,12 @@ setCompodocJson(docJson);
 const preview: Preview = {
   decorators: [],
   parameters: {
+    html: {
+      highlighter: {
+        showLineNumbers: true, // default: false
+        wrapLines: false, // default: true
+      },
+    },
     controls: {
       chromatic: { disableSnapshot: false },
       layout: 'centered',
