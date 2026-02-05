@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@chromatic-com/storybook',
     '@whitespace/storybook-addon-html',
+    '@storybook/addon-designs',
   ],
   framework: {
     name: '@analogjs/storybook-angular',

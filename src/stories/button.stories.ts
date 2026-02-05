@@ -2,20 +2,20 @@ import type { Meta, StoryObj } from '@analogjs/storybook-angular';
 import { expect, within } from 'storybook/test';
 import { ButtonComponent } from './button.component';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonComponent> = {
   title: 'Example/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
   render: (args) => ({
     props: {
-      backgroundColor: null,
       ...args,
     },
   }),
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
+
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FhoxPBdIKJQ2UaHaXmVGb36%2FDatacolor-Design-System-Documentation%3Fnode-id%3D222%253A845',
     },
   },
 };
@@ -23,7 +23,6 @@ const meta: Meta<ButtonComponent> = {
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     primary: true,
@@ -44,6 +43,12 @@ export const Large: Story = {
   },
 };
 
+export const medium: Story = {
+  args: {
+    size: 'medium',
+    label: 'Button',
+  },
+};
 export const Small: Story = {
   args: {
     size: 'small',
