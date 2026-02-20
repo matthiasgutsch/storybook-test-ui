@@ -212,6 +212,107 @@
             }
         },
         {
+            "name": "CardComponent",
+            "id": "component-CardComponent-709544a3b1c422faa270d1f64f575730a30a626ec4a53e7ecfa3e33f39c1e50dead952c1d544d09ef3108a22a986bfe4c4ee96f739c114f88c03956c4fb118da",
+            "file": "src/stories/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [],
+            "styles": [
+                "\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 8px;\n        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n      }\n    "
+            ],
+            "template": "<div class=\"card\">\n  <h3>{{ title }}</h3>\n  <ng-content></ng-content>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  template: `\n    <div class=\"card\">\n      <h3>{{ title }}</h3>\n      <ng-content></ng-content>\n    </div>\n  `,\n  styles: [\n    `\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 8px;\n        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n      }\n    `,\n  ],\n})\nexport class CardComponent {\n  @Input() title = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 8px;\n        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n      }\n    \n",
+            "extends": []
+        },
+        {
+            "name": "DashboardLayoutComponent",
+            "id": "component-DashboardLayoutComponent-78ce283d59c7d2c41181cb9ae2365dc1c5df0a3231f2f716e8d355945a6ca30ea47d24da5a6d65c7e44e2883fda266cd96a46f6d5bb66de7559cf77faf2cb1ec",
+            "file": "src/stories/dashboard-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dashboard-layout",
+            "styleUrls": [],
+            "styles": [
+                "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n      }\n    "
+            ],
+            "template": "<div class=\"dashboard\">\n  <app-sidebar></app-sidebar>\n\n  <main class=\"content\">\n    <storybook-header></storybook-header>\n\n    <section class=\"grid\">\n      <app-card title=\"Sales\"></app-card>\n      <app-card title=\"Users\"></app-card>\n      <app-card title=\"Performance\"></app-card>\n    </section>\n  </main>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SidebarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { CardComponent } from './card.component';\nimport { SidebarComponent } from './sidebar.component';\nimport { HeaderComponent } from './header.component';\n\n@Component({\n  selector: 'app-dashboard-layout',\n  standalone: true,\n  imports: [CommonModule, SidebarComponent, HeaderComponent, CardComponent],\n  template: `\n    <div class=\"dashboard\">\n      <app-sidebar></app-sidebar>\n\n      <main class=\"content\">\n        <storybook-header></storybook-header>\n\n        <section class=\"grid\">\n          <app-card title=\"Sales\"></app-card>\n          <app-card title=\"Users\"></app-card>\n          <app-card title=\"Performance\"></app-card>\n        </section>\n      </main>\n    </div>\n  `,\n  styles: [\n    `\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n      }\n    `,\n  ],\n})\nexport class DashboardLayoutComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n      }\n    \n",
+            "extends": []
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-bf1b59351d45d6f1a7caabbe9caa07241c4049354b07062c19c981a7e2687e743a675013bb62da7e0f2941d2afec5437ec29e475111d30a97f230a83d5645a14",
             "file": "src/stories/header.component.ts",
@@ -390,6 +491,43 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-2e997b0a7dbb33d3f9d74f6fc4ec76a5f55c03a9d3f347a0442c3cc4e09bd93e63d4da886aae8f8f457ff883a88cd4b0b21890c2f329713d6b6841d09183ca1f",
+            "file": "src/stories/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [
+                "\n      .sidebar {\n        width: 220px;\n        background: #f4f4f4;\n        padding: 16px;\n        height: 100vh;\n      }\n      nav a {\n        display: block;\n        margin-bottom: 12px;\n        cursor: pointer;\n      }\n    "
+            ],
+            "template": "<aside class=\"sidebar\">\n  <nav>\n    <a>Dashboard</a>\n    <a>Reports</a>\n    <a>Settings</a>\n  </nav>\n</aside>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-sidebar',\n  template: `\n    <aside class=\"sidebar\">\n      <nav>\n        <a>Dashboard</a>\n        <a>Reports</a>\n        <a>Settings</a>\n      </nav>\n    </aside>\n  `,\n  styles: [\n    `\n      .sidebar {\n        width: 220px;\n        background: #f4f4f4;\n        padding: 16px;\n        height: 100vh;\n      }\n      nav a {\n        display: block;\n        margin-bottom: 12px;\n        cursor: pointer;\n      }\n    `,\n  ],\n})\nexport class SidebarComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      .sidebar {\n        width: 220px;\n        background: #f4f4f4;\n        padding: 16px;\n        height: 100vh;\n      }\n      nav a {\n        display: block;\n        margin-bottom: 12px;\n        cursor: pointer;\n      }\n    \n",
+            "extends": []
         }
     ],
     "modules": [],
@@ -455,7 +593,7 @@
         "children": []
     },
     "coverage": {
-        "count": 11,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -497,6 +635,24 @@
                 "status": "very-good"
             },
             {
+                "filePath": "src/stories/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/dashboard-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DashboardLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/header.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -512,6 +668,15 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
