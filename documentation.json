@@ -213,7 +213,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-709544a3b1c422faa270d1f64f575730a30a626ec4a53e7ecfa3e33f39c1e50dead952c1d544d09ef3108a22a986bfe4c4ee96f739c114f88c03956c4fb118da",
+            "id": "component-CardComponent-7df7cfd5d06a2e3d6cfc8a1bfeef03e863a0181275d17f39bdb5ff124f14b95bf249e0103498569a7ef829d0c36a9bbf56540b1e8a8f41ca11be5b00b92d07d0",
             "file": "src/stories/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -223,7 +223,7 @@
             "selector": "app-card",
             "styleUrls": [],
             "styles": [
-                "\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 8px;\n        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n      }\n    "
+                "\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 4px;\n        border: 1px solid #ddd;\n      }\n    "
             ],
             "template": "<div class=\"card\">\n  <h3>{{ title }}</h3>\n  <ng-content></ng-content>\n</div>\n",
             "templateUrl": [],
@@ -252,15 +252,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  template: `\n    <div class=\"card\">\n      <h3>{{ title }}</h3>\n      <ng-content></ng-content>\n    </div>\n  `,\n  styles: [\n    `\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 8px;\n        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n      }\n    `,\n  ],\n})\nexport class CardComponent {\n  @Input() title = '';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  template: `\n    <div class=\"card\">\n      <h3>{{ title }}</h3>\n      <ng-content></ng-content>\n    </div>\n  `,\n  styles: [\n    `\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 4px;\n        border: 1px solid #ddd;\n      }\n    `,\n  ],\n})\nexport class CardComponent {\n  @Input() title = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 8px;\n        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n      }\n    \n",
+            "stylesData": "\n      .card {\n        background: white;\n        padding: 16px;\n        border-radius: 4px;\n        border: 1px solid #ddd;\n      }\n    \n",
             "extends": []
         },
         {
             "name": "DashboardLayoutComponent",
-            "id": "component-DashboardLayoutComponent-78ce283d59c7d2c41181cb9ae2365dc1c5df0a3231f2f716e8d355945a6ca30ea47d24da5a6d65c7e44e2883fda266cd96a46f6d5bb66de7559cf77faf2cb1ec",
+            "id": "component-DashboardLayoutComponent-b43a3a80f2c96c3bdebfe9c394a611548500f4794033341fc69e49973e3543dd68f66d72e837ec6fc6eef91a3092daa37f10d7eccd0d336f0bfcccb74030212e",
             "file": "src/stories/dashboard-layout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -270,7 +270,7 @@
             "selector": "app-dashboard-layout",
             "styleUrls": [],
             "styles": [
-                "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n      }\n    "
+                "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n        padding: 24px 0px;\n      }\n    "
             ],
             "template": "<div class=\"dashboard\">\n  <app-sidebar></app-sidebar>\n\n  <main class=\"content\">\n    <storybook-header></storybook-header>\n\n    <section class=\"grid\">\n      <app-card title=\"Sales\"></app-card>\n      <app-card title=\"Users\"></app-card>\n      <app-card title=\"Performance\"></app-card>\n    </section>\n  </main>\n</div>\n",
             "templateUrl": [],
@@ -306,10 +306,10 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { CardComponent } from './card.component';\nimport { SidebarComponent } from './sidebar.component';\nimport { HeaderComponent } from './header.component';\n\n@Component({\n  selector: 'app-dashboard-layout',\n  standalone: true,\n  imports: [CommonModule, SidebarComponent, HeaderComponent, CardComponent],\n  template: `\n    <div class=\"dashboard\">\n      <app-sidebar></app-sidebar>\n\n      <main class=\"content\">\n        <storybook-header></storybook-header>\n\n        <section class=\"grid\">\n          <app-card title=\"Sales\"></app-card>\n          <app-card title=\"Users\"></app-card>\n          <app-card title=\"Performance\"></app-card>\n        </section>\n      </main>\n    </div>\n  `,\n  styles: [\n    `\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n      }\n    `,\n  ],\n})\nexport class DashboardLayoutComponent {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { CardComponent } from './card.component';\nimport { SidebarComponent } from './sidebar.component';\nimport { HeaderComponent } from './header.component';\n\n@Component({\n  selector: 'app-dashboard-layout',\n  standalone: true,\n  imports: [CommonModule, SidebarComponent, HeaderComponent, CardComponent],\n  template: `\n    <div class=\"dashboard\">\n      <app-sidebar></app-sidebar>\n\n      <main class=\"content\">\n        <storybook-header></storybook-header>\n\n        <section class=\"grid\">\n          <app-card title=\"Sales\"></app-card>\n          <app-card title=\"Users\"></app-card>\n          <app-card title=\"Performance\"></app-card>\n        </section>\n      </main>\n    </div>\n  `,\n  styles: [\n    `\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n        padding: 24px 0px;\n      }\n    `,\n  ],\n})\nexport class DashboardLayoutComponent {}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n      }\n    \n",
+            "stylesData": "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n        padding: 24px 0px;\n      }\n    \n",
             "extends": []
         },
         {
