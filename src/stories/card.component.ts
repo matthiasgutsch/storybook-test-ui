@@ -13,8 +13,8 @@ import { Component, Input } from '@angular/core';
       .card {
         background: white;
         padding: 16px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        border: 1px solid #ddd;
       }
     `,
   ],

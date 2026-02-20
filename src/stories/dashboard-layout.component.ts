@@ -40,6 +40,7 @@ import { HeaderComponent } from './header.component';
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
+        padding: 24px 0px;
       }
     `,
   ],
