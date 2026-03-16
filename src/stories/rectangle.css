@@ -1,0 +1,17 @@
+.storybook-rectangle {
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.storybook-rectangle--sharp {
+  border-radius: 0;
+}
+
+.storybook-rectangle--rounded {
+  border-radius: 8px;
+}
+
+.storybook-rectangle--pill {
+  border-radius: 50px;
+}
