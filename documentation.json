@@ -260,7 +260,7 @@
         },
         {
             "name": "DashboardLayoutComponent",
-            "id": "component-DashboardLayoutComponent-b43a3a80f2c96c3bdebfe9c394a611548500f4794033341fc69e49973e3543dd68f66d72e837ec6fc6eef91a3092daa37f10d7eccd0d336f0bfcccb74030212e",
+            "id": "component-DashboardLayoutComponent-b70499729279f9800e94aaee8e04af884d329863e3850bef5e9cd46047b1f41e7abe2bb4af744232681bf637ce95c0ee0b8f4b3302aa9f051dcfe8122f9d5041",
             "file": "src/stories/dashboard-layout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -272,7 +272,7 @@
             "styles": [
                 "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n        padding: 24px 0px;\n      }\n    "
             ],
-            "template": "<div class=\"dashboard\">\n  <app-sidebar></app-sidebar>\n\n  <main class=\"content\">\n    <storybook-header></storybook-header>\n\n    <section class=\"grid\">\n      <app-card title=\"Sales\"></app-card>\n      <app-card title=\"Users\"></app-card>\n      <app-card title=\"Performance\"></app-card>\n    </section>\n  </main>\n</div>\n",
+            "template": "<div class=\"dashboard\">\n  <app-sidebar></app-sidebar>\n\n  <main class=\"content\">\n    <storybook-header></storybook-header>\n\n    <section class=\"grid mt-4\">\n      <app-card title=\"Sales\"></app-card>\n      <app-card title=\"Users\"></app-card>\n      <app-card title=\"Performance\"></app-card>\n    </section>\n  </main>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -306,7 +306,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { CardComponent } from './card.component';\nimport { SidebarComponent } from './sidebar.component';\nimport { HeaderComponent } from './header.component';\n\n@Component({\n  selector: 'app-dashboard-layout',\n  standalone: true,\n  imports: [CommonModule, SidebarComponent, HeaderComponent, CardComponent],\n  template: `\n    <div class=\"dashboard\">\n      <app-sidebar></app-sidebar>\n\n      <main class=\"content\">\n        <storybook-header></storybook-header>\n\n        <section class=\"grid\">\n          <app-card title=\"Sales\"></app-card>\n          <app-card title=\"Users\"></app-card>\n          <app-card title=\"Performance\"></app-card>\n        </section>\n      </main>\n    </div>\n  `,\n  styles: [\n    `\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n        padding: 24px 0px;\n      }\n    `,\n  ],\n})\nexport class DashboardLayoutComponent {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { CardComponent } from './card.component';\nimport { SidebarComponent } from './sidebar.component';\nimport { HeaderComponent } from './header.component';\n\n@Component({\n  selector: 'app-dashboard-layout',\n  standalone: true,\n  imports: [CommonModule, SidebarComponent, HeaderComponent, CardComponent],\n  template: `\n    <div class=\"dashboard\">\n      <app-sidebar></app-sidebar>\n\n      <main class=\"content\">\n        <storybook-header></storybook-header>\n\n        <section class=\"grid mt-4\">\n          <app-card title=\"Sales\"></app-card>\n          <app-card title=\"Users\"></app-card>\n          <app-card title=\"Performance\"></app-card>\n        </section>\n      </main>\n    </div>\n  `,\n  styles: [\n    `\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n        padding: 24px 0px;\n      }\n    `,\n  ],\n})\nexport class DashboardLayoutComponent {}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      .dashboard {\n        display: flex;\n        height: 100vh;\n      }\n\n      .content {\n        flex: 1;\n        padding: 36px;\n      }\n\n      .grid {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 16px;\n        padding: 24px 0px;\n      }\n    \n",
