@@ -16,7 +16,7 @@ import { HeaderComponent } from './header.component';
       <main class="content">
         <storybook-header></storybook-header>
 
-        <section class="grid">
+        <section class="grid mt-4">
           <app-card title="Sales"></app-card>
           <app-card title="Users"></app-card>
           <app-card title="Performance"></app-card>
