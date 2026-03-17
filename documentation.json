@@ -493,6 +493,118 @@
             "extends": []
         },
         {
+            "name": "RectangleComponent",
+            "id": "component-RectangleComponent-e343c0da394c2ee4d9e865405133c24fda0958f7059400b9b7aac3d50dc421b96aee236352f890c0fc5c64a9f50d10fb6952a127cb1e33643685ac1ba8d748ff",
+            "file": "src/stories/rectangle.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-rectangle",
+            "styleUrls": [
+                "./rectangle.css"
+            ],
+            "styles": [],
+            "template": "<div [ngClass]=\"classes\" [style]=\"dynamicStyle\"></div>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "defaultValue": "'#d7172f'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nBackground color of the rectangle\n",
+                    "description": "<p>Background color of the rectangle</p>\n",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "'100px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHeight of the rectangle\n",
+                    "description": "<p>Height of the rectangle</p>\n",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'sharp'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nBorder radius style\n",
+                    "description": "<p>Border radius style</p>\n",
+                    "line": 34,
+                    "type": "\"sharp\" | \"rounded\" | \"pill\"",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "'200px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWidth of the rectangle\n",
+                    "description": "<p>Width of the rectangle</p>\n",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'storybook-rectangle',\n  standalone: true,\n  imports: [CommonModule],\n  template: `<div [ngClass]=\"classes\" [style]=\"dynamicStyle\"></div>`,\n  styleUrls: ['./rectangle.css'],\n})\nexport class RectangleComponent {\n  /**\n   * Width of the rectangle\n   */\n  @Input()\n  width: string = '200px';\n\n  /**\n   * Height of the rectangle\n   */\n  @Input()\n  height: string = '100px';\n\n  /**\n   * Background color of the rectangle\n   */\n  @Input()\n  backgroundColor: string = '#d7172f';\n\n  /**\n   * Border radius style\n   */\n  @Input()\n  variant: 'sharp' | 'rounded' | 'pill' = 'sharp';\n\n  public get classes(): string[] {\n    return ['storybook-rectangle', `storybook-rectangle--${this.variant}`];\n  }\n\n  public get dynamicStyle(): string {\n    return `width: ${this.width}; height: ${this.height}; background-color: ${this.backgroundColor};`;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-rectangle {\n  display: inline-block;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n\n.storybook-rectangle--sharp {\n  border-radius: 0;\n}\n\n.storybook-rectangle--rounded {\n  border-radius: 8px;\n}\n\n.storybook-rectangle--pill {\n  border-radius: 50px;\n}\n",
+                    "styleUrl": "./rectangle.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 36
+                    }
+                },
+                "dynamicStyle": {
+                    "name": "dynamicStyle",
+                    "getSignature": {
+                        "name": "dynamicStyle",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 40
+                    }
+                }
+            }
+        },
+        {
             "name": "SidebarComponent",
             "id": "component-SidebarComponent-2e997b0a7dbb33d3f9d74f6fc4ec76a5f55c03a9d3f347a0442c3cc4e09bd93e63d4da886aae8f8f457ff883a88cd4b0b21890c2f329713d6b6841d09183ca1f",
             "file": "src/stories/sidebar.component.ts",
@@ -593,7 +705,7 @@
         "children": []
     },
     "coverage": {
-        "count": 8,
+        "count": 14,
         "status": "low",
         "files": [
             {
@@ -669,6 +781,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
+            },
+            {
+                "filePath": "src/stories/rectangle.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RectangleComponent",
+                "coveragePercent": 80,
+                "coverageCount": "4/5",
+                "status": "very-good"
             },
             {
                 "filePath": "src/stories/sidebar.component.ts",
