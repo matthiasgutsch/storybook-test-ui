@@ -493,6 +493,109 @@
             "extends": []
         },
         {
+            "name": "Rectangle1Component",
+            "id": "component-Rectangle1Component-8e666c5cf3eb0357c198fb865f14944bfecdd7dc8bceea255281fac94cdeb32fa29d5e5e83351dd0a2c9dba08ad59086606d131a1e27a9d962d5d0d951b223a7",
+            "file": "src/stories/rectangle1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-rectangle1",
+            "styleUrls": [
+                "./rectangle1.css"
+            ],
+            "styles": [],
+            "template": "<div class=\"card-container\" [style.border-color]=\"borderColor\" [style.width]=\"width\" [style.height]=\"height\">\n  <div class=\"card-top-block\" [style.background-color]=\"topColor\"></div>\n  <div class=\"card-bottom-block\" [style.background-color]=\"accentColor\"></div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "accentColor",
+                    "defaultValue": "'#C41230'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nAccent color for the bottom block\n",
+                    "description": "<p>Accent color for the bottom block</p>\n",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "borderColor",
+                    "defaultValue": "'#8B5CF6'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nBorder color of the card container\n",
+                    "description": "<p>Border color of the card container</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "'310px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHeight of the card\n",
+                    "description": "<p>Height of the card</p>\n",
+                    "line": 45,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "topColor",
+                    "defaultValue": "'#F5F5F5'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nColor for the top block\n",
+                    "description": "<p>Color for the top block</p>\n",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "'245px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWidth of the card\n",
+                    "description": "<p>Width of the card</p>\n",
+                    "line": 39,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'storybook-rectangle1',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div class=\"card-container\" [style.border-color]=\"borderColor\" [style.width]=\"width\" [style.height]=\"height\">\n      <div class=\"card-top-block\" [style.background-color]=\"topColor\"></div>\n      <div class=\"card-bottom-block\" [style.background-color]=\"accentColor\"></div>\n    </div>\n  `,\n  styleUrls: ['./rectangle1.css'],\n})\nexport class Rectangle1Component {\n  /**\n   * Accent color for the bottom block\n   */\n  @Input()\n  accentColor: string = '#C41230';\n\n  /**\n   * Color for the top block\n   */\n  @Input()\n  topColor: string = '#F5F5F5';\n\n  /**\n   * Border color of the card container\n   */\n  @Input()\n  borderColor: string = '#8B5CF6';\n\n  /**\n   * Width of the card\n   */\n  @Input()\n  width: string = '245px';\n\n  /**\n   * Height of the card\n   */\n  @Input()\n  height: string = '310px';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".card-container {\n  display: flex;\n  flex-direction: column;\n  width: 245px;\n  height: 310px;\n  border: 2px dashed #8B5CF6;\n  border-radius: 12px;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n\n.card-top-block {\n  flex: 1;\n  background-color: #F5F5F5;\n}\n\n.card-bottom-block {\n  flex: 1;\n  background-color: #C41230;\n}\n",
+                    "styleUrl": "./rectangle1.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "RectangleComponent",
             "id": "component-RectangleComponent-e343c0da394c2ee4d9e865405133c24fda0958f7059400b9b7aac3d50dc421b96aee236352f890c0fc5c64a9f50d10fb6952a127cb1e33643685ac1ba8d748ff",
             "file": "src/stories/rectangle.component.ts",
@@ -705,7 +808,7 @@
         "children": []
     },
     "coverage": {
-        "count": 14,
+        "count": 20,
         "status": "low",
         "files": [
             {
@@ -789,6 +892,15 @@
                 "name": "RectangleComponent",
                 "coveragePercent": 80,
                 "coverageCount": "4/5",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/rectangle1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Rectangle1Component",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
                 "status": "very-good"
             },
             {
