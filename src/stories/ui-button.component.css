@@ -1,0 +1,132 @@
+/* ── Base ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 1px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+              color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+/* ── Sizes ── */
+.btn--small {
+  height: 32px;
+  padding: 0 16px;
+  gap: 8px;
+  font-size: 13.33px;
+  line-height: 20px;
+}
+
+.btn--medium {
+  height: 40px;
+  padding: 0 24px;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.btn--large {
+  height: 56px;
+  padding: 0 32px;
+  gap: 16px;
+  font-size: 19.2px;
+  line-height: 28.8px;
+}
+
+/* ── Primary ── */
+.btn--primary {
+  background: #d7192f;
+  color: #fff;
+  box-shadow: 0 5px 9px 0 rgba(166, 17, 33, 0.4);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: #a61121;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn--primary:active:not(:disabled) {
+  background: #a61121;
+  box-shadow: none;
+}
+
+.btn--primary:disabled {
+  background: #c8c9c7;
+  box-shadow: none;
+  color: #fff;
+}
+
+/* ── Secondary ── */
+.btn--secondary {
+  background: #fff;
+  color: #d7192f;
+  border: 1px solid #d7192f;
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  border-color: #a61121;
+  color: #a61121;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn--secondary:active:not(:disabled) {
+  border-color: #a61121;
+  color: #a61121;
+  box-shadow: none;
+}
+
+.btn--secondary:disabled {
+  border-color: #c8c9c7;
+  color: #c8c9c7;
+  box-shadow: none;
+}
+
+/* ── Text ── */
+.btn--text {
+  background: none;
+  color: #d7192f;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn--text:hover:not(:disabled) {
+  color: #a61121;
+}
+
+.btn--text:active:not(:disabled) {
+  color: #a61121;
+}
+
+.btn--text:disabled {
+  color: #c8c9c7;
+}
+
+/* ── Icon ── */
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.btn__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Label ── */
+.btn__label {
+  color: inherit;
+}
