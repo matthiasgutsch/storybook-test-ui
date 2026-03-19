@@ -5,39 +5,17 @@ import { Component, Input } from '@angular/core';
   selector: 'storybook-rectangle',
   standalone: true,
   imports: [CommonModule],
-  template: `<div [ngClass]="classes" [style]="dynamicStyle"></div>`,
+  template: `
+    <div class="rectangle" [ngClass]="'rectangle--' + property1.toLowerCase()">
+      <div class="rectangle__fill"></div>
+    </div>
+  `,
   styleUrls: ['./rectangle.css'],
 })
 export class RectangleComponent {
   /**
-   * Width of the rectangle
+   * Visual variant of the rectangle
    */
   @Input()
-  width: string = '200px';
-
-  /**
-   * Height of the rectangle
-   */
-  @Input()
-  height: string = '100px';
-
-  /**
-   * Background color of the rectangle
-   */
-  @Input()
-  backgroundColor: string = '#d7172f';
-
-  /**
-   * Border radius style
-   */
-  @Input()
-  variant: 'sharp' | 'rounded' | 'pill' = 'sharp';
-
-  public get classes(): string[] {
-    return ['storybook-rectangle', `storybook-rectangle--${this.variant}`];
-  }
-
-  public get dynamicStyle(): string {
-    return `width: ${this.width}; height: ${this.height}; background-color: ${this.backgroundColor};`;
-  }
+  property1: 'Default' | 'Red' = 'Default';
 }

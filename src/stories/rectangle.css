@@ -1,17 +1,15 @@
-.storybook-rectangle {
-  display: inline-block;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.rectangle {
+  position: relative;
+  width: 207px;
+  height: 158px;
 }
 
-.storybook-rectangle--sharp {
-  border-radius: 0;
+.rectangle__fill {
+  position: absolute;
+  inset: 0;
+  background-color: #f5f5f5;
 }
 
-.storybook-rectangle--rounded {
-  border-radius: 8px;
-}
-
-.storybook-rectangle--pill {
-  border-radius: 50px;
+.rectangle--red .rectangle__fill {
+  background-color: #d7192f;
 }

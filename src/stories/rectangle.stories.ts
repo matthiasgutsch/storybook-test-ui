@@ -10,6 +10,12 @@ const meta: Meta<RectangleComponent> = {
       ...args,
     },
   }),
+  argTypes: {
+    property1: {
+      control: 'select',
+      options: ['Default', 'Red'],
+    },
+  },
 };
 
 export default meta;
@@ -17,54 +23,12 @@ type Story = StoryObj<RectangleComponent>;
 
 export const Default: Story = {
   args: {
-    width: '200px',
-    height: '100px',
-    backgroundColor: '#d7172f',
-    variant: 'sharp',
+    property1: 'Default',
   },
 };
 
-export const Sharp: Story = {
+export const Red: Story = {
   args: {
-    width: '200px',
-    height: '100px',
-    backgroundColor: '#d7172f',
-    variant: 'sharp',
-  },
-};
-
-export const Rounded: Story = {
-  args: {
-    width: '200px',
-    height: '100px',
-    backgroundColor: '#3b82f6',
-    variant: 'rounded',
-  },
-};
-
-export const Pill: Story = {
-  args: {
-    width: '200px',
-    height: '100px',
-    backgroundColor: '#10b981',
-    variant: 'pill',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    width: '400px',
-    height: '200px',
-    backgroundColor: '#8b5cf6',
-    variant: 'rounded',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    width: '100px',
-    height: '50px',
-    backgroundColor: '#f59e0b',
-    variant: 'rounded',
+    property1: 'Red',
   },
 };
