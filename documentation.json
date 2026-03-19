@@ -2,6 +2,31 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "BreadcrumbItem",
+            "id": "interface-BreadcrumbItem-d16006346703a7396cd808c11a75d16b68a2619bac8334e02338bcc990ea5c0e7207942d079c86b5835caf71aae6554fb78c52f49ebfff05e60d5e786bef684d",
+            "file": "src/stories/title-bar.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nexport type TitleBarType = 'White' | 'Transparent';\n\nexport interface BreadcrumbItem {\n  label: string;\n}\n\n/**\n * Title Bar component — top-level page header with configurable left and right sections.\n *\n * **Left side:** back button, menu button, breadcrumb trail, title, edit button, tag badge\n * **Right side:** published toggle (with optional calibrated tag), save icon, text/primary/secondary action buttons\n *\n * Both `White` and `Transparent` background types are supported.\n */\n@Component({\n  selector: 'storybook-title-bar',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './title-bar.component.html',\n  styleUrls: ['./title-bar.component.css'],\n})\nexport class TitleBarComponent {\n  /** Background type */\n  @Input() type: TitleBarType = 'White';\n\n  /** Page title text */\n  @Input() title = 'Title';\n\n  /** Show/hide the title */\n  @Input() showTitle = true;\n\n  /** Show back (chevron) button */\n  @Input() backButton = true;\n\n  /** Show menu grid button */\n  @Input() menuButton = false;\n\n  /** Show editable pencil icon next to title */\n  @Input() editButton = false;\n\n  /** Show yellow tag badge */\n  @Input() tag = true;\n\n  /** Tag label text */\n  @Input() tagLabel = 'Label';\n\n  /** Show breadcrumb trail */\n  @Input() breadcrumb = false;\n\n  /** Breadcrumb items — last item is treated as current (non-link) */\n  @Input() breadcrumbs: BreadcrumbItem[] = [\n    { label: 'Home' },\n    { label: 'Level One' },\n    { label: 'Level Two' },\n    { label: 'Current' },\n  ];\n\n  /** Show published toggle */\n  @Input() published = false;\n\n  /** Toggle state for published */\n  @Input() isPublished = true;\n\n  /** Show calibrated tag (requires published=true) */\n  @Input() calibrated = false;\n\n  /** Show save icon */\n  @Input() saveIcon = false;\n\n  /** Show text button */\n  @Input() textButton = true;\n\n  /** Text button label */\n  @Input() textButtonLabel = 'Label';\n\n  /** Show primary button */\n  @Input() primaryButton = true;\n\n  /** Primary button label */\n  @Input() primaryButtonLabel = 'Label';\n\n  /** Show secondary button */\n  @Input() secondaryButton = true;\n\n  /** Secondary button label */\n  @Input() secondaryButtonLabel = 'Label';\n\n  @Output() backClick          = new EventEmitter<void>();\n  @Output() menuClick          = new EventEmitter<void>();\n  @Output() editClick          = new EventEmitter<void>();\n  @Output() publishedChange    = new EventEmitter<boolean>();\n  @Output() saveClick          = new EventEmitter<void>();\n  @Output() textButtonClick    = new EventEmitter<void>();\n  @Output() primaryButtonClick = new EventEmitter<void>();\n  @Output() secondaryButtonClick = new EventEmitter<void>();\n  @Output() breadcrumbClick    = new EventEmitter<BreadcrumbItem>();\n\n  togglePublished(): void {\n    this.isPublished = !this.isPublished;\n    this.publishedChange.emit(this.isPublished);\n  }\n\n  get breadcrumbLinks(): BreadcrumbItem[] {\n    return this.breadcrumbs.slice(0, -1);\n  }\n\n  get breadcrumbCurrent(): BreadcrumbItem | undefined {\n    return this.breadcrumbs[this.breadcrumbs.length - 1];\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -33,6 +58,106 @@
     "classes": [],
     "directives": [],
     "components": [
+        {
+            "name": "AccordionComponent",
+            "id": "component-AccordionComponent-2ee87537e1cff136f78ab147613bf83317ee10bf55ee31275734e207fb93511f9f9c543d91a21d20909af6a47d511f3c6e77f599d2d33807d670462a7b54feda",
+            "file": "src/stories/accordion.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-accordion",
+            "styleUrls": [
+                "./accordion.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./accordion.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nDisable interaction",
+                    "description": "<p>Disable interaction</p>\n",
+                    "line": 39,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "expanded",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nStart in expanded state",
+                    "description": "<p>Start in expanded state</p>\n",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Accordion Header'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHeader label text",
+                    "description": "<p>Header label text</p>\n",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "<p>Accordion item with a clickable header that expands/collapses a content slot.</p>\n<ul>\n<li><strong>Default</strong> — white header when collapsed, offwhite when expanded</li>\n<li><strong>Disabled</strong> — non-interactive, greyed out</li>\n</ul>\n<p>Use <code>&lt;ng-content&gt;</code> to project any content into the expanded body.</p>\n",
+            "rawdescription": "\n\nAccordion item with a clickable header that expands/collapses a content slot.\n\n- **Default** — white header when collapsed, offwhite when expanded\n- **Disabled** — non-interactive, greyed out\n\nUse `<ng-content>` to project any content into the expanded body.\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { trigger, state, style, animate, transition } from '@angular/animations';\n\n/**\n * Accordion item with a clickable header that expands/collapses a content slot.\n *\n * - **Default** — white header when collapsed, offwhite when expanded\n * - **Disabled** — non-interactive, greyed out\n *\n * Use `<ng-content>` to project any content into the expanded body.\n */\n@Component({\n  selector: 'storybook-accordion',\n  standalone: true,\n  imports: [],\n  templateUrl: './accordion.component.html',\n  styleUrls: ['./accordion.component.css'],\n  animations: [\n    trigger('bodyExpand', [\n      state('collapsed', style({ height: '0', opacity: '0' })),\n      state('expanded',  style({ height: '*', opacity: '1' })),\n      transition('collapsed <=> expanded', animate('220ms ease-in-out')),\n    ]),\n    trigger('iconRotate', [\n      state('collapsed', style({ transform: 'rotate(0deg)' })),\n      state('expanded',  style({ transform: 'rotate(180deg)' })),\n      transition('collapsed <=> expanded', animate('220ms ease-in-out')),\n    ]),\n  ],\n})\nexport class AccordionComponent {\n  /** Header label text */\n  @Input() title = 'Accordion Header';\n\n  /** Start in expanded state */\n  @Input() expanded = false;\n\n  /** Disable interaction */\n  @Input() disabled = false;\n\n  toggle(): void {\n    if (this.disabled) return;\n    this.expanded = !this.expanded;\n  }\n\n  get animState(): 'expanded' | 'collapsed' {\n    return this.expanded ? 'expanded' : 'collapsed';\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: block;\n  width: 540px;\n  font-family: 'Roboto', sans-serif;\n}\n\n/* ── Shell ── */\n.accordion {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  border-radius: 4px;\n  overflow: hidden;\n  border: 1px solid #e6e6e6;\n  background: #fff;\n}\n\n.accordion--expanded {\n  background: #fff;\n}\n\n.accordion--disabled {\n  background: #f5f5f5;\n}\n\n/* ── Header ── */\n.accordion__header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  height: 48px;\n  padding: 12px 16px;\n  border: none;\n  background: #fff;\n  cursor: pointer;\n  box-sizing: border-box;\n  flex-shrink: 0;\n  transition: background 0.2s ease;\n}\n\n.accordion--expanded .accordion__header {\n  background: #f5f5f5;\n  border-bottom: 1px solid #e6e6e6;\n}\n\n.accordion--disabled .accordion__header {\n  background: #f5f5f5;\n  cursor: not-allowed;\n}\n\n.accordion__header:focus-visible {\n  outline: 2px solid #d7192f;\n  outline-offset: -2px;\n}\n\n/* ── Title ── */\n.accordion__title {\n  font-size: 13.33px;\n  font-weight: 700;\n  line-height: 20px;\n  color: #000;\n  white-space: nowrap;\n}\n\n.accordion--disabled .accordion__title {\n  color: #97999b;\n}\n\n/* ── Icon ── */\n.accordion__icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  width: 20px;\n  height: 20px;\n}\n\n/* ── Body ── */\n.accordion__body {\n  overflow: hidden;\n}\n\n.accordion__content {\n  background: #fafaff;\n  min-height: 240px;\n  width: 100%;\n}\n",
+                    "styleUrl": "./accordion.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "animState": {
+                    "name": "animState",
+                    "getSignature": {
+                        "name": "animState",
+                        "type": "unknown",
+                        "returnType": "\"expanded\" | \"collapsed\"",
+                        "line": 46
+                    }
+                }
+            },
+            "templateData": "<div class=\"accordion\" [class.accordion--expanded]=\"expanded\" [class.accordion--disabled]=\"disabled\">\n\n  <!-- Header -->\n  <button\n    class=\"accordion__header\"\n    [disabled]=\"disabled\"\n    (click)=\"toggle()\"\n    [attr.aria-expanded]=\"expanded\"\n  >\n    <span class=\"accordion__title\">{{ title }}</span>\n\n    <!-- Icon: + when collapsed, − when expanded -->\n    <span class=\"accordion__icon\" [@iconRotate]=\"animState\">\n      @if (expanded) {\n        <!-- Minus -->\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <rect x=\"3\" y=\"9\" width=\"14\" height=\"2\" rx=\"1\" [attr.fill]=\"disabled ? '#97999b' : '#d7192f'\" />\n        </svg>\n      } @else {\n        <!-- Plus -->\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <rect x=\"9\" y=\"3\" width=\"2\" height=\"14\" rx=\"1\" [attr.fill]=\"disabled ? '#97999b' : '#d7192f'\" />\n          <rect x=\"3\" y=\"9\" width=\"14\" height=\"2\" rx=\"1\" [attr.fill]=\"disabled ? '#97999b' : '#d7192f'\" />\n        </svg>\n      }\n    </span>\n  </button>\n\n  <!-- Expandable body -->\n  <div\n    class=\"accordion__body\"\n    [@bodyExpand]=\"animState\"\n  >\n    <div class=\"accordion__content\">\n      <ng-content />\n    </div>\n  </div>\n\n</div>\n"
+        },
         {
             "name": "AppComponent",
             "id": "component-AppComponent-402b8379e7e8b1dcdacf44b158bd2790e7ace917126f898e1be94d2b57c9d16946474bb5cd67db695d9f832394cc4e7203f14dbdc1a5b9abd4b905d59daed9cb",
@@ -876,7 +1001,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "/* ── Host ── */\n:host {\n  display: inline-block;\n  overflow: visible;\n}\n\n/* ── Base ── */\n.sq-tab {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: visible;\n  border: 1px solid #e6e6e6;\n  border-bottom: 1px solid #e6e6e6;\n  background: #f5f5f5;\n  cursor: pointer;\n  font-family: 'Roboto', sans-serif;\n  box-sizing: border-box;\n}\n\n/* ── Sizes ── */\n.sq-tab--l {\n  flex-direction: column;\n  gap: 12px;\n  width: 120px;\n  height: 112px;\n  padding: 21px 20px;\n}\n\n.sq-tab--m {\n  flex-direction: row;\n  gap: 10px;\n  width: 88px;\n  height: 80px;\n  padding: 12px 14px;\n}\n\n.sq-tab--s {\n  flex-direction: row;\n  gap: 10px;\n  width: 60px;\n  height: 56px;\n  padding: 12px 14px;\n}\n\n/* ── Status: Active ── */\n.sq-tab--active {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Hover ── */\n.sq-tab--hover {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Disabled ── */\n.sq-tab--disabled {\n  background: #f5f5f5;\n  border-color: #e6e6e6;\n  cursor: not-allowed;\n}\n\n/* ── Icon ── */\n.sq-tab__icon {\n  position: relative;\n  flex-shrink: 0;\n  width: 29px;\n  height: 29px;\n}\n\n.sq-tab__icon-mask {\n  display: block;\n  position: absolute;\n  inset: 0;\n  mask-size: 29px 29px;\n  mask-repeat: no-repeat;\n  mask-position: 0 0;\n  -webkit-mask-size: 29px 29px;\n  -webkit-mask-repeat: no-repeat;\n  -webkit-mask-position: 0 0;\n}\n\n/* ── Label (L only) ── */\n.sq-tab__label {\n  font-size: 13.33px;\n  font-weight: 700;\n  line-height: 20px;\n  text-align: center;\n  width: 100%;\n}\n\n/* ── Tooltip (storybook-tooltip host) ── */\n.sq-tab__tooltip {\n  position: absolute;\n  z-index: 1000;\n}\n\n.sq-tab--m .sq-tab__tooltip { top: 16px; }\n.sq-tab--s .sq-tab__tooltip { top: 4px; }\n\n.sq-tab__tooltip--left  { right: calc(100% + 8px); }\n.sq-tab__tooltip--right { left:  calc(100% + 8px); }\n",
+                    "data": "/* ── Host ── */\n:host {\n  display: inline-block;\n  overflow: visible;\n}\n\n/* ── Base ── */\n.sq-tab {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: visible;\n  border: 1px solid #e6e6e6;\n  border-bottom: 1px solid #e6e6e6;\n  background: #f5f5f5;\n  cursor: pointer;\n  font-family: 'Roboto', sans-serif;\n  box-sizing: border-box;\n}\n\n/* ── Sizes ── */\n.sq-tab--l {\n  flex-direction: column;\n  gap: 12px;\n  width: 120px;\n  height: 112px;\n  padding: 21px 20px;\n}\n\n.sq-tab--m {\n  flex-direction: row;\n  gap: 10px;\n  width: 88px;\n  height: 80px;\n  padding: 12px 14px;\n}\n\n.sq-tab--s {\n  flex-direction: row;\n  gap: 10px;\n  width: 60px;\n  height: 56px;\n  padding: 12px 14px;\n}\n\n/* ── Status: Active ── */\n.sq-tab--active {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Hover ── */\n.sq-tab--hover {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Disabled ── */\n.sq-tab--disabled {\n  background: #f5f5f5;\n  border-color: #e6e6e6;\n  cursor: not-allowed;\n}\n\n/* ── Icon ── */\n.sq-tab__icon {\n  position: relative;\n  flex-shrink: 0;\n  width: 29px;\n  height: 29px;\n}\n\n.sq-tab__icon-mask {\n  display: block;\n  position: absolute;\n  inset: 0;\n  mask-size: 29px 29px;\n  mask-repeat: no-repeat;\n  mask-position: 0 0;\n  -webkit-mask-size: 29px 29px;\n  -webkit-mask-repeat: no-repeat;\n  -webkit-mask-position: 0 0;\n}\n\n/* ── Label (L only) ── */\n.sq-tab__label {\n  font-size: 13.33px;\n  font-weight: 700;\n  line-height: 20px;\n  text-align: center;\n  width: 100%;\n}\n\n/* ── Tooltip (storybook-tooltip host) ── */\n@keyframes tooltip-in-right {\n  from { opacity: 0; transform: translateY(-50%) translateX(-6px); }\n  to   { opacity: 1; transform: translateY(-50%) translateX(0); }\n}\n\n@keyframes tooltip-in-left {\n  from { opacity: 0; transform: translateY(-50%) translateX(6px); }\n  to   { opacity: 1; transform: translateY(-50%) translateX(0); }\n}\n\n.sq-tab__tooltip {\n  position: absolute;\n  top: 50%;\n  z-index: 1000;\n}\n\n.sq-tab__tooltip--right {\n  left: calc(100% + 8px);\n  transform: translateY(-50%);\n  animation: tooltip-in-right 0.18s ease-out forwards;\n}\n\n.sq-tab__tooltip--left {\n  right: calc(100% + 8px);\n  transform: translateY(-50%);\n  animation: tooltip-in-left 0.18s ease-out forwards;\n}\n",
                     "styleUrl": "./square-tab.component.css"
                 }
             ],
@@ -932,6 +1057,380 @@
                 }
             },
             "templateData": "<div\n  class=\"sq-tab\"\n  [class]=\"'sq-tab sq-tab--' + size.toLowerCase() + ' sq-tab--' + effectiveStatus.toLowerCase()\"\n>\n\n  <!-- Icon -->\n  <span class=\"sq-tab__icon\">\n    <span\n      class=\"sq-tab__icon-mask\"\n      [style.background-color]=\"iconColor\"\n      [style.-webkit-mask-image]=\"'url(' + iconMask + ')'\"\n      [style.mask-image]=\"'url(' + iconMask + ')'\"\n    ></span>\n  </span>\n\n  <!-- Label (L size only) -->\n  @if (size === 'L' && showLabel) {\n    <span class=\"sq-tab__label\" [style.color]=\"labelColor\">{{ label }}</span>\n  }\n\n  <!-- Tooltip (M + S, shown on hover) -->\n  @if (showTooltip) {\n    <storybook-tooltip\n      class=\"sq-tab__tooltip\"\n      [class.sq-tab__tooltip--left]=\"tooltipSide === 'left'\"\n      [class.sq-tab__tooltip--right]=\"tooltipSide === 'right'\"\n      [arrowSide]=\"tooltipArrowSide\"\n      [style]=\"tooltipStyle\"\n      [smallLabel]=\"tooltipSmallLabel\"\n      [heading]=\"tooltipHeading\"\n      [message]=\"tooltipMessage\"\n    />\n  }\n\n</div>\n"
+        },
+        {
+            "name": "TitleBarComponent",
+            "id": "component-TitleBarComponent-d16006346703a7396cd808c11a75d16b68a2619bac8334e02338bcc990ea5c0e7207942d079c86b5835caf71aae6554fb78c52f49ebfff05e60d5e786bef684d",
+            "file": "src/stories/title-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-title-bar",
+            "styleUrls": [
+                "./title-bar.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./title-bar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow back (chevron) button",
+                    "description": "<p>Show back (chevron) button</p>\n",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "breadcrumb",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow breadcrumb trail",
+                    "description": "<p>Show breadcrumb trail</p>\n",
+                    "line": 51,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "breadcrumbs",
+                    "defaultValue": "[\n    { label: 'Home' },\n    { label: 'Level One' },\n    { label: 'Level Two' },\n    { label: 'Current' },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nBreadcrumb items — last item is treated as current (non-link)",
+                    "description": "<p>Breadcrumb items — last item is treated as current (non-link)</p>\n",
+                    "line": 54,
+                    "type": "BreadcrumbItem[]",
+                    "decorators": []
+                },
+                {
+                    "name": "calibrated",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow calibrated tag (requires published=true)",
+                    "description": "<p>Show calibrated tag (requires published=true)</p>\n",
+                    "line": 68,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "editButton",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow editable pencil icon next to title",
+                    "description": "<p>Show editable pencil icon next to title</p>\n",
+                    "line": 42,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isPublished",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nToggle state for published",
+                    "description": "<p>Toggle state for published</p>\n",
+                    "line": 65,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "menuButton",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow menu grid button",
+                    "description": "<p>Show menu grid button</p>\n",
+                    "line": 39,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "primaryButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow primary button",
+                    "description": "<p>Show primary button</p>\n",
+                    "line": 80,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "primaryButtonLabel",
+                    "defaultValue": "'Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nPrimary button label",
+                    "description": "<p>Primary button label</p>\n",
+                    "line": 83,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "published",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow published toggle",
+                    "description": "<p>Show published toggle</p>\n",
+                    "line": 62,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "saveIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow save icon",
+                    "description": "<p>Show save icon</p>\n",
+                    "line": 71,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "secondaryButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow secondary button",
+                    "description": "<p>Show secondary button</p>\n",
+                    "line": 86,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "secondaryButtonLabel",
+                    "defaultValue": "'Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nSecondary button label",
+                    "description": "<p>Secondary button label</p>\n",
+                    "line": 89,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "showTitle",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow/hide the title",
+                    "description": "<p>Show/hide the title</p>\n",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tag",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow yellow tag badge",
+                    "description": "<p>Show yellow tag badge</p>\n",
+                    "line": 45,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tagLabel",
+                    "defaultValue": "'Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTag label text",
+                    "description": "<p>Tag label text</p>\n",
+                    "line": 48,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "textButton",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow text button",
+                    "description": "<p>Show text button</p>\n",
+                    "line": 74,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "textButtonLabel",
+                    "defaultValue": "'Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nText button label",
+                    "description": "<p>Text button label</p>\n",
+                    "line": 77,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nPage title text",
+                    "description": "<p>Page title text</p>\n",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'White'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nBackground type",
+                    "description": "<p>Background type</p>\n",
+                    "line": 27,
+                    "type": "TitleBarType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "backClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 91,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "breadcrumbClick",
+                    "defaultValue": "new EventEmitter<BreadcrumbItem>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 99,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "editClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 93,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "menuClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 92,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "primaryButtonClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 97,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "publishedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 94,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "saveClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 95,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "secondaryButtonClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 98,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "textButtonClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 96,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "togglePublished",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 101,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "<p>Title Bar component — top-level page header with configurable left and right sections.</p>\n<p><strong>Left side:</strong> back button, menu button, breadcrumb trail, title, edit button, tag badge\n<strong>Right side:</strong> published toggle (with optional calibrated tag), save icon, text/primary/secondary action buttons</p>\n<p>Both <code>White</code> and <code>Transparent</code> background types are supported.</p>\n",
+            "rawdescription": "\n\nTitle Bar component — top-level page header with configurable left and right sections.\n\n**Left side:** back button, menu button, breadcrumb trail, title, edit button, tag badge\n**Right side:** published toggle (with optional calibrated tag), save icon, text/primary/secondary action buttons\n\nBoth `White` and `Transparent` background types are supported.\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nexport type TitleBarType = 'White' | 'Transparent';\n\nexport interface BreadcrumbItem {\n  label: string;\n}\n\n/**\n * Title Bar component — top-level page header with configurable left and right sections.\n *\n * **Left side:** back button, menu button, breadcrumb trail, title, edit button, tag badge\n * **Right side:** published toggle (with optional calibrated tag), save icon, text/primary/secondary action buttons\n *\n * Both `White` and `Transparent` background types are supported.\n */\n@Component({\n  selector: 'storybook-title-bar',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './title-bar.component.html',\n  styleUrls: ['./title-bar.component.css'],\n})\nexport class TitleBarComponent {\n  /** Background type */\n  @Input() type: TitleBarType = 'White';\n\n  /** Page title text */\n  @Input() title = 'Title';\n\n  /** Show/hide the title */\n  @Input() showTitle = true;\n\n  /** Show back (chevron) button */\n  @Input() backButton = true;\n\n  /** Show menu grid button */\n  @Input() menuButton = false;\n\n  /** Show editable pencil icon next to title */\n  @Input() editButton = false;\n\n  /** Show yellow tag badge */\n  @Input() tag = true;\n\n  /** Tag label text */\n  @Input() tagLabel = 'Label';\n\n  /** Show breadcrumb trail */\n  @Input() breadcrumb = false;\n\n  /** Breadcrumb items — last item is treated as current (non-link) */\n  @Input() breadcrumbs: BreadcrumbItem[] = [\n    { label: 'Home' },\n    { label: 'Level One' },\n    { label: 'Level Two' },\n    { label: 'Current' },\n  ];\n\n  /** Show published toggle */\n  @Input() published = false;\n\n  /** Toggle state for published */\n  @Input() isPublished = true;\n\n  /** Show calibrated tag (requires published=true) */\n  @Input() calibrated = false;\n\n  /** Show save icon */\n  @Input() saveIcon = false;\n\n  /** Show text button */\n  @Input() textButton = true;\n\n  /** Text button label */\n  @Input() textButtonLabel = 'Label';\n\n  /** Show primary button */\n  @Input() primaryButton = true;\n\n  /** Primary button label */\n  @Input() primaryButtonLabel = 'Label';\n\n  /** Show secondary button */\n  @Input() secondaryButton = true;\n\n  /** Secondary button label */\n  @Input() secondaryButtonLabel = 'Label';\n\n  @Output() backClick          = new EventEmitter<void>();\n  @Output() menuClick          = new EventEmitter<void>();\n  @Output() editClick          = new EventEmitter<void>();\n  @Output() publishedChange    = new EventEmitter<boolean>();\n  @Output() saveClick          = new EventEmitter<void>();\n  @Output() textButtonClick    = new EventEmitter<void>();\n  @Output() primaryButtonClick = new EventEmitter<void>();\n  @Output() secondaryButtonClick = new EventEmitter<void>();\n  @Output() breadcrumbClick    = new EventEmitter<BreadcrumbItem>();\n\n  togglePublished(): void {\n    this.isPublished = !this.isPublished;\n    this.publishedChange.emit(this.isPublished);\n  }\n\n  get breadcrumbLinks(): BreadcrumbItem[] {\n    return this.breadcrumbs.slice(0, -1);\n  }\n\n  get breadcrumbCurrent(): BreadcrumbItem | undefined {\n    return this.breadcrumbs[this.breadcrumbs.length - 1];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: block;\n  font-family: 'Roboto', sans-serif;\n}\n\n/* ── Shell ── */\n.tb {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: 72px;\n  padding: 16px 40px;\n  box-sizing: border-box;\n  width: 100%;\n  border-bottom: 1px solid #e6e6e6;\n}\n\n.tb--white       { background: #fff; }\n.tb--transparent { background: transparent; }\n\n/* ── Left Side ── */\n.tb__left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n/* ── Icon Buttons ── */\n.tb__icon-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 20px;\n  height: 20px;\n  background: none;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  flex-shrink: 0;\n}\n\n.tb__icon-btn:hover { opacity: 0.7; }\n\n/* ── Breadcrumb ── */\n.tb__breadcrumb {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  height: 40px;\n}\n\n.tb__breadcrumb-link {\n  background: none;\n  border: none;\n  padding: 0 4px;\n  cursor: pointer;\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  color: #d7192f;\n  line-height: 24px;\n  white-space: nowrap;\n}\n\n.tb__breadcrumb-link:hover { text-decoration: underline; }\n\n.tb__breadcrumb-sep {\n  display: flex;\n  align-items: center;\n  color: #c8c9c7;\n}\n\n.tb__breadcrumb-current {\n  padding: 0 4px;\n  font-size: 16px;\n  font-weight: 700;\n  color: #000;\n  line-height: 24px;\n  white-space: nowrap;\n}\n\n/* ── Title Group ── */\n.tb__title-group {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.tb__title {\n  font-size: 19.2px;\n  font-weight: 700;\n  line-height: 28.8px;\n  color: #000;\n  white-space: nowrap;\n}\n\n/* ── Tag Badge ── */\n.tb__tag {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  height: 20px;\n  padding: 0 8px;\n  background: #fecd32;\n  border-radius: 4px;\n  font-size: 11.11px;\n  font-weight: 700;\n  line-height: 16.67px;\n  color: #000;\n  white-space: nowrap;\n}\n\n/* ── Right Side ── */\n.tb__right {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n/* ── Published ── */\n.tb__published {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n.tb__calibrated-tag {\n  display: inline-flex;\n  align-items: center;\n  height: 24px;\n  padding: 0 8px;\n  background: #e0f1cb;\n  border: 1px solid #639522;\n  border-radius: 2px;\n  font-size: 13.33px;\n  font-weight: 700;\n  color: #639522;\n  white-space: nowrap;\n}\n\n.tb__switch {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n}\n\n.tb__switch-track {\n  position: relative;\n  width: 48px;\n  height: 24px;\n  border-radius: 12px;\n  background: #97999b;\n  border: 1px solid #7a7c7e;\n  transition: background 0.2s ease, border-color 0.2s ease;\n  flex-shrink: 0;\n}\n\n.tb__switch-track--on {\n  background: #d7192f;\n  border-color: #a61121;\n}\n\n.tb__switch-knob {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  background: #fff;\n  border: 1px solid #7a7c7e;\n  transition: left 0.2s ease, border-color 0.2s ease;\n}\n\n.tb__switch-knob--on {\n  left: 24px;\n  border-color: #a61121;\n}\n\n.tb__switch-label {\n  font-size: 11.11px;\n  font-weight: 700;\n  line-height: 24px;\n  color: #000;\n  white-space: nowrap;\n}\n\n.tb__divider {\n  width: 1px;\n  height: 40px;\n  background: #c8c9c7;\n  opacity: 0.5;\n}\n\n/* ── Buttons ── */\n.tb__btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  padding: 0 24px;\n  border-radius: 1px;\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n  cursor: pointer;\n  white-space: nowrap;\n  border: none;\n  transition: opacity 0.15s ease;\n}\n\n.tb__btn:hover { opacity: 0.85; }\n\n.tb__btn--text {\n  background: none;\n  border: none;\n  color: #d7192f;\n  padding: 0;\n}\n\n.tb__btn--primary {\n  background: #d7192f;\n  color: #fff;\n  box-shadow: 0 5px 9px 0 rgba(166, 17, 33, 0.4);\n}\n\n.tb__btn--secondary {\n  background: #fff;\n  color: #d7192f;\n  border: 1px solid #d7192f;\n  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);\n}\n",
+                    "styleUrl": "./title-bar.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "breadcrumbLinks": {
+                    "name": "breadcrumbLinks",
+                    "getSignature": {
+                        "name": "breadcrumbLinks",
+                        "type": "[]",
+                        "returnType": "BreadcrumbItem[]",
+                        "line": 106
+                    }
+                },
+                "breadcrumbCurrent": {
+                    "name": "breadcrumbCurrent",
+                    "getSignature": {
+                        "name": "breadcrumbCurrent",
+                        "type": "unknown",
+                        "returnType": "BreadcrumbItem | undefined",
+                        "line": 110
+                    }
+                }
+            },
+            "templateData": "<header class=\"tb\" [class.tb--white]=\"type === 'White'\" [class.tb--transparent]=\"type === 'Transparent'\">\n\n  <!-- ── Left Side ── -->\n  <div class=\"tb__left\">\n\n    <!-- Back Button -->\n    @if (backButton) {\n      <button class=\"tb__icon-btn\" (click)=\"backClick.emit()\" aria-label=\"Go back\">\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M12.5 15L7.5 10L12.5 5\" stroke=\"#000\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </button>\n    }\n\n    <!-- Menu Button -->\n    @if (menuButton) {\n      <button class=\"tb__icon-btn\" (click)=\"menuClick.emit()\" aria-label=\"Open menu\">\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <rect x=\"3\"  y=\"3\"  width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n          <rect x=\"12\" y=\"3\"  width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n          <rect x=\"3\"  y=\"12\" width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n          <rect x=\"12\" y=\"12\" width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n        </svg>\n      </button>\n    }\n\n    <!-- Breadcrumb -->\n    @if (breadcrumb) {\n      <nav class=\"tb__breadcrumb\" aria-label=\"Breadcrumb\">\n        @for (item of breadcrumbLinks; track item.label) {\n          <button class=\"tb__breadcrumb-link\" (click)=\"breadcrumbClick.emit(item)\">{{ item.label }}</button>\n          <span class=\"tb__breadcrumb-sep\" aria-hidden=\"true\">\n            <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path d=\"M7.5 5L12.5 10L7.5 15\" stroke=\"#c8c9c7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n            </svg>\n          </span>\n        }\n        @if (breadcrumbCurrent) {\n          <span class=\"tb__breadcrumb-current\">{{ breadcrumbCurrent.label }}</span>\n        }\n      </nav>\n    }\n\n    <!-- Title + Edit + Tag -->\n    <div class=\"tb__title-group\">\n      @if (showTitle) {\n        <span class=\"tb__title\">{{ title }}</span>\n      }\n\n      @if (editButton) {\n        <button class=\"tb__icon-btn\" (click)=\"editClick.emit()\" aria-label=\"Edit\">\n          <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <path d=\"M14.85 2.85a2 2 0 0 1 2.83 2.83L6.5 16.84 3 17.5l.66-3.5L14.85 2.85Z\" stroke=\"#000\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n          </svg>\n        </button>\n      }\n\n      @if (tag) {\n        <span class=\"tb__tag\">{{ tagLabel }}</span>\n      }\n    </div>\n\n  </div>\n\n  <!-- ── Right Side ── -->\n  <div class=\"tb__right\">\n\n    <!-- Published Toggle + Calibrated -->\n    @if (published) {\n      <div class=\"tb__published\">\n        @if (calibrated) {\n          <span class=\"tb__calibrated-tag\">Calibrated</span>\n        }\n        <div class=\"tb__switch\" (click)=\"togglePublished()\">\n          <div class=\"tb__switch-track\" [class.tb__switch-track--on]=\"isPublished\">\n            <div class=\"tb__switch-knob\" [class.tb__switch-knob--on]=\"isPublished\"></div>\n          </div>\n          <span class=\"tb__switch-label\">Published</span>\n        </div>\n        <div class=\"tb__divider\"></div>\n      </div>\n    }\n\n    <!-- Save Icon -->\n    @if (saveIcon) {\n      <button class=\"tb__icon-btn\" (click)=\"saveClick.emit()\" aria-label=\"Save\">\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M3 3h11l3 3v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3Z\" stroke=\"#000\" stroke-width=\"1.4\" stroke-linejoin=\"round\"/>\n          <rect x=\"7\" y=\"3\" width=\"6\" height=\"4\" rx=\"0.5\" stroke=\"#000\" stroke-width=\"1.4\"/>\n          <rect x=\"5\" y=\"11\" width=\"10\" height=\"6\" rx=\"0.5\" stroke=\"#000\" stroke-width=\"1.4\"/>\n        </svg>\n      </button>\n    }\n\n    <!-- Text Button -->\n    @if (textButton) {\n      <button class=\"tb__btn tb__btn--text\" (click)=\"textButtonClick.emit()\">{{ textButtonLabel }}</button>\n    }\n\n    <!-- Primary Button -->\n    @if (primaryButton) {\n      <button class=\"tb__btn tb__btn--primary\" (click)=\"primaryButtonClick.emit()\">{{ primaryButtonLabel }}</button>\n    }\n\n    <!-- Secondary Button -->\n    @if (secondaryButton) {\n      <button class=\"tb__btn tb__btn--secondary\" (click)=\"secondaryButtonClick.emit()\">{{ secondaryButtonLabel }}</button>\n    }\n\n  </div>\n\n</header>\n"
         },
         {
             "name": "TooltipComponent",
@@ -1076,6 +1575,137 @@
                 }
             },
             "templateData": "<div\n  class=\"tooltip\"\n  [class]=\"'tooltip tooltip--' + arrowSide.toLowerCase()\"\n  [style.background-color]=\"bgColor\"\n>\n  <!-- Content -->\n  <div class=\"tooltip__content\">\n    @if (showSmallLabel && smallLabel) {\n      <span class=\"tooltip__small-label\">{{ smallLabel }}</span>\n    }\n    @if (showHeading && heading) {\n      <span class=\"tooltip__heading\">{{ heading }}</span>\n    }\n    @if (showMessage && message) {\n      <span class=\"tooltip__message\">{{ message }}</span>\n    }\n  </div>\n\n  <!-- Arrow — absolutely positioned, color inherits from parent via currentColor trick -->\n  <span class=\"tooltip__arrow\" [style.background-color]=\"bgColor\"></span>\n</div>\n"
+        },
+        {
+            "name": "UiButtonComponent",
+            "id": "component-UiButtonComponent-567816cb4ca108ed32e66a39d49c1ca0422e81b760f00eb69da0cccde26f4fe74531d474f4b643db8e728a5b6c146fa4552ba986bc2cb6741bd13430f045d3d8",
+            "file": "src/stories/ui-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-ui-button",
+            "styleUrls": [
+                "./ui-button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ui-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nDisable the button",
+                    "description": "<p>Disable the button</p>\n",
+                    "line": 44,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nButton label text",
+                    "description": "<p>Button label text</p>\n",
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "leftIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow left icon",
+                    "description": "<p>Show left icon</p>\n",
+                    "line": 38,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "rightIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow right icon",
+                    "description": "<p>Show right icon</p>\n",
+                    "line": 41,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showLabel",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow label text",
+                    "description": "<p>Show label text</p>\n",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'Medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nSize variant",
+                    "description": "<p>Size variant</p>\n",
+                    "line": 29,
+                    "type": "ButtonSize",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'Primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nVisual type",
+                    "description": "<p>Visual type</p>\n",
+                    "line": 26,
+                    "type": "ButtonType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "clicked",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 46,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "<p>Button component — three types, three sizes, four interactive states.</p>\n<ul>\n<li><strong>Primary</strong> — filled red background, white text</li>\n<li><strong>Secondary</strong> — white background, red border and text</li>\n<li><strong>Text</strong> — no background or border, red text</li>\n</ul>\n<p>Sizes: Small (32px), Medium (40px), Large (56px).\nHover and Active states are driven by CSS <code>:hover</code> / <code>:active</code>.\nOptional left and right icons flank the label.</p>\n",
+            "rawdescription": "\n\nButton component — three types, three sizes, four interactive states.\n\n- **Primary** — filled red background, white text\n- **Secondary** — white background, red border and text\n- **Text** — no background or border, red text\n\nSizes: Small (32px), Medium (40px), Large (56px).\nHover and Active states are driven by CSS `:hover` / `:active`.\nOptional left and right icons flank the label.\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\nexport type ButtonType = 'Primary' | 'Secondary' | 'Text';\nexport type ButtonSize = 'Small' | 'Medium' | 'Large';\n\n/**\n * Button component — three types, three sizes, four interactive states.\n *\n * - **Primary** — filled red background, white text\n * - **Secondary** — white background, red border and text\n * - **Text** — no background or border, red text\n *\n * Sizes: Small (32px), Medium (40px), Large (56px).\n * Hover and Active states are driven by CSS `:hover` / `:active`.\n * Optional left and right icons flank the label.\n */\n@Component({\n  selector: 'storybook-ui-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './ui-button.component.html',\n  styleUrls: ['./ui-button.component.css'],\n})\nexport class UiButtonComponent {\n  /** Visual type */\n  @Input() type: ButtonType = 'Primary';\n\n  /** Size variant */\n  @Input() size: ButtonSize = 'Medium';\n\n  /** Button label text */\n  @Input() label = 'Label';\n\n  /** Show label text */\n  @Input() showLabel = true;\n\n  /** Show left icon */\n  @Input() leftIcon = false;\n\n  /** Show right icon */\n  @Input() rightIcon = false;\n\n  /** Disable the button */\n  @Input() disabled = false;\n\n  @Output() clicked = new EventEmitter<void>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* ── Base ── */\n.btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  border-radius: 1px;\n  font-family: 'Roboto', sans-serif;\n  font-weight: 700;\n  cursor: pointer;\n  transition: background 0.15s ease, border-color 0.15s ease,\n              color 0.15s ease, box-shadow 0.15s ease;\n  white-space: nowrap;\n  line-height: 1;\n  text-decoration: none;\n}\n\n.btn:disabled {\n  cursor: not-allowed;\n}\n\n/* ── Sizes ── */\n.btn--small {\n  height: 32px;\n  padding: 0 16px;\n  gap: 8px;\n  font-size: 13.33px;\n  line-height: 20px;\n}\n\n.btn--medium {\n  height: 40px;\n  padding: 0 24px;\n  gap: 12px;\n  font-size: 16px;\n  line-height: 24px;\n}\n\n.btn--large {\n  height: 56px;\n  padding: 0 32px;\n  gap: 16px;\n  font-size: 19.2px;\n  line-height: 28.8px;\n}\n\n/* ── Primary ── */\n.btn--primary {\n  background: #d7192f;\n  color: #fff;\n  box-shadow: 0 5px 9px 0 rgba(166, 17, 33, 0.4);\n}\n\n.btn--primary:hover:not(:disabled) {\n  background: #a61121;\n  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);\n}\n\n.btn--primary:active:not(:disabled) {\n  background: #a61121;\n  box-shadow: none;\n}\n\n.btn--primary:disabled {\n  background: #c8c9c7;\n  box-shadow: none;\n  color: #fff;\n}\n\n/* ── Secondary ── */\n.btn--secondary {\n  background: #fff;\n  color: #d7192f;\n  border: 1px solid #d7192f;\n  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);\n}\n\n.btn--secondary:hover:not(:disabled) {\n  border-color: #a61121;\n  color: #a61121;\n  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);\n}\n\n.btn--secondary:active:not(:disabled) {\n  border-color: #a61121;\n  color: #a61121;\n  box-shadow: none;\n}\n\n.btn--secondary:disabled {\n  border-color: #c8c9c7;\n  color: #c8c9c7;\n  box-shadow: none;\n}\n\n/* ── Text ── */\n.btn--text {\n  background: none;\n  color: #d7192f;\n  padding-left: 0;\n  padding-right: 0;\n}\n\n.btn--text:hover:not(:disabled) {\n  color: #a61121;\n}\n\n.btn--text:active:not(:disabled) {\n  color: #a61121;\n}\n\n.btn--text:disabled {\n  color: #c8c9c7;\n}\n\n/* ── Icon ── */\n.btn__icon {\n  display: inline-flex;\n  align-items: center;\n  flex-shrink: 0;\n  color: inherit;\n}\n\n.btn__icon svg {\n  width: 20px;\n  height: 20px;\n}\n\n/* ── Label ── */\n.btn__label {\n  color: inherit;\n}\n",
+                    "styleUrl": "./ui-button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<button\n  class=\"btn\"\n  [class]=\"'btn btn--' + type.toLowerCase() + ' btn--' + size.toLowerCase()\"\n  [disabled]=\"disabled\"\n  (click)=\"clicked.emit()\"\n>\n  @if (leftIcon) {\n    <span class=\"btn__icon btn__icon--left\" aria-hidden=\"true\">\n      <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"10\" cy=\"10\" r=\"7\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n        <circle cx=\"10\" cy=\"10\" r=\"2\" fill=\"currentColor\"/>\n      </svg>\n    </span>\n  }\n\n  @if (showLabel) {\n    <span class=\"btn__label\">{{ label }}</span>\n  }\n\n  @if (rightIcon) {\n    <span class=\"btn__icon btn__icon--right\" aria-hidden=\"true\">\n      <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"10\" cy=\"10\" r=\"7\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n        <circle cx=\"10\" cy=\"10\" r=\"2\" fill=\"currentColor\"/>\n      </svg>\n    </span>\n  }\n</button>\n"
         }
     ],
     "modules": [],
@@ -1135,6 +1765,28 @@
         "functions": [],
         "typealiases": [
             {
+                "name": "ButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"Small\" | \"Medium\" | \"Large\"",
+                "file": "src/stories/ui-button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"Primary\" | \"Secondary\" | \"Text\"",
+                "file": "src/stories/ui-button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
                 "name": "SquareTabSize",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -1151,6 +1803,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"Default\" | \"Active\" | \"Hover\" | \"Disabled\"",
                 "file": "src/stories/square-tab.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "TitleBarType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"White\" | \"Transparent\"",
+                "file": "src/stories/title-bar.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1245,6 +1908,30 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "src/stories/ui-button.component.ts": [
+                {
+                    "name": "ButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"Small\" | \"Medium\" | \"Large\"",
+                    "file": "src/stories/ui-button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"Primary\" | \"Secondary\" | \"Text\"",
+                    "file": "src/stories/ui-button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
             "src/stories/square-tab.component.ts": [
                 {
                     "name": "SquareTabSize",
@@ -1263,6 +1950,19 @@
                     "subtype": "typealias",
                     "rawtype": "\"Default\" | \"Active\" | \"Hover\" | \"Disabled\"",
                     "file": "src/stories/square-tab.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/stories/title-bar.component.ts": [
+                {
+                    "name": "TitleBarType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"White\" | \"Transparent\"",
+                    "file": "src/stories/title-bar.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1301,7 +2001,7 @@
         "children": []
     },
     "coverage": {
-        "count": 15,
+        "count": 20,
         "status": "low",
         "files": [
             {
@@ -1332,6 +2032,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
+            },
+            {
+                "filePath": "src/stories/accordion.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionComponent",
+                "coveragePercent": 80,
+                "coverageCount": "4/5",
+                "status": "very-good"
             },
             {
                 "filePath": "src/stories/button.component.ts",
@@ -1446,6 +2155,34 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/title-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TitleBarComponent",
+                "coveragePercent": 67,
+                "coverageCount": "21/31",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/title-bar.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BreadcrumbItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/title-bar.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TitleBarType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/tooltip.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1480,6 +2217,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "TooltipStyle",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/ui-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiButtonComponent",
+                "coveragePercent": 88,
+                "coverageCount": "8/9",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/ui-button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/ui-button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonType",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
