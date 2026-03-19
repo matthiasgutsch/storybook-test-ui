@@ -1,4 +1,4 @@
-<!-- ── 1 Color ── -->
+<!-- ── 1 Color — 417×91px ── -->
 @if (is1Color) {
   <div class="cc cc--1color">
     <storybook-color-swatch
@@ -11,57 +11,83 @@
   </div>
 }
 
-<!-- ── 2 Colors ── -->
+<!-- ── 2 Colors — 417×87px ── -->
 @if (is2Colors) {
   <div class="cc cc--2colors">
     <div class="cc__row">
-      <storybook-color-swatch [color]="color1" [labelLeft]="labelLeft" [labelLeftText]="labelLeftText" />
-      <storybook-color-swatch [color]="color2" [labelRight]="labelRight" [labelRightText]="labelRightText" />
+      <storybook-color-swatch
+        [color]="color1"
+        [labelLeft]="labelLeft"
+        [labelLeftText]="labelLeftText"
+      />
+      <storybook-color-swatch
+        [color]="color2"
+        [labelRight]="labelRight"
+        [labelRightText]="labelRightText"
+      />
     </div>
+
+    <!-- doubleCompare: rotated mirror row, centred at 50% height -->
     @if (doubleCompare) {
-      <div class="cc__row cc__row--compare">
-        <storybook-color-swatch [color]="color2" />
-        <storybook-color-swatch [color]="color1" />
+      <div class="cc__double-wrap">
+        <div class="cc__double-inner">
+          <div class="cc__double-cell">
+            <storybook-color-swatch [color]="color1" />
+          </div>
+          <div class="cc__double-cell">
+            <storybook-color-swatch [color]="color2" />
+          </div>
+        </div>
       </div>
     }
   </div>
 }
 
-<!-- ── On White / On Black ── -->
+<!-- ── On White / On Black — 417×244px, bordered ── -->
 @if (isOwOb) {
   <div class="cc cc--owob">
-    <div class="cc__half cc__half--white">
-      <storybook-color-swatch
-        [color]="color3"
-        [labelLeft]="labelLeft"
-        [labelLeftText]="labelLeftText"
-        [labelRight]="labelRight"
-        [labelRightText]="labelRightText"
-      />
-    </div>
-    <div class="cc__half cc__half--black">
-      <storybook-color-swatch
-        [color]="color4"
-        [labelLeft]="labelLeft"
-        [labelLeftText]="labelLeftText"
-        [labelRight]="labelRight"
-        [labelRightText]="labelRightText"
-      />
+    <div class="cc__owob-inner">
+      <!-- White half: single swatch, padding top + sides only -->
+      <div class="cc__half cc__half--white">
+        <storybook-color-swatch
+          [color]="color3"
+          [labelLeft]="labelLeft"
+          [labelLeftText]="labelLeftText"
+          [labelRight]="labelRight"
+          [labelRightText]="labelRightText"
+        />
+      </div>
+      <!-- Black half: single swatch, padding bottom + sides only -->
+      <div class="cc__half cc__half--black">
+        <storybook-color-swatch
+          [color]="color4"
+          [labelLeft]="labelLeft"
+          [labelLeftText]="labelLeftText"
+          [labelRight]="labelRight"
+          [labelRightText]="labelRightText"
+        />
+      </div>
     </div>
   </div>
 }
 
-<!-- ── On White / On Black Compare ── -->
+<!-- ── On White / On Black Compare — 417×244px, bordered ── -->
 @if (isOwObCompare) {
   <div class="cc cc--owob-compare">
-    <div class="cc__half cc__half--white">
-      <storybook-color-swatch [color]="color3" />
-      <storybook-color-swatch [color]="color4" />
+    <div class="cc__owob-inner">
+      <!-- White half: two swatches side by side -->
+      <div class="cc__half cc__half--white">
+        <storybook-color-swatch [color]="color3" />
+        <storybook-color-swatch [color]="color4" />
+      </div>
+      <!-- Black half: filled swatch (left) + second color (right) -->
+      <div class="cc__half cc__half--black">
+        <storybook-color-swatch [color]="color1" />
+        <storybook-color-swatch [color]="color2" />
+      </div>
     </div>
-    <div class="cc__half cc__half--black">
-      <storybook-color-swatch mode="empty" />
-      <storybook-color-swatch [color]="color2" />
-    </div>
+
+    <!-- Recipe overlay: centred absolute swatch -->
     @if (withRecipe) {
       <div class="cc__recipe">
         <storybook-color-swatch

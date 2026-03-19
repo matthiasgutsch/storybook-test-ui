@@ -1,69 +1,119 @@
 :host {
   display: block;
   font-family: 'Roboto', sans-serif;
-  width: 417px;
 }
 
-/* ── Base ── */
+/* ── Shared shell ── */
 .cc {
+  position: relative;
+  width: 417px;
   display: flex;
-  width: 100%;
 }
 
-/* ── 1 Color ── */
+/* ── 1 Color — 417 × 91px ── */
 .cc--1color {
+  flex-direction: column;
+  align-items: flex-start;
   height: 91px;
 }
 
-/* ── 2 Colors ── */
+/* ── 2 Colors — 417 × 87px ── */
 .cc--2colors {
   flex-direction: column;
+  align-items: flex-start;
   height: 87px;
 }
 
 .cc__row {
   display: flex;
   flex: 1 0 0;
-  gap: 0;
-  min-height: 0;
+  width: 100%;
+  align-items: flex-start;
+  min-height: 1px;
 }
 
-.cc__row--compare {
-  transform: rotate(180deg);
-  flex: 0 0 44px;
-  width: 50%;
-  align-self: center;
-}
-
-/* ── On White / On Black (shared) ── */
-.cc--owob,
-.cc--owob-compare {
-  position: relative;
-  flex-direction: column;
-  height: 244px;
-  border: 1px solid #97999b;
-}
-
-.cc__half {
-  display: flex;
-  flex: 1 0 0;
-  gap: 8px;
-  padding: 10px;
-  min-height: 0;
-}
-
-.cc__half--white { background: #fff; }
-.cc__half--black { background: #000; }
-
-/* ── Recipe Overlay ── */
-.cc__recipe {
+/* doubleCompare: absolute, centred at 50% height, rotated 180° */
+.cc__double-wrap {
   position: absolute;
-  top: 50%;
-  left: 18%;
-  right: 18%;
-  height: 55%;
+  left: 23.74%;
+  right: 23.5%;
+  top: calc(50% + 0.5px);
   transform: translateY(-50%);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc__double-inner {
+  width: 220px;
+  height: 44px;
+  transform: rotate(180deg);
   display: flex;
   border-radius: 4px;
   overflow: hidden;
+}
+
+.cc__double-cell {
+  display: flex;
+  flex: 1 0 0;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── ow-ob / ow-ob-compare — 417 × 244px, grey border ── */
+.cc--owob,
+.cc--owob-compare {
+  height: 244px;
+  border: 1px solid #97999b;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc__owob-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  height: 100%;
+  justify-content: space-between;
+  min-width: 1px;
+}
+
+/* White half: padding top + sides only */
+.cc__half--white {
+  background: #fff;
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 0 10px;
+  gap: 0;
+  min-height: 1px;
+  position: relative;
+}
+
+/* Black half: padding bottom + sides only */
+.cc__half--black {
+  background: #000;
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 10px 10px;
+  gap: 0;
+  min-height: 1px;
+  position: relative;
+}
+
+/* Recipe overlay: Figma inset calc(22.54%) / calc(18.47%) / calc(22.95%) / calc(18.23%) */
+.cc__recipe {
+  position: absolute;
+  top:    calc(22.54% - 0.27px);
+  right:  calc(18.47% - 0.32px);
+  bottom: calc(22.95% - 0.27px);
+  left:   calc(18.23% - 0.32px);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
 }

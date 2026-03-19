@@ -10,20 +10,25 @@ const meta: Meta<ColorSwatchComponent> = {
     docs: {
       description: {
         component:
-          'Single color swatch cell used inside Color Component. Two modes: **filled** (solid color block) and **empty** (hatched placeholder with eye-slash icon). Optional corner labels.',
+          'Single color swatch cell (125×89 px). **Filled** shows a solid color block with optional corner labels. **Empty** shows a hatched placeholder with eye-slash icon.',
       },
     },
   },
-  render: (args) => ({ props: { ...args } }),
-  decorators: [
-    (storyFn) => {
-      const story = storyFn();
-      return {
-        ...story,
-        template: `<div style="width:125px;height:89px;display:flex;">${story.template ?? '<storybook-color-swatch></storybook-color-swatch>'}</div>`,
-      };
-    },
-  ],
+  render: (args) => ({
+    props: { ...args },
+    template: `
+      <div style="width:125px;height:89px;display:flex;">
+        <storybook-color-swatch
+          [color]="color"
+          [mode]="mode"
+          [labelLeft]="labelLeft"
+          [labelLeftText]="labelLeftText"
+          [labelRight]="labelRight"
+          [labelRightText]="labelRightText"
+        ></storybook-color-swatch>
+      </div>
+    `,
+  }),
   argTypes: {
     mode: {
       control: 'inline-radio',
@@ -36,22 +41,22 @@ const meta: Meta<ColorSwatchComponent> = {
       description: 'Hex color (filled mode only).',
       table: { defaultValue: { summary: '#659cc3' } },
     },
-    labelLeft:      { control: 'boolean', description: 'Show bottom-left label.' },
-    labelLeftText:  { control: 'text',    description: 'Bottom-left label text.' },
-    labelRight:     { control: 'boolean', description: 'Show bottom-right label.' },
-    labelRightText: { control: 'text',    description: 'Bottom-right label text.' },
+    labelLeft:      { control: 'boolean', description: 'Show bottom-left label.', table: { defaultValue: { summary: 'false' } } },
+    labelLeftText:  { control: 'text',    description: 'Bottom-left label text.', table: { defaultValue: { summary: 'Target' } } },
+    labelRight:     { control: 'boolean', description: 'Show bottom-right label.', table: { defaultValue: { summary: 'false' } } },
+    labelRightText: { control: 'text',    description: 'Bottom-right label text.', table: { defaultValue: { summary: 'Target' } } },
   },
 };
 
 export default meta;
 type Story = StoryObj<ColorSwatchComponent>;
 
-/** Filled swatch — solid color. */
+/** Filled — solid color block. */
 export const Filled: Story = {
   args: { mode: 'filled', color: '#659cc3' },
 };
 
-/** Filled with both corner labels. */
+/** Filled with left and right corner labels. */
 export const FilledWithLabels: Story = {
   args: {
     mode: 'filled',
@@ -63,7 +68,7 @@ export const FilledWithLabels: Story = {
   },
 };
 
-/** Empty swatch — hatched placeholder. */
+/** Empty — hatched placeholder with eye-slash icon. */
 export const Empty: Story = {
   args: { mode: 'empty' },
 };
