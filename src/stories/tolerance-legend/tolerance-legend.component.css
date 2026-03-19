@@ -11,21 +11,42 @@
   padding: 8px;
 }
 
-/* ── Tooltip wrapper — right-aligned to bar width ── */
-.tl__tooltip-wrap {
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 16px;
-}
-
-.tl--symmetric  .tl__tooltip-wrap { width: 200px; }
-.tl--asymmetric .tl__tooltip-wrap { width: 120px; }
-
-/* ── Bar area (relative for indicator positioning) ── */
+/* ── Bar area — hover target, relative anchor for tooltip ── */
 .tl__bar-area {
   position: relative;
+  /* top padding reserves space so the tooltip doesn't get clipped */
+  padding-top: 96px;
+  cursor: pointer;
 }
 
+/* ── Tooltip: absolutely positioned above indicator, animated ──
+   Centred on indicator: left = indicator centre (147px sym / 67px asym),
+   translateX(-50%) centres the 240px tooltip body over that point.
+   Arrow (arrowSide=Bottom, left:50%) then points straight down to the dot. */
+.tl__tooltip-wrap {
+  position: absolute;
+  /* sit just above the bar (arrow tip clears the bar top) */
+  bottom: calc(100% - 96px + 4px);
+  z-index: 100;
+  pointer-events: none;
+
+  /* hidden state */
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.tl--symmetric  .tl__tooltip-wrap { left: 147px; }
+.tl--asymmetric .tl__tooltip-wrap { left:  67px; }
+
+/* visible state */
+.tl__tooltip-wrap--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* ── Bar ── */
 .tl__bar {
   display: flex;
   margin-top: 2px;
@@ -43,19 +64,16 @@
 .tl__seg--green  { background: #85c72e; }
 
 /* ── Indicator circle ──
-   Figma ml-[141px] (sym) / ml-[61px] (asym), mt-0 while bar has mt-2px.
-   We position absolute: left = ml value, vertically centred on the 8px bar. */
+   Figma: ml-141px (sym) ml-61px (asym), mt-0, size 12×12px with extended visual.
+   bar: mt-2px h-8px → centre at 6px from bar-area content top (after padding).
+   circle 13px → top = 2 + 4 - 6.5 = -0.5px */
 .tl__indicator {
   position: absolute;
-  /* bar starts at top 2px, height 8px → centre at 6px; circle is 13px → offset -6.5px + 2px = -4.5px */
-  top: -0.5px;
+  top: calc(96px - 0.5px); /* padding-top offset + bar vertical centre */
   transform: translateX(-50%);
 }
 
-/* symmetric  → centre at 141 + 6 = 147 px */
 .tl__indicator--sym  { left: 147px; }
-
-/* asymmetric → centre at  61 + 6 =  67 px */
 .tl__indicator--asym { left:  67px; }
 
 /* ── Labels ── */
@@ -64,7 +82,6 @@
   margin-top: 2px;
 }
 
-/* symmetric: spacer(20) + 4×label(40) + spacer(20) = 200 px */
 .tl__label {
   height: 14px;
   width: 40px;
@@ -80,13 +97,13 @@
 .tl__label--center { text-align: center; }
 .tl__label--right  { text-align: right;  }
 
-/* invisible spacers keep labels aligned to segment edges */
+/* invisible spacers align labels to segment edges */
 .tl__label--spacer {
   width: 20px;
   opacity: 0;
 }
 
-/* asymmetric: 2 labels centred in 120 px bar */
+/* asymmetric: 2 labels centred within the 120px bar */
 .tl--asymmetric .tl__labels {
   width: 120px;
   justify-content: center;

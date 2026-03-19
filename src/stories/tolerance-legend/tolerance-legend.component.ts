@@ -12,7 +12,7 @@ export type ToleranceProperty = 'symmetric' | 'asymmetric';
  * | **asymmetric** | 3 segments: green · yellow · red (120 px) |
  *
  * The indicator marks the current value on the bar.
- * The tooltip (storybook-tooltip, arrowSide=Bottom) floats above the bar.
+ * Hovering the bar shows the tooltip with a slide-in animation (arrowSide=Bottom).
  */
 @Component({
   selector: 'storybook-tolerance-legend',
@@ -28,7 +28,7 @@ export class ToleranceLegendComponent {
   /** Show the current-value indicator on the bar */
   @Input() withIndicator = true;
 
-  /** Show the tooltip above the bar */
+  /** Enable the tooltip (shown on hover) */
   @Input() withTooltip = true;
 
   /** Tooltip small-label text */
@@ -39,6 +39,11 @@ export class ToleranceLegendComponent {
 
   /** Tooltip message text */
   @Input() tooltipMessage = 'Message';
+
+  _tooltipVisible = false;
+
+  onBarEnter(): void { if (this.withTooltip) this._tooltipVisible = true; }
+  onBarLeave(): void { this._tooltipVisible = false; }
 
   get isSymmetric()  { return this.property1 === 'symmetric'; }
   get isAsymmetric() { return this.property1 === 'asymmetric'; }
