@@ -1,0 +1,70 @@
+<div class="tl" [class.tl--symmetric]="isSymmetric" [class.tl--asymmetric]="isAsymmetric">
+
+  <!-- ── Tooltip (above bar, right-aligned) ── -->
+  @if (withTooltip) {
+    <div class="tl__tooltip-wrap">
+      <storybook-tooltip
+        arrowSide="Bottom"
+        style="Neutral"
+        [smallLabel]="tooltipSmallLabel"
+        [heading]="tooltipHeading"
+        [message]="tooltipMessage"
+        [showSmallLabel]="true"
+        [showHeading]="true"
+        [showMessage]="true"
+      />
+    </div>
+  }
+
+  <!-- ── Bar + Indicator ── -->
+  <div class="tl__bar-area">
+
+    <!-- colour segments -->
+    <div class="tl__bar">
+      @if (isSymmetric) {
+        <div class="tl__seg tl__seg--red"></div>
+        <div class="tl__seg tl__seg--yellow"></div>
+        <div class="tl__seg tl__seg--green"></div>
+        <div class="tl__seg tl__seg--yellow"></div>
+        <div class="tl__seg tl__seg--red"></div>
+      }
+      @if (isAsymmetric) {
+        <div class="tl__seg tl__seg--green"></div>
+        <div class="tl__seg tl__seg--yellow"></div>
+        <div class="tl__seg tl__seg--red"></div>
+      }
+    </div>
+
+    <!-- indicator circle — symmetric: 141 px, asymmetric: 61 px from left -->
+    @if (withIndicator) {
+      <div class="tl__indicator" [class.tl__indicator--sym]="isSymmetric" [class.tl__indicator--asym]="isAsymmetric">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6.5" cy="6.5" r="5.75" fill="white" stroke="#c8c9c7" stroke-width="1.5"/>
+        </svg>
+      </div>
+    }
+
+  </div>
+
+  <!-- ── Labels (11.11 px, Roboto Light, letter-spacing 0.22 px) ── -->
+  <div class="tl__labels">
+
+    @if (isSymmetric) {
+      <!-- invisible left spacer aligns labels to bar segment edges -->
+      <span class="tl__label tl__label--spacer">-2</span>
+      <span class="tl__label tl__label--center">-1</span>
+      <span class="tl__label tl__label--center">-0.9</span>
+      <span class="tl__label tl__label--center">0.9</span>
+      <span class="tl__label tl__label--center">1</span>
+      <!-- invisible right spacer -->
+      <span class="tl__label tl__label--spacer tl__label--right">2</span>
+    }
+
+    @if (isAsymmetric) {
+      <span class="tl__label tl__label--center">0.9</span>
+      <span class="tl__label tl__label--center">1</span>
+    }
+
+  </div>
+
+</div>

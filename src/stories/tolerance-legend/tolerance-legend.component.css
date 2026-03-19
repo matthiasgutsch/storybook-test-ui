@@ -1,0 +1,93 @@
+:host {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── Shell ── */
+.tl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+}
+
+/* ── Tooltip wrapper — right-aligned to bar width ── */
+.tl__tooltip-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 16px;
+}
+
+.tl--symmetric  .tl__tooltip-wrap { width: 200px; }
+.tl--asymmetric .tl__tooltip-wrap { width: 120px; }
+
+/* ── Bar area (relative for indicator positioning) ── */
+.tl__bar-area {
+  position: relative;
+}
+
+.tl__bar {
+  display: flex;
+  margin-top: 2px;
+}
+
+/* Figma: each segment 40 × 8 px */
+.tl__seg {
+  width: 40px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.tl__seg--red    { background: #ef6577; }
+.tl__seg--yellow { background: #fecd32; }
+.tl__seg--green  { background: #85c72e; }
+
+/* ── Indicator circle ──
+   Figma ml-[141px] (sym) / ml-[61px] (asym), mt-0 while bar has mt-2px.
+   We position absolute: left = ml value, vertically centred on the 8px bar. */
+.tl__indicator {
+  position: absolute;
+  /* bar starts at top 2px, height 8px → centre at 6px; circle is 13px → offset -6.5px + 2px = -4.5px */
+  top: -0.5px;
+  transform: translateX(-50%);
+}
+
+/* symmetric  → centre at 141 + 6 = 147 px */
+.tl__indicator--sym  { left: 147px; }
+
+/* asymmetric → centre at  61 + 6 =  67 px */
+.tl__indicator--asym { left:  67px; }
+
+/* ── Labels ── */
+.tl__labels {
+  display: flex;
+  margin-top: 2px;
+}
+
+/* symmetric: spacer(20) + 4×label(40) + spacer(20) = 200 px */
+.tl__label {
+  height: 14px;
+  width: 40px;
+  flex-shrink: 0;
+  font-size: 11.11px;
+  font-weight: 300;
+  line-height: 16.67px;
+  letter-spacing: 0.22px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.tl__label--center { text-align: center; }
+.tl__label--right  { text-align: right;  }
+
+/* invisible spacers keep labels aligned to segment edges */
+.tl__label--spacer {
+  width: 20px;
+  opacity: 0;
+}
+
+/* asymmetric: 2 labels centred in 120 px bar */
+.tl--asymmetric .tl__labels {
+  width: 120px;
+  justify-content: center;
+}
