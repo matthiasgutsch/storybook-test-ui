@@ -6,6 +6,7 @@ const meta: Meta<SquareTabComponent> = {
   component: SquareTabComponent,
   tags: ['autodocs'],
   parameters: {
+    layout: 'centered',
     docs: {
       description: {
         component: `
@@ -95,6 +96,14 @@ export const LargeDisabled: Story = {
 
 /** Size M — hover to see hover state and tooltip on the right. */
 export const MediumTooltipRight: Story = {
+  parameters: { layout: 'centered' },
+  decorators: [
+    (storyFn) => ({
+      ...storyFn(),
+      styles: ['story-wrapper { padding: 60px 140px; display: flex; }'],
+      template: `<div style="padding: 60px 140px;"><ng-content></ng-content></div>`,
+    }),
+  ],
   args: {
     size: 'M',
     status: 'Default',
