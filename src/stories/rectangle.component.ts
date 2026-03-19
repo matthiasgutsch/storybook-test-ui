@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <div class="rectangle" [ngClass]="'rectangle--' + property1.toLowerCase()">
+    <div class="rectangle" [class]="'rectangle rectangle--' + property1.toLowerCase()">
       <div class="rectangle__fill"></div>
       @if (property1 === 'Default' && icon) {
         <img
