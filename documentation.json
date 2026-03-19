@@ -494,7 +494,7 @@
         },
         {
             "name": "RectangleComponent",
-            "id": "component-RectangleComponent-e343c0da394c2ee4d9e865405133c24fda0958f7059400b9b7aac3d50dc421b96aee236352f890c0fc5c64a9f50d10fb6952a127cb1e33643685ac1ba8d748ff",
+            "id": "component-RectangleComponent-d3214ed066d4e5f8b63cdd019981a2f6144802afad7fbb2bd9da82aed5a76418f71240124b6a916c6f0462f63adbe1f421c2f127ea2cf20248dc393ed4a1b9bf",
             "file": "src/stories/rectangle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -506,103 +506,71 @@
                 "./rectangle.css"
             ],
             "styles": [],
-            "template": "<div [ngClass]=\"classes\" [style]=\"dynamicStyle\"></div>",
+            "template": "<div class=\"rectangle\" [class]=\"'rectangle rectangle--' + property1.toLowerCase()\">\n  <div class=\"rectangle__fill\"></div>\n  @if (icon) {\n    <img class=\"rectangle__icon\" [src]=\"iconSrc\" alt=\"info\" />\n  }\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "backgroundColor",
-                    "defaultValue": "'#d7172f'",
+                    "name": "icon",
+                    "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nBackground color of the rectangle\n",
-                    "description": "<p>Background color of the rectangle</p>\n",
-                    "line": 28,
-                    "type": "string",
+                    "rawdescription": "\n\nShow a centered info icon inside the rectangle.\n",
+                    "description": "<p>Show a centered info icon inside the rectangle.</p>\n",
+                    "line": 40,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
-                    "name": "height",
-                    "defaultValue": "'100px'",
+                    "name": "property1",
+                    "defaultValue": "'Default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nHeight of the rectangle\n",
-                    "description": "<p>Height of the rectangle</p>\n",
-                    "line": 22,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "variant",
-                    "defaultValue": "'sharp'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nBorder radius style\n",
-                    "description": "<p>Border radius style</p>\n",
+                    "rawdescription": "\n\nVisual variant of the rectangle.\n- `Default` — offwhite (`#F5F5F5`)\n- `Red` — brand primary (`#D7192F`)\n",
+                    "description": "<p>Visual variant of the rectangle.</p>\n<ul>\n<li><code>Default</code> — offwhite (<code>#F5F5F5</code>)</li>\n<li><code>Red</code> — brand primary (<code>#D7192F</code>)</li>\n</ul>\n",
                     "line": 34,
-                    "type": "\"sharp\" | \"rounded\" | \"pill\"",
-                    "decorators": []
-                },
-                {
-                    "name": "width",
-                    "defaultValue": "'200px'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWidth of the rectangle\n",
-                    "description": "<p>Width of the rectangle</p>\n",
-                    "line": 16,
-                    "type": "string",
+                    "type": "\"Default\" | \"Red\"",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "iconSrc",
+                    "defaultValue": "ICON_SRC",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
+            "imports": [],
+            "description": "<p>A Rectangle component with two visual variants and an optional centered icon.</p>\n<ul>\n<li><strong>Default</strong> — offwhite background (<code>#F5F5F5</code>)</li>\n<li><strong>Red</strong> — brand primary background (<code>#D7192F</code>)</li>\n</ul>\n<p>Both variants support an optional info icon centered inside the rectangle.</p>\n",
+            "rawdescription": "\n\nA Rectangle component with two visual variants and an optional centered icon.\n\n- **Default** — offwhite background (`#F5F5F5`)\n- **Red** — brand primary background (`#D7192F`)\n\nBoth variants support an optional info icon centered inside the rectangle.\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'storybook-rectangle',\n  standalone: true,\n  imports: [CommonModule],\n  template: `<div [ngClass]=\"classes\" [style]=\"dynamicStyle\"></div>`,\n  styleUrls: ['./rectangle.css'],\n})\nexport class RectangleComponent {\n  /**\n   * Width of the rectangle\n   */\n  @Input()\n  width: string = '200px';\n\n  /**\n   * Height of the rectangle\n   */\n  @Input()\n  height: string = '100px';\n\n  /**\n   * Background color of the rectangle\n   */\n  @Input()\n  backgroundColor: string = '#d7172f';\n\n  /**\n   * Border radius style\n   */\n  @Input()\n  variant: 'sharp' | 'rounded' | 'pill' = 'sharp';\n\n  public get classes(): string[] {\n    return ['storybook-rectangle', `storybook-rectangle--${this.variant}`];\n  }\n\n  public get dynamicStyle(): string {\n    return `width: ${this.width}; height: ${this.height}; background-color: ${this.backgroundColor};`;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nconst ICON_SRC = 'https://www.figma.com/api/mcp/asset/cce1b616-d677-400c-aa0a-53e3107786d0';\n\n/**\n * A Rectangle component with two visual variants and an optional centered icon.\n *\n * - **Default** — offwhite background (`#F5F5F5`)\n * - **Red** — brand primary background (`#D7192F`)\n *\n * Both variants support an optional info icon centered inside the rectangle.\n */\n@Component({\n  selector: 'storybook-rectangle',\n  standalone: true,\n  imports: [],\n  template: `\n    <div class=\"rectangle\" [class]=\"'rectangle rectangle--' + property1.toLowerCase()\">\n      <div class=\"rectangle__fill\"></div>\n      @if (icon) {\n        <img class=\"rectangle__icon\" [src]=\"iconSrc\" alt=\"info\" />\n      }\n    </div>\n  `,\n  styleUrls: ['./rectangle.css'],\n})\nexport class RectangleComponent {\n  /**\n   * Visual variant of the rectangle.\n   * - `Default` — offwhite (`#F5F5F5`)\n   * - `Red` — brand primary (`#D7192F`)\n   */\n  @Input()\n  property1: 'Default' | 'Red' = 'Default';\n\n  /**\n   * Show a centered info icon inside the rectangle.\n   */\n  @Input()\n  icon = true;\n\n  readonly iconSrc = ICON_SRC;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-rectangle {\n  display: inline-block;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n\n.storybook-rectangle--sharp {\n  border-radius: 0;\n}\n\n.storybook-rectangle--rounded {\n  border-radius: 8px;\n}\n\n.storybook-rectangle--pill {\n  border-radius: 50px;\n}\n",
+                    "data": ".rectangle {\n  position: relative;\n  width: 207px;\n  height: 158px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #f5f5f5;\n}\n\n.rectangle__fill {\n  position: absolute;\n  inset: 0;\n}\n\n.rectangle--red {\n  background-color: transparent;\n}\n\n.rectangle--red .rectangle__fill {\n  background-color: #d7192f;\n}\n\n.rectangle__icon {\n  position: relative;\n  width: 20px;\n  height: 20px;\n  z-index: 1;\n}\n",
                     "styleUrl": "./rectangle.css"
                 }
             ],
             "stylesData": "",
-            "extends": [],
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 36
-                    }
-                },
-                "dynamicStyle": {
-                    "name": "dynamicStyle",
-                    "getSignature": {
-                        "name": "dynamicStyle",
-                        "type": "string",
-                        "returnType": "string",
-                        "line": 40
-                    }
-                }
-            }
+            "extends": []
         },
         {
             "name": "SidebarComponent",
@@ -640,6 +608,474 @@
             "styleUrlsData": "",
             "stylesData": "\n      .sidebar {\n        width: 220px;\n        background: #f4f4f4;\n        padding: 16px;\n        height: 100vh;\n      }\n      nav a {\n        display: block;\n        margin-bottom: 12px;\n        cursor: pointer;\n      }\n    \n",
             "extends": []
+        },
+        {
+            "name": "SquareTabComponent",
+            "id": "component-SquareTabComponent-f4d47686a6aacf8dcbfad56ea53aad5a86fdcabab0f132fcad3d802abcd664b75a81536ab25e4fc3c8cb76bfe3ad0bdd86a778b54dd98f6c335e1697876708b7",
+            "file": "src/stories/square-tab.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-square-tab",
+            "styleUrls": [
+                "./square-tab.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./square-tab.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nLabel text (only visible on size L)",
+                    "description": "<p>Label text (only visible on size L)</p>\n",
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "showLabel",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow label (size L only)",
+                    "description": "<p>Show label (size L only)</p>\n",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'L'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTab size",
+                    "description": "<p>Tab size</p>\n",
+                    "line": 26,
+                    "type": "SquareTabSize",
+                    "decorators": []
+                },
+                {
+                    "name": "status",
+                    "defaultValue": "'Default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nInitial visual status (Disabled cannot be overridden by interaction)",
+                    "description": "<p>Initial visual status (Disabled cannot be overridden by interaction)</p>\n",
+                    "line": 29,
+                    "type": "SquareTabStatus",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipHeading",
+                    "defaultValue": "'Heading'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTooltip heading text",
+                    "description": "<p>Tooltip heading text</p>\n",
+                    "line": 47,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipMessage",
+                    "defaultValue": "'Message'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTooltip message text",
+                    "description": "<p>Tooltip message text</p>\n",
+                    "line": 50,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipSide",
+                    "defaultValue": "'right'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nSide the tooltip appears on hover (M and S only)",
+                    "description": "<p>Side the tooltip appears on hover (M and S only)</p>\n",
+                    "line": 38,
+                    "type": "\"left\" | \"right\"",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipSmallLabel",
+                    "defaultValue": "'Small Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTooltip small label text",
+                    "description": "<p>Tooltip small label text</p>\n",
+                    "line": 44,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipStyle",
+                    "defaultValue": "'Neutral'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTooltip visual style",
+                    "description": "<p>Tooltip visual style</p>\n",
+                    "line": 41,
+                    "type": "TooltipStyle",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_active",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 53,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "_hovered",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 52,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "iconMask",
+                    "defaultValue": "ICON_MASK",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 55,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 69,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'click'"
+                        }
+                    ],
+                    "modifierKind": [
+                        171
+                    ]
+                },
+                {
+                    "name": "onMouseEnter",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 58,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseenter'"
+                        }
+                    ],
+                    "modifierKind": [
+                        171
+                    ]
+                },
+                {
+                    "name": "onMouseLeave",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseleave'"
+                        }
+                    ],
+                    "modifierKind": [
+                        171
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "click",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69
+                },
+                {
+                    "name": "mouseenter",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 58
+                },
+                {
+                    "name": "mouseleave",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 64
+                }
+            ],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "TooltipComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "<p>Square Tab component — icon-based navigation tab used in vertical tab rails.</p>\n<p>Supports three sizes (L, M, S) and four statuses (Default, Active, Hover, Disabled).\nHover and Active states are driven interactively via mouse events.\nSize L shows an optional text label beneath the icon.\nSizes M and S show a Tooltip automatically on hover.</p>\n",
+            "rawdescription": "\n\nSquare Tab component — icon-based navigation tab used in vertical tab rails.\n\nSupports three sizes (L, M, S) and four statuses (Default, Active, Hover, Disabled).\nHover and Active states are driven interactively via mouse events.\nSize L shows an optional text label beneath the icon.\nSizes M and S show a Tooltip automatically on hover.\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, HostListener } from '@angular/core';\nimport { TooltipComponent, TooltipStyle } from './tooltip.component';\n\nexport type SquareTabSize   = 'L' | 'M' | 'S';\nexport type SquareTabStatus = 'Default' | 'Active' | 'Hover' | 'Disabled';\n\nconst ICON_MASK = 'https://www.figma.com/api/mcp/asset/93cb51c2-4f62-4764-9c12-48cb85cef5f9';\n\n/**\n * Square Tab component — icon-based navigation tab used in vertical tab rails.\n *\n * Supports three sizes (L, M, S) and four statuses (Default, Active, Hover, Disabled).\n * Hover and Active states are driven interactively via mouse events.\n * Size L shows an optional text label beneath the icon.\n * Sizes M and S show a Tooltip automatically on hover.\n */\n@Component({\n  selector: 'storybook-square-tab',\n  standalone: true,\n  imports: [TooltipComponent],\n  templateUrl: './square-tab.component.html',\n  styleUrls: ['./square-tab.component.css'],\n})\nexport class SquareTabComponent {\n  /** Tab size */\n  @Input() size: SquareTabSize = 'L';\n\n  /** Initial visual status (Disabled cannot be overridden by interaction) */\n  @Input() status: SquareTabStatus = 'Default';\n\n  /** Label text (only visible on size L) */\n  @Input() label = 'Label';\n\n  /** Show label (size L only) */\n  @Input() showLabel = true;\n\n  /** Side the tooltip appears on hover (M and S only) */\n  @Input() tooltipSide: 'left' | 'right' = 'right';\n\n  /** Tooltip visual style */\n  @Input() tooltipStyle: TooltipStyle = 'Neutral';\n\n  /** Tooltip small label text */\n  @Input() tooltipSmallLabel = 'Small Label';\n\n  /** Tooltip heading text */\n  @Input() tooltipHeading = 'Heading';\n\n  /** Tooltip message text */\n  @Input() tooltipMessage = 'Message';\n\n  private _hovered = false;\n  private _active  = false;\n\n  readonly iconMask = ICON_MASK;\n\n  @HostListener('mouseenter')\n  onMouseEnter(): void {\n    if (this.status === 'Disabled') return;\n    this._hovered = true;\n  }\n\n  @HostListener('mouseleave')\n  onMouseLeave(): void {\n    this._hovered = false;\n  }\n\n  @HostListener('click')\n  onClick(): void {\n    if (this.status === 'Disabled') return;\n    this._active = !this._active;\n  }\n\n  get effectiveStatus(): SquareTabStatus {\n    if (this.status === 'Disabled') return 'Disabled';\n    if (this._active)  return 'Active';\n    if (this._hovered) return 'Hover';\n    return this.status === 'Active' ? 'Active' : 'Default';\n  }\n\n  get iconColor(): string {\n    const map: Record<SquareTabStatus, string> = {\n      Default:  '#000000',\n      Active:   '#d7192f',\n      Hover:    '#ef6577',\n      Disabled: '#97999b',\n    };\n    return map[this.effectiveStatus];\n  }\n\n  get labelColor(): string {\n    const map: Record<SquareTabStatus, string> = {\n      Default:  '#53565a',\n      Active:   '#d7192f',\n      Hover:    '#ef6577',\n      Disabled: '#97999b',\n    };\n    return map[this.effectiveStatus];\n  }\n\n  get showTooltip(): boolean {\n    return (this.size === 'M' || this.size === 'S') && this._hovered;\n  }\n\n  /** Arrow side for the Tooltip: opposite of tooltipSide so it points toward the tab */\n  get tooltipArrowSide(): 'Left' | 'Right' {\n    return this.tooltipSide === 'right' ? 'Left' : 'Right';\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* ── Host ── */\n:host {\n  display: inline-block;\n  overflow: visible;\n}\n\n/* ── Base ── */\n.sq-tab {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: visible;\n  border: 1px solid #e6e6e6;\n  border-bottom: 1px solid #e6e6e6;\n  background: #f5f5f5;\n  cursor: pointer;\n  font-family: 'Roboto', sans-serif;\n  box-sizing: border-box;\n}\n\n/* ── Sizes ── */\n.sq-tab--l {\n  flex-direction: column;\n  gap: 12px;\n  width: 120px;\n  height: 112px;\n  padding: 21px 20px;\n}\n\n.sq-tab--m {\n  flex-direction: row;\n  gap: 10px;\n  width: 88px;\n  height: 80px;\n  padding: 12px 14px;\n}\n\n.sq-tab--s {\n  flex-direction: row;\n  gap: 10px;\n  width: 60px;\n  height: 56px;\n  padding: 12px 14px;\n}\n\n/* ── Status: Active ── */\n.sq-tab--active {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Hover ── */\n.sq-tab--hover {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Disabled ── */\n.sq-tab--disabled {\n  background: #f5f5f5;\n  border-color: #e6e6e6;\n  cursor: not-allowed;\n}\n\n/* ── Icon ── */\n.sq-tab__icon {\n  position: relative;\n  flex-shrink: 0;\n  width: 29px;\n  height: 29px;\n}\n\n.sq-tab__icon-mask {\n  display: block;\n  position: absolute;\n  inset: 0;\n  mask-size: 29px 29px;\n  mask-repeat: no-repeat;\n  mask-position: 0 0;\n  -webkit-mask-size: 29px 29px;\n  -webkit-mask-repeat: no-repeat;\n  -webkit-mask-position: 0 0;\n}\n\n/* ── Label (L only) ── */\n.sq-tab__label {\n  font-size: 13.33px;\n  font-weight: 700;\n  line-height: 20px;\n  text-align: center;\n  width: 100%;\n}\n\n/* ── Tooltip (storybook-tooltip host) ── */\n.sq-tab__tooltip {\n  position: absolute;\n  z-index: 1000;\n}\n\n.sq-tab--m .sq-tab__tooltip { top: 16px; }\n.sq-tab--s .sq-tab__tooltip { top: 4px; }\n\n.sq-tab__tooltip--left  { right: calc(100% + 8px); }\n.sq-tab__tooltip--right { left:  calc(100% + 8px); }\n",
+                    "styleUrl": "./square-tab.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "effectiveStatus": {
+                    "name": "effectiveStatus",
+                    "getSignature": {
+                        "name": "effectiveStatus",
+                        "type": "unknown",
+                        "returnType": "SquareTabStatus",
+                        "line": 74
+                    }
+                },
+                "iconColor": {
+                    "name": "iconColor",
+                    "getSignature": {
+                        "name": "iconColor",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 81
+                    }
+                },
+                "labelColor": {
+                    "name": "labelColor",
+                    "getSignature": {
+                        "name": "labelColor",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 91
+                    }
+                },
+                "showTooltip": {
+                    "name": "showTooltip",
+                    "getSignature": {
+                        "name": "showTooltip",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 101
+                    }
+                },
+                "tooltipArrowSide": {
+                    "name": "tooltipArrowSide",
+                    "getSignature": {
+                        "name": "tooltipArrowSide",
+                        "type": "unknown",
+                        "returnType": "\"Left\" | \"Right\"",
+                        "line": 106,
+                        "rawdescription": "\nArrow side for the Tooltip: opposite of tooltipSide so it points toward the tab",
+                        "description": "<p>Arrow side for the Tooltip: opposite of tooltipSide so it points toward the tab</p>\n"
+                    }
+                }
+            },
+            "templateData": "<div\n  class=\"sq-tab\"\n  [class]=\"'sq-tab sq-tab--' + size.toLowerCase() + ' sq-tab--' + effectiveStatus.toLowerCase()\"\n>\n\n  <!-- Icon -->\n  <span class=\"sq-tab__icon\">\n    <span\n      class=\"sq-tab__icon-mask\"\n      [style.background-color]=\"iconColor\"\n      [style.-webkit-mask-image]=\"'url(' + iconMask + ')'\"\n      [style.mask-image]=\"'url(' + iconMask + ')'\"\n    ></span>\n  </span>\n\n  <!-- Label (L size only) -->\n  @if (size === 'L' && showLabel) {\n    <span class=\"sq-tab__label\" [style.color]=\"labelColor\">{{ label }}</span>\n  }\n\n  <!-- Tooltip (M + S, shown on hover) -->\n  @if (showTooltip) {\n    <storybook-tooltip\n      class=\"sq-tab__tooltip\"\n      [class.sq-tab__tooltip--left]=\"tooltipSide === 'left'\"\n      [class.sq-tab__tooltip--right]=\"tooltipSide === 'right'\"\n      [arrowSide]=\"tooltipArrowSide\"\n      [style]=\"tooltipStyle\"\n      [smallLabel]=\"tooltipSmallLabel\"\n      [heading]=\"tooltipHeading\"\n      [message]=\"tooltipMessage\"\n    />\n  }\n\n</div>\n"
+        },
+        {
+            "name": "TooltipComponent",
+            "id": "component-TooltipComponent-fcbd2e41047fb3b5e93532bff4069853567294bbe1fee7d139c637dbe3019fa76929653e3524ecd38d2028a68878f450676157598e8258923fc4f5ab0e46048f",
+            "file": "src/stories/tooltip.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-tooltip",
+            "styleUrls": [
+                "./tooltip.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tooltip.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "arrowSide",
+                    "defaultValue": "'Right'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nWhich side the arrow appears on",
+                    "description": "<p>Which side the arrow appears on</p>\n",
+                    "line": 29,
+                    "type": "TooltipArrowSide",
+                    "decorators": []
+                },
+                {
+                    "name": "heading",
+                    "defaultValue": "'Heading / title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHeading text",
+                    "description": "<p>Heading text</p>\n",
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "message",
+                    "defaultValue": "'Message'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nMessage text",
+                    "description": "<p>Message text</p>\n",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "showHeading",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow the heading row",
+                    "description": "<p>Show the heading row</p>\n",
+                    "line": 47,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showMessage",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow the message row",
+                    "description": "<p>Show the message row</p>\n",
+                    "line": 50,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showSmallLabel",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow the small label row",
+                    "description": "<p>Show the small label row</p>\n",
+                    "line": 44,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "smallLabel",
+                    "defaultValue": "'Small Label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nSmall label text (shown above heading)",
+                    "description": "<p>Small label text (shown above heading)</p>\n",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "style",
+                    "defaultValue": "'Alert'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nVisual style",
+                    "description": "<p>Visual style</p>\n",
+                    "line": 32,
+                    "type": "TooltipStyle",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "<p>Tooltip component with three visual styles and four arrow positions.</p>\n<p>The arrow is a pure CSS triangle (16 × 8px per Figma spec, rotated for direction).</p>\n<ul>\n<li><strong>Style</strong> — <code>Neutral</code> (offwhite), <code>Alert</code> (yellow), <code>Success</code> (green)</li>\n<li><strong>Arrow side</strong> — <code>Top</code>, <code>Right</code>, <code>Bottom</code>, <code>Left</code></li>\n</ul>\n",
+            "rawdescription": "\n\nTooltip component with three visual styles and four arrow positions.\n\nThe arrow is a pure CSS triangle (16 × 8px per Figma spec, rotated for direction).\n\n- **Style** — `Neutral` (offwhite), `Alert` (yellow), `Success` (green)\n- **Arrow side** — `Top`, `Right`, `Bottom`, `Left`\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport type TooltipArrowSide = 'Top' | 'Right' | 'Bottom' | 'Left';\nexport type TooltipStyle     = 'Neutral' | 'Alert' | 'Success';\n\nconst BG: Record<TooltipStyle, string> = {\n  Neutral: '#f5f5f5',\n  Alert:   '#fecd32',\n  Success: '#c1e396',\n};\n\n/**\n * Tooltip component with three visual styles and four arrow positions.\n *\n * The arrow is a pure CSS triangle (16 × 8px per Figma spec, rotated for direction).\n *\n * - **Style** — `Neutral` (offwhite), `Alert` (yellow), `Success` (green)\n * - **Arrow side** — `Top`, `Right`, `Bottom`, `Left`\n */\n@Component({\n  selector: 'storybook-tooltip',\n  standalone: true,\n  imports: [],\n  templateUrl: './tooltip.component.html',\n  styleUrls: ['./tooltip.component.css'],\n})\nexport class TooltipComponent {\n  /** Which side the arrow appears on */\n  @Input() arrowSide: TooltipArrowSide = 'Right';\n\n  /** Visual style */\n  @Input() style: TooltipStyle = 'Alert';\n\n  /** Small label text (shown above heading) */\n  @Input() smallLabel = 'Small Label';\n\n  /** Heading text */\n  @Input() heading = 'Heading / title';\n\n  /** Message text */\n  @Input() message = 'Message';\n\n  /** Show the small label row */\n  @Input() showSmallLabel = true;\n\n  /** Show the heading row */\n  @Input() showHeading = true;\n\n  /** Show the message row */\n  @Input() showMessage = true;\n\n  get bgColor(): string {\n    return BG[this.style];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: inline-block;\n}\n\n/* ── Shell ── */\n.tooltip {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 240px;\n  border-radius: 1px;\n  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);\n  font-family: 'Roboto', sans-serif;\n  box-sizing: border-box;\n  overflow: visible;\n}\n\n/* ── Content ── */\n.tooltip__content {\n  display: flex;\n  flex-direction: column;\n  padding: 16px;\n}\n\n.tooltip__small-label {\n  font-size: 11.11px;\n  font-weight: 300;\n  line-height: 16.67px;\n  letter-spacing: 0.22px;\n  color: #3e4144;\n}\n\n.tooltip__heading {\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n  color: #000;\n}\n\n.tooltip__message {\n  font-size: 13.33px;\n  font-weight: 300;\n  line-height: 20px;\n  color: #3e4144;\n}\n\n/* ── Arrow base ── */\n/* Arrow is 16px × 8px per Figma spec; rotated 90deg = 8px wide × 16px tall for Left/Right */\n.tooltip__arrow {\n  position: absolute;\n}\n\n/* Arrow pointing RIGHT (tooltip body is to the left) */\n.tooltip--right .tooltip__arrow {\n  right: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 16px;\n  clip-path: polygon(0 0, 0 100%, 100% 50%);\n}\n\n/* Arrow pointing LEFT (tooltip body is to the right) */\n.tooltip--left .tooltip__arrow {\n  left: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 16px;\n  clip-path: polygon(100% 0, 0 50%, 100% 100%);\n}\n\n/* Arrow pointing UP (tooltip body is below) */\n.tooltip--top .tooltip__arrow {\n  top: -8px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 16px;\n  height: 8px;\n  clip-path: polygon(0 100%, 50% 0, 100% 100%);\n}\n\n/* Arrow pointing DOWN (tooltip body is above) */\n.tooltip--bottom .tooltip__arrow {\n  bottom: -8px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 16px;\n  height: 8px;\n  clip-path: polygon(0 0, 50% 100%, 100% 0);\n}\n",
+                    "styleUrl": "./tooltip.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "bgColor": {
+                    "name": "bgColor",
+                    "getSignature": {
+                        "name": "bgColor",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 52
+                    }
+                }
+            },
+            "templateData": "<div\n  class=\"tooltip\"\n  [class]=\"'tooltip tooltip--' + arrowSide.toLowerCase()\"\n  [style.background-color]=\"bgColor\"\n>\n  <!-- Content -->\n  <div class=\"tooltip__content\">\n    @if (showSmallLabel && smallLabel) {\n      <span class=\"tooltip__small-label\">{{ smallLabel }}</span>\n    }\n    @if (showHeading && heading) {\n      <span class=\"tooltip__heading\">{{ heading }}</span>\n    }\n    @if (showMessage && message) {\n      <span class=\"tooltip__message\">{{ message }}</span>\n    }\n  </div>\n\n  <!-- Arrow — absolutely positioned, color inherits from parent via currentColor trick -->\n  <span class=\"tooltip__arrow\" [style.background-color]=\"bgColor\"></span>\n</div>\n"
         }
     ],
     "modules": [],
@@ -656,6 +1092,36 @@
                 "defaultValue": "{\n  providers: [provideRouter(routes)]\n}"
             },
             {
+                "name": "BG",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/tooltip.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Record<TooltipStyle, string>",
+                "defaultValue": "{\n  Neutral: '#f5f5f5',\n  Alert:   '#fecd32',\n  Success: '#c1e396',\n}"
+            },
+            {
+                "name": "ICON_MASK",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/square-tab.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'https://www.figma.com/api/mcp/asset/93cb51c2-4f62-4764-9c12-48cb85cef5f9'"
+            },
+            {
+                "name": "ICON_SRC",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/rectangle.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'https://www.figma.com/api/mcp/asset/cce1b616-d677-400c-aa0a-53e3107786d0'"
+            },
+            {
                 "name": "routes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -667,7 +1133,52 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "SquareTabSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"L\" | \"M\" | \"S\"",
+                "file": "src/stories/square-tab.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "SquareTabStatus",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"Default\" | \"Active\" | \"Hover\" | \"Disabled\"",
+                "file": "src/stories/square-tab.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "TooltipArrowSide",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"Top\" | \"Right\" | \"Bottom\" | \"Left\"",
+                "file": "src/stories/tooltip.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "TooltipStyle",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"Neutral\" | \"Alert\" | \"Success\"",
+                "file": "src/stories/tooltip.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/app/app.config.ts": [
@@ -680,6 +1191,42 @@
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
                     "defaultValue": "{\n  providers: [provideRouter(routes)]\n}"
+                }
+            ],
+            "src/stories/tooltip.component.ts": [
+                {
+                    "name": "BG",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/tooltip.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<TooltipStyle, string>",
+                    "defaultValue": "{\n  Neutral: '#f5f5f5',\n  Alert:   '#fecd32',\n  Success: '#c1e396',\n}"
+                }
+            ],
+            "src/stories/square-tab.component.ts": [
+                {
+                    "name": "ICON_MASK",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/square-tab.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'https://www.figma.com/api/mcp/asset/93cb51c2-4f62-4764-9c12-48cb85cef5f9'"
+                }
+            ],
+            "src/stories/rectangle.component.ts": [
+                {
+                    "name": "ICON_SRC",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/rectangle.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'https://www.figma.com/api/mcp/asset/cce1b616-d677-400c-aa0a-53e3107786d0'"
                 }
             ],
             "src/app/app.routes.ts": [
@@ -697,7 +1244,56 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/stories/square-tab.component.ts": [
+                {
+                    "name": "SquareTabSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"L\" | \"M\" | \"S\"",
+                    "file": "src/stories/square-tab.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "SquareTabStatus",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"Default\" | \"Active\" | \"Hover\" | \"Disabled\"",
+                    "file": "src/stories/square-tab.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/stories/tooltip.component.ts": [
+                {
+                    "name": "TooltipArrowSide",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"Top\" | \"Right\" | \"Bottom\" | \"Left\"",
+                    "file": "src/stories/tooltip.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "TooltipStyle",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"Neutral\" | \"Alert\" | \"Success\"",
+                    "file": "src/stories/tooltip.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ]
+        }
     },
     "routes": {
         "name": "<root>",
@@ -705,7 +1301,7 @@
         "children": []
     },
     "coverage": {
-        "count": 14,
+        "count": 15,
         "status": "low",
         "files": [
             {
@@ -787,15 +1383,103 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "RectangleComponent",
-                "coveragePercent": 80,
-                "coverageCount": "4/5",
-                "status": "very-good"
+                "coveragePercent": 75,
+                "coverageCount": "3/4",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/rectangle.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ICON_SRC",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/sidebar.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/square-tab.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SquareTabComponent",
+                "coveragePercent": 52,
+                "coverageCount": "10/19",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/square-tab.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ICON_MASK",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/square-tab.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "SquareTabSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/square-tab.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "SquareTabStatus",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/tooltip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TooltipComponent",
+                "coveragePercent": 100,
+                "coverageCount": "9/9",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/tooltip.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BG",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/tooltip.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TooltipArrowSide",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/tooltip.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TooltipStyle",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
