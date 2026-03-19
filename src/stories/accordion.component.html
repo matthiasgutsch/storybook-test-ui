@@ -1,0 +1,39 @@
+<div class="accordion" [class.accordion--expanded]="expanded" [class.accordion--disabled]="disabled">
+
+  <!-- Header -->
+  <button
+    class="accordion__header"
+    [disabled]="disabled"
+    (click)="toggle()"
+    [attr.aria-expanded]="expanded"
+  >
+    <span class="accordion__title">{{ title }}</span>
+
+    <!-- Icon: + when collapsed, − when expanded -->
+    <span class="accordion__icon" [@iconRotate]="animState">
+      @if (expanded) {
+        <!-- Minus -->
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="9" width="14" height="2" rx="1" [attr.fill]="disabled ? '#97999b' : '#d7192f'" />
+        </svg>
+      } @else {
+        <!-- Plus -->
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="9" y="3" width="2" height="14" rx="1" [attr.fill]="disabled ? '#97999b' : '#d7192f'" />
+          <rect x="3" y="9" width="14" height="2" rx="1" [attr.fill]="disabled ? '#97999b' : '#d7192f'" />
+        </svg>
+      }
+    </span>
+  </button>
+
+  <!-- Expandable body -->
+  <div
+    class="accordion__body"
+    [@bodyExpand]="animState"
+  >
+    <div class="accordion__content">
+      <ng-content />
+    </div>
+  </div>
+
+</div>
