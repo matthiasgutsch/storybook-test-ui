@@ -1,0 +1,49 @@
+<div
+  class="sq-tab"
+  [class]="'sq-tab sq-tab--' + size.toLowerCase() + ' sq-tab--' + status.toLowerCase()"
+>
+
+  <!-- Icon -->
+  <span class="sq-tab__icon">
+    <span
+      class="sq-tab__icon-mask"
+      [style.background-color]="iconColor"
+      [style.-webkit-mask-image]="'url(' + iconMask + ')'"
+      [style.mask-image]="'url(' + iconMask + ')'"
+    ></span>
+  </span>
+
+  <!-- Label (L size only) -->
+  @if (size === 'L' && showLabel) {
+    <span class="sq-tab__label" [style.color]="labelColor">{{ label }}</span>
+  }
+
+  <!-- Tooltip left (M + S only) -->
+  @if (showTooltip && tooltipLeft) {
+    <div class="sq-tab__tooltip sq-tab__tooltip--left">
+      <div class="sq-tab__tooltip-content">
+        <span class="sq-tab__tooltip-small">{{ tooltipSmallLabel }}</span>
+        <span class="sq-tab__tooltip-heading">{{ tooltipHeading }}</span>
+        <span class="sq-tab__tooltip-message">{{ tooltipMessage }}</span>
+      </div>
+      <div class="sq-tab__tooltip-arrow sq-tab__tooltip-arrow--right">
+        <img [src]="arrowLeft" alt="" />
+      </div>
+    </div>
+  }
+
+  <!-- Tooltip right (M + S only) -->
+  @if (showTooltip && tooltipRight) {
+    <div class="sq-tab__tooltip sq-tab__tooltip--right">
+      <div class="sq-tab__tooltip-arrow sq-tab__tooltip-arrow--left">
+        <img [src]="arrowRight" alt="" />
+      </div>
+      <div class="sq-tab__tooltip-content">
+        <span class="sq-tab__tooltip-small">{{ tooltipSmallLabel }}</span>
+        <span class="sq-tab__tooltip-heading">{{ tooltipHeading }}</span>
+        <span class="sq-tab__tooltip-message">{{ tooltipMessage }}</span>
+      </div>
+    </div>
+  }
+
+</div>
