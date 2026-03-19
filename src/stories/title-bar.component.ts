@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UiButtonComponent } from './ui-button.component';
 
 export type TitleBarType = 'White' | 'Transparent';
 
@@ -18,7 +19,7 @@ export interface BreadcrumbItem {
 @Component({
   selector: 'storybook-title-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UiButtonComponent],
   templateUrl: './title-bar.component.html',
   styleUrls: ['./title-bar.component.css'],
 })

@@ -147,29 +147,3 @@ export const IconOnly: Story = {
   args: { type: 'Primary', size: 'Medium', showLabel: false, leftIcon: true },
 };
 
-// ── All Sizes ──
-/** All three sizes side by side. */
-export const AllSizes: Story = {
-  render: () => ({
-    template: `
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <storybook-ui-button type="Primary" size="Small"  label="Small"></storybook-ui-button>
-        <storybook-ui-button type="Primary" size="Medium" label="Medium"></storybook-ui-button>
-        <storybook-ui-button type="Primary" size="Large"  label="Large"></storybook-ui-button>
-      </div>
-    `,
-  }),
-};
-
-/** All three types side by side. */
-export const AllTypes: Story = {
-  render: () => ({
-    template: `
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <storybook-ui-button type="Primary"   size="Medium" label="Primary"></storybook-ui-button>
-        <storybook-ui-button type="Secondary" size="Medium" label="Secondary"></storybook-ui-button>
-        <storybook-ui-button type="Text"      size="Medium" label="Text"></storybook-ui-button>
-      </div>
-    `,
-  }),
-};

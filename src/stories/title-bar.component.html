@@ -94,17 +94,17 @@
 
     <!-- Text Button -->
     @if (textButton) {
-      <button class="tb__btn tb__btn--text" (click)="textButtonClick.emit()">{{ textButtonLabel }}</button>
+      <storybook-ui-button type="Text" size="Medium" [label]="textButtonLabel" (clicked)="textButtonClick.emit()" />
     }
 
     <!-- Primary Button -->
     @if (primaryButton) {
-      <button class="tb__btn tb__btn--primary" (click)="primaryButtonClick.emit()">{{ primaryButtonLabel }}</button>
+      <storybook-ui-button type="Primary" size="Medium" [label]="primaryButtonLabel" (clicked)="primaryButtonClick.emit()" />
     }
 
     <!-- Secondary Button -->
     @if (secondaryButton) {
-      <button class="tb__btn tb__btn--secondary" (click)="secondaryButtonClick.emit()">{{ secondaryButtonLabel }}</button>
+      <storybook-ui-button type="Secondary" size="Medium" [label]="secondaryButtonLabel" (clicked)="secondaryButtonClick.emit()" />
     }
 
   </div>
