@@ -15,6 +15,9 @@ const meta: Meta<RectangleComponent> = {
       control: 'select',
       options: ['Default', 'Red'],
     },
+    icon: {
+      control: 'boolean',
+    },
   },
 };
 
@@ -24,11 +27,20 @@ type Story = StoryObj<RectangleComponent>;
 export const Default: Story = {
   args: {
     property1: 'Default',
+    icon: true,
+  },
+};
+
+export const DefaultNoIcon: Story = {
+  args: {
+    property1: 'Default',
+    icon: false,
   },
 };
 
 export const Red: Story = {
   args: {
     property1: 'Red',
+    icon: true,
   },
 };
