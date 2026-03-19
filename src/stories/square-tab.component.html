@@ -19,31 +19,27 @@
   }
 
   <!-- Tooltip left (M + S, shown on hover) -->
-  @if (tooltipLeft) {
-    <div class="sq-tab__tooltip sq-tab__tooltip--left">
-      <div class="sq-tab__tooltip-content">
-        <span class="sq-tab__tooltip-small">{{ tooltipSmallLabel }}</span>
-        <span class="sq-tab__tooltip-heading">{{ tooltipHeading }}</span>
-        <span class="sq-tab__tooltip-message">{{ tooltipMessage }}</span>
-      </div>
-      <div class="sq-tab__tooltip-arrow sq-tab__tooltip-arrow--right">
-        <img [src]="arrowLeft" alt="" />
-      </div>
-    </div>
+  @if (showTooltip && tooltipSide === 'left') {
+    <storybook-tooltip
+      class="sq-tab__tooltip sq-tab__tooltip--left"
+      [arrowSide]="tooltipArrowSide"
+      [style]="tooltipStyle"
+      [smallLabel]="tooltipSmallLabel"
+      [heading]="tooltipHeading"
+      [message]="tooltipMessage"
+    />
   }
 
   <!-- Tooltip right (M + S, shown on hover) -->
-  @if (tooltipRight) {
-    <div class="sq-tab__tooltip sq-tab__tooltip--right">
-      <div class="sq-tab__tooltip-arrow sq-tab__tooltip-arrow--left">
-        <img [src]="arrowRight" alt="" />
-      </div>
-      <div class="sq-tab__tooltip-content">
-        <span class="sq-tab__tooltip-small">{{ tooltipSmallLabel }}</span>
-        <span class="sq-tab__tooltip-heading">{{ tooltipHeading }}</span>
-        <span class="sq-tab__tooltip-message">{{ tooltipMessage }}</span>
-      </div>
-    </div>
+  @if (showTooltip && tooltipSide === 'right') {
+    <storybook-tooltip
+      class="sq-tab__tooltip sq-tab__tooltip--right"
+      [arrowSide]="tooltipArrowSide"
+      [style]="tooltipStyle"
+      [smallLabel]="tooltipSmallLabel"
+      [heading]="tooltipHeading"
+      [message]="tooltipMessage"
+    />
   }
 
 </div>

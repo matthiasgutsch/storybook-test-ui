@@ -1,0 +1,43 @@
+<div
+  class="tooltip"
+  [class.tooltip--horizontal]="isHorizontal"
+  [class.tooltip--vertical]="!isHorizontal"
+  [style.background-color]="bgColor"
+>
+
+  <!-- Arrow on Left or Top -->
+  @if (arrowFirst) {
+    <span
+      class="tooltip__arrow"
+      [class.tooltip__arrow--top]="arrowSide === 'Top'"
+      [class.tooltip__arrow--left]="arrowSide === 'Left'"
+    >
+      <img [src]="arrowSrc" alt="" />
+    </span>
+  }
+
+  <!-- Content -->
+  <div class="tooltip__content">
+    @if (showSmallLabel && smallLabel) {
+      <span class="tooltip__small-label">{{ smallLabel }}</span>
+    }
+    @if (showHeading && heading) {
+      <span class="tooltip__heading">{{ heading }}</span>
+    }
+    @if (showMessage && message) {
+      <span class="tooltip__message">{{ message }}</span>
+    }
+  </div>
+
+  <!-- Arrow on Right or Bottom -->
+  @if (!arrowFirst) {
+    <span
+      class="tooltip__arrow"
+      [class.tooltip__arrow--bottom]="arrowSide === 'Bottom'"
+      [class.tooltip__arrow--right]="arrowSide === 'Right'"
+    >
+      <img [src]="arrowSrc" alt="" />
+    </span>
+  }
+
+</div>

@@ -53,6 +53,12 @@ Size L supports a text label; M and S show a tooltip on hover.
       description: 'Side the tooltip appears on hover (M and S only).',
       table: { defaultValue: { summary: 'right' } },
     },
+    tooltipStyle: {
+      control: 'inline-radio',
+      options: ['Neutral', 'Alert', 'Success'],
+      description: 'Tooltip visual style.',
+      table: { defaultValue: { summary: 'Neutral' } },
+    },
     tooltipSmallLabel: {
       control: 'text',
       description: 'Tooltip small label text.',

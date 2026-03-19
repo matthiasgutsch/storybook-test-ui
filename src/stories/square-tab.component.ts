@@ -1,11 +1,10 @@
 import { Component, Input, HostListener } from '@angular/core';
+import { TooltipComponent, TooltipStyle } from './tooltip.component';
 
 export type SquareTabSize   = 'L' | 'M' | 'S';
 export type SquareTabStatus = 'Default' | 'Active' | 'Hover' | 'Disabled';
 
-const ICON_MASK   = 'https://www.figma.com/api/mcp/asset/93cb51c2-4f62-4764-9c12-48cb85cef5f9';
-const ARROW_LEFT  = 'https://www.figma.com/api/mcp/asset/32f309cf-7d17-488f-9a09-3f331971c66a';
-const ARROW_RIGHT = 'https://www.figma.com/api/mcp/asset/b6c6a5c3-e7ff-4efc-91aa-555f6cb63ad7';
+const ICON_MASK = 'https://www.figma.com/api/mcp/asset/93cb51c2-4f62-4764-9c12-48cb85cef5f9';
 
 /**
  * Square Tab component — icon-based navigation tab used in vertical tab rails.
@@ -13,12 +12,12 @@ const ARROW_RIGHT = 'https://www.figma.com/api/mcp/asset/b6c6a5c3-e7ff-4efc-91aa
  * Supports three sizes (L, M, S) and four statuses (Default, Active, Hover, Disabled).
  * Hover and Active states are driven interactively via mouse events.
  * Size L shows an optional text label beneath the icon.
- * Sizes M and S show a tooltip automatically on hover.
+ * Sizes M and S show a Tooltip automatically on hover.
  */
 @Component({
   selector: 'storybook-square-tab',
   standalone: true,
-  imports: [],
+  imports: [TooltipComponent],
   templateUrl: './square-tab.component.html',
   styleUrls: ['./square-tab.component.css'],
 })
@@ -35,8 +34,11 @@ export class SquareTabComponent {
   /** Show label (size L only) */
   @Input() showLabel = true;
 
-  /** Tooltip position preference for M and S (auto-shown on hover) */
+  /** Side the tooltip appears on hover (M and S only) */
   @Input() tooltipSide: 'left' | 'right' = 'right';
+
+  /** Tooltip visual style */
+  @Input() tooltipStyle: TooltipStyle = 'Neutral';
 
   /** Tooltip small label text */
   @Input() tooltipSmallLabel = 'Small Label';
@@ -50,9 +52,7 @@ export class SquareTabComponent {
   private _hovered = false;
   private _active  = false;
 
-  readonly iconMask   = ICON_MASK;
-  readonly arrowLeft  = ARROW_LEFT;
-  readonly arrowRight = ARROW_RIGHT;
+  readonly iconMask = ICON_MASK;
 
   @HostListener('mouseenter')
   onMouseEnter(): void {
@@ -102,11 +102,8 @@ export class SquareTabComponent {
     return (this.size === 'M' || this.size === 'S') && this._hovered;
   }
 
-  get tooltipLeft(): boolean {
-    return this.showTooltip && this.tooltipSide === 'left';
-  }
-
-  get tooltipRight(): boolean {
-    return this.showTooltip && this.tooltipSide === 'right';
+  /** Arrow side for the Tooltip: opposite of tooltipSide so it points toward the tab */
+  get tooltipArrowSide(): 'Left' | 'Right' {
+    return this.tooltipSide === 'right' ? 'Left' : 'Right';
   }
 }
