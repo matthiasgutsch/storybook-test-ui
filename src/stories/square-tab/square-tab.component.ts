@@ -1,5 +1,5 @@
 import { Component, Input, HostListener } from '@angular/core';
-import { TooltipComponent, TooltipStyle } from './tooltip.component';
+import { TooltipComponent, TooltipStyle } from '../tooltip/tooltip.component';
 
 export type SquareTabSize   = 'L' | 'M' | 'S';
 export type SquareTabStatus = 'Default' | 'Active' | 'Hover' | 'Disabled';

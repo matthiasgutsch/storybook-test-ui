@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UiButtonComponent } from './ui-button.component';
+import { UiButtonComponent } from '../ui-button/ui-button.component';
 
 export type TitleBarType = 'White' | 'Transparent';
 

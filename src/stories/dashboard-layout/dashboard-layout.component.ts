@@ -1,9 +1,9 @@
 // dashboard-layout.component.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CardComponent } from './card.component';
-import { SidebarComponent } from './sidebar.component';
-import { TitleBarComponent } from './title-bar.component';
+import { CardComponent } from '../card/card.component';
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { TitleBarComponent } from '../title-bar/title-bar.component';
 
 @Component({
   selector: 'app-dashboard-layout',
