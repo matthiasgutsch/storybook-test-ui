@@ -1,0 +1,234 @@
+:host {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── Shell ── */
+.tb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 16px 40px;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.tb--white       { background: #fff; }
+.tb--transparent { background: transparent; }
+
+/* ── Left Side ── */
+.tb__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── Icon Buttons ── */
+.tb__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.tb__icon-btn:hover { opacity: 0.7; }
+
+/* ── Breadcrumb ── */
+.tb__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 40px;
+}
+
+.tb__breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0 4px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #d7192f;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.tb__breadcrumb-link:hover { text-decoration: underline; }
+
+.tb__breadcrumb-sep {
+  display: flex;
+  align-items: center;
+  color: #c8c9c7;
+}
+
+.tb__breadcrumb-current {
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+/* ── Title Group ── */
+.tb__title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tb__title {
+  font-size: 19.2px;
+  font-weight: 700;
+  line-height: 28.8px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* ── Tag Badge ── */
+.tb__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 8px;
+  background: #fecd32;
+  border-radius: 4px;
+  font-size: 11.11px;
+  font-weight: 700;
+  line-height: 16.67px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* ── Right Side ── */
+.tb__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── Published ── */
+.tb__published {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tb__calibrated-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  background: #e0f1cb;
+  border: 1px solid #639522;
+  border-radius: 2px;
+  font-size: 13.33px;
+  font-weight: 700;
+  color: #639522;
+  white-space: nowrap;
+}
+
+.tb__switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.tb__switch-track {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  background: #97999b;
+  border: 1px solid #7a7c7e;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tb__switch-track--on {
+  background: #d7192f;
+  border-color: #a61121;
+}
+
+.tb__switch-knob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #7a7c7e;
+  transition: left 0.2s ease, border-color 0.2s ease;
+}
+
+.tb__switch-knob--on {
+  left: 24px;
+  border-color: #a61121;
+}
+
+.tb__switch-label {
+  font-size: 11.11px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.tb__divider {
+  width: 1px;
+  height: 40px;
+  background: #c8c9c7;
+  opacity: 0.5;
+}
+
+/* ── Buttons ── */
+.tb__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 1px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: opacity 0.15s ease;
+}
+
+.tb__btn:hover { opacity: 0.85; }
+
+.tb__btn--text {
+  background: none;
+  border: none;
+  color: #d7192f;
+  padding: 0;
+}
+
+.tb__btn--primary {
+  background: #d7192f;
+  color: #fff;
+  box-shadow: 0 5px 9px 0 rgba(166, 17, 33, 0.4);
+}
+
+.tb__btn--secondary {
+  background: #fff;
+  color: #d7192f;
+  border: 1px solid #d7192f;
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
+}
