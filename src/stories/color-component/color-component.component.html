@@ -1,0 +1,77 @@
+<!-- ── 1 Color ── -->
+@if (is1Color) {
+  <div class="cc cc--1color">
+    <storybook-color-swatch
+      [color]="color1"
+      [labelLeft]="labelLeft"
+      [labelLeftText]="labelLeftText"
+      [labelRight]="labelRight"
+      [labelRightText]="labelRightText"
+    />
+  </div>
+}
+
+<!-- ── 2 Colors ── -->
+@if (is2Colors) {
+  <div class="cc cc--2colors">
+    <div class="cc__row">
+      <storybook-color-swatch [color]="color1" [labelLeft]="labelLeft" [labelLeftText]="labelLeftText" />
+      <storybook-color-swatch [color]="color2" [labelRight]="labelRight" [labelRightText]="labelRightText" />
+    </div>
+    @if (doubleCompare) {
+      <div class="cc__row cc__row--compare">
+        <storybook-color-swatch [color]="color2" />
+        <storybook-color-swatch [color]="color1" />
+      </div>
+    }
+  </div>
+}
+
+<!-- ── On White / On Black ── -->
+@if (isOwOb) {
+  <div class="cc cc--owob">
+    <div class="cc__half cc__half--white">
+      <storybook-color-swatch
+        [color]="color3"
+        [labelLeft]="labelLeft"
+        [labelLeftText]="labelLeftText"
+        [labelRight]="labelRight"
+        [labelRightText]="labelRightText"
+      />
+    </div>
+    <div class="cc__half cc__half--black">
+      <storybook-color-swatch
+        [color]="color4"
+        [labelLeft]="labelLeft"
+        [labelLeftText]="labelLeftText"
+        [labelRight]="labelRight"
+        [labelRightText]="labelRightText"
+      />
+    </div>
+  </div>
+}
+
+<!-- ── On White / On Black Compare ── -->
+@if (isOwObCompare) {
+  <div class="cc cc--owob-compare">
+    <div class="cc__half cc__half--white">
+      <storybook-color-swatch [color]="color3" />
+      <storybook-color-swatch [color]="color4" />
+    </div>
+    <div class="cc__half cc__half--black">
+      <storybook-color-swatch mode="empty" />
+      <storybook-color-swatch [color]="color2" />
+    </div>
+    @if (withRecipe) {
+      <div class="cc__recipe">
+        <storybook-color-swatch
+          [color]="color1"
+          [labelLeft]="labelLeft"
+          [labelLeftText]="labelLeftText"
+          [labelRight]="labelRight"
+          [labelRightText]="labelRightText"
+        />
+      </div>
+    }
+  </div>
+}
