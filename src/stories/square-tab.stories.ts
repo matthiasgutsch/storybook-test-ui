@@ -8,8 +8,17 @@ const meta: Meta<SquareTabComponent> = {
   parameters: {
     docs: {
       description: {
-        component:
-          'Icon-based square tab used in vertical tab rails. Three sizes (L, M, S) × four statuses (Default, Active, Hover, Disabled). Size L supports a text label; M and S support optional left/right tooltips.',
+        component: `
+Icon-based square tab used in vertical tab rails.
+
+**Interactions:**
+- **Hover** — automatically switches to Hover state and shows tooltip (M and S sizes)
+- **Click** — toggles Active state on/off
+- **Disabled** — blocks all interactions
+
+Three sizes (L, M, S) × four statuses (Default, Active, Hover, Disabled).
+Size L supports a text label; M and S show a tooltip on hover.
+        `.trim(),
       },
     },
   },
@@ -24,7 +33,7 @@ const meta: Meta<SquareTabComponent> = {
     status: {
       control: 'select',
       options: ['Default', 'Active', 'Hover', 'Disabled'],
-      description: 'Visual status.',
+      description: 'Initial visual status. Use Disabled to block interactions.',
       table: { defaultValue: { summary: 'Default' } },
     },
     label: {
@@ -37,15 +46,11 @@ const meta: Meta<SquareTabComponent> = {
       description: 'Show or hide the label (size L only).',
       table: { defaultValue: { summary: 'true' } },
     },
-    tooltipLeft: {
-      control: 'boolean',
-      description: 'Show tooltip on the left side (M and S only).',
-      table: { defaultValue: { summary: 'false' } },
-    },
-    tooltipRight: {
-      control: 'boolean',
-      description: 'Show tooltip on the right side (M and S only).',
-      table: { defaultValue: { summary: 'false' } },
+    tooltipSide: {
+      control: 'inline-radio',
+      options: ['left', 'right'],
+      description: 'Side the tooltip appears on hover (M and S only).',
+      table: { defaultValue: { summary: 'right' } },
     },
     tooltipSmallLabel: {
       control: 'text',
@@ -68,66 +73,63 @@ const meta: Meta<SquareTabComponent> = {
 export default meta;
 type Story = StoryObj<SquareTabComponent>;
 
-/** Size L — Default state with label. */
+/** Size L — hover over to see hover state, click to toggle active. */
 export const LargeDefault: Story = {
   args: { size: 'L', status: 'Default', label: 'Label', showLabel: true },
 };
 
-/** Size L — Active state. */
+/** Size L — starts in Active state. Click to deactivate. */
 export const LargeActive: Story = {
   args: { size: 'L', status: 'Active', label: 'Label', showLabel: true },
 };
 
-/** Size L — Hover state. */
-export const LargeHover: Story = {
-  args: { size: 'L', status: 'Hover', label: 'Label', showLabel: true },
+/** Size L — no label shown. */
+export const LargeNoLabel: Story = {
+  args: { size: 'L', status: 'Default', showLabel: false },
 };
 
-/** Size L — Disabled state. */
+/** Size L — Disabled, no interactions. */
 export const LargeDisabled: Story = {
   args: { size: 'L', status: 'Disabled', label: 'Label', showLabel: true },
 };
 
-/** Size M — Default state. */
-export const MediumDefault: Story = {
-  args: { size: 'M', status: 'Default' },
-};
-
-/** Size M — Active state. */
-export const MediumActive: Story = {
-  args: { size: 'M', status: 'Active' },
-};
-
-/** Size M — with right tooltip. */
+/** Size M — hover to see hover state and tooltip on the right. */
 export const MediumTooltipRight: Story = {
   args: {
     size: 'M',
     status: 'Default',
-    tooltipRight: true,
+    tooltipSide: 'right',
     tooltipSmallLabel: 'Small Label',
     tooltipHeading: 'Heading / title',
     tooltipMessage: 'Message',
   },
 };
 
-/** Size S — Default state. */
-export const SmallDefault: Story = {
-  args: { size: 'S', status: 'Default' },
-};
-
-/** Size S — Active state. */
-export const SmallActive: Story = {
-  args: { size: 'S', status: 'Active' },
-};
-
-/** Size S — with left tooltip. */
-export const SmallTooltipLeft: Story = {
+/** Size M — tooltip appears on the left side on hover. */
+export const MediumTooltipLeft: Story = {
   args: {
-    size: 'S',
+    size: 'M',
     status: 'Default',
-    tooltipLeft: true,
+    tooltipSide: 'left',
     tooltipSmallLabel: 'Small Label',
     tooltipHeading: 'Heading',
     tooltipMessage: 'Message',
   },
+};
+
+/** Size S — hover to see tooltip on the right. */
+export const SmallTooltipRight: Story = {
+  args: {
+    size: 'S',
+    status: 'Default',
+    tooltipSide: 'right',
+    tooltipSmallLabel: 'Small Label',
+    tooltipHeading: 'Heading',
+    tooltipMessage: 'Message',
+  },
+};
+
+/** Size S — Disabled state. */
+export const SmallDisabled: Story = {
+  args: { size: 'S', status: 'Disabled' },
 };
