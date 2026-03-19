@@ -3,24 +3,26 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CardComponent } from './card.component';
 import { SidebarComponent } from './sidebar.component';
-import { HeaderComponent } from './header.component';
+import { TitleBarComponent } from './title-bar.component';
 
 @Component({
   selector: 'app-dashboard-layout',
   standalone: true,
-  imports: [CommonModule, SidebarComponent, HeaderComponent, CardComponent],
+  imports: [CommonModule, SidebarComponent, TitleBarComponent, CardComponent],
   template: `
     <div class="dashboard">
       <app-sidebar></app-sidebar>
 
       <main class="content">
-        <storybook-header></storybook-header>
+        <storybook-title-bar type="White" title="Dashboard" [backButton]="false" [primaryButton]="true" primaryButtonLabel="Save"></storybook-title-bar>
 
-        <section class="grid mt-4">
+        <div class="grid-wrapper">
+        <section class="grid">
           <app-card title="Sales"></app-card>
           <app-card title="Users"></app-card>
           <app-card title="Performance"></app-card>
         </section>
+        </div>
       </main>
     </div>
   `,
@@ -33,6 +35,12 @@ import { HeaderComponent } from './header.component';
 
       .content {
         flex: 1;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .grid-wrapper {
         padding: 36px;
       }
 
