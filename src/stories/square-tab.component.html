@@ -18,22 +18,12 @@
     <span class="sq-tab__label" [style.color]="labelColor">{{ label }}</span>
   }
 
-  <!-- Tooltip left (M + S, shown on hover) -->
-  @if (showTooltip && tooltipSide === 'left') {
+  <!-- Tooltip (M + S, shown on hover) -->
+  @if (showTooltip) {
     <storybook-tooltip
-      class="sq-tab__tooltip sq-tab__tooltip--left"
-      [arrowSide]="tooltipArrowSide"
-      [style]="tooltipStyle"
-      [smallLabel]="tooltipSmallLabel"
-      [heading]="tooltipHeading"
-      [message]="tooltipMessage"
-    />
-  }
-
-  <!-- Tooltip right (M + S, shown on hover) -->
-  @if (showTooltip && tooltipSide === 'right') {
-    <storybook-tooltip
-      class="sq-tab__tooltip sq-tab__tooltip--right"
+      class="sq-tab__tooltip"
+      [class.sq-tab__tooltip--left]="tooltipSide === 'left'"
+      [class.sq-tab__tooltip--right]="tooltipSide === 'right'"
       [arrowSide]="tooltipArrowSide"
       [style]="tooltipStyle"
       [smallLabel]="tooltipSmallLabel"
