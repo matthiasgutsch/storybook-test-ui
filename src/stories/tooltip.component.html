@@ -1,21 +1,8 @@
 <div
   class="tooltip"
-  [class.tooltip--horizontal]="isHorizontal"
-  [class.tooltip--vertical]="!isHorizontal"
+  [class]="'tooltip tooltip--' + arrowSide.toLowerCase()"
   [style.background-color]="bgColor"
 >
-
-  <!-- Arrow on Left or Top -->
-  @if (arrowFirst) {
-    <span
-      class="tooltip__arrow"
-      [class.tooltip__arrow--top]="arrowSide === 'Top'"
-      [class.tooltip__arrow--left]="arrowSide === 'Left'"
-    >
-      <img [src]="arrowSrc" alt="" />
-    </span>
-  }
-
   <!-- Content -->
   <div class="tooltip__content">
     @if (showSmallLabel && smallLabel) {
@@ -29,15 +16,6 @@
     }
   </div>
 
-  <!-- Arrow on Right or Bottom -->
-  @if (!arrowFirst) {
-    <span
-      class="tooltip__arrow"
-      [class.tooltip__arrow--bottom]="arrowSide === 'Bottom'"
-      [class.tooltip__arrow--right]="arrowSide === 'Right'"
-    >
-      <img [src]="arrowSrc" alt="" />
-    </span>
-  }
-
+  <!-- Arrow — absolutely positioned, color inherits from parent via currentColor trick -->
+  <span class="tooltip__arrow" [style.background-color]="bgColor"></span>
 </div>

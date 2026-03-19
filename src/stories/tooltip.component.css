@@ -4,31 +4,22 @@
 
 /* ── Shell ── */
 .tooltip {
+  position: relative;
   display: flex;
+  flex-direction: column;
   width: 240px;
   border-radius: 1px;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-}
-
-.tooltip--horizontal {
-  flex-direction: row;
-  align-items: center;
-}
-
-.tooltip--vertical {
-  flex-direction: column;
-  align-items: center;
+  overflow: visible;
 }
 
 /* ── Content ── */
 .tooltip__content {
   display: flex;
   flex-direction: column;
-  flex: 1;
   padding: 16px;
-  min-width: 0;
 }
 
 .tooltip__small-label {
@@ -53,44 +44,48 @@
   color: #3e4144;
 }
 
-/* ── Arrow ── */
+/* ── Arrow base ── */
+/* Arrow is 16px × 8px per Figma spec; rotated 90deg = 8px wide × 16px tall for Left/Right */
 .tooltip__arrow {
-  position: relative;
-  flex-shrink: 0;
-}
-
-/* Horizontal arrows — zero-width container, image overflows */
-.tooltip__arrow--left,
-.tooltip__arrow--right {
-  width: 0;
-  height: 48px;
-}
-
-.tooltip__arrow--left img,
-.tooltip__arrow--right img {
   position: absolute;
-  top: 0;
-  height: 100%;
-  display: block;
 }
 
-.tooltip__arrow--left img  { left: -8px; }
-.tooltip__arrow--right img { right: -8px; }
-
-/* Vertical arrows — zero-height container, image overflows */
-.tooltip__arrow--top,
-.tooltip__arrow--bottom {
-  width: 48px;
-  height: 0;
+/* Arrow pointing RIGHT (tooltip body is to the left) */
+.tooltip--right .tooltip__arrow {
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 16px;
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 
-.tooltip__arrow--top img,
-.tooltip__arrow--bottom img {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  display: block;
+/* Arrow pointing LEFT (tooltip body is to the right) */
+.tooltip--left .tooltip__arrow {
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 16px;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
 
-.tooltip__arrow--top img    { top: -8px; }
-.tooltip__arrow--bottom img { bottom: -8px; }
+/* Arrow pointing UP (tooltip body is below) */
+.tooltip--top .tooltip__arrow {
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 8px;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+/* Arrow pointing DOWN (tooltip body is above) */
+.tooltip--bottom .tooltip__arrow {
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 8px;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
