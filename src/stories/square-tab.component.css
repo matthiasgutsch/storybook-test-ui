@@ -93,13 +93,30 @@
 }
 
 /* ── Tooltip (storybook-tooltip host) ── */
+@keyframes tooltip-in-right {
+  from { opacity: 0; transform: translateY(-50%) translateX(-6px); }
+  to   { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+
+@keyframes tooltip-in-left {
+  from { opacity: 0; transform: translateY(-50%) translateX(6px); }
+  to   { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+
 .sq-tab__tooltip {
   position: absolute;
+  top: 50%;
   z-index: 1000;
 }
 
-.sq-tab--m .sq-tab__tooltip { top: 16px; }
-.sq-tab--s .sq-tab__tooltip { top: 4px; }
+.sq-tab__tooltip--right {
+  left: calc(100% + 8px);
+  transform: translateY(-50%);
+  animation: tooltip-in-right 0.18s ease-out forwards;
+}
 
-.sq-tab__tooltip--left  { right: calc(100% + 8px); }
-.sq-tab__tooltip--right { left:  calc(100% + 8px); }
+.sq-tab__tooltip--left {
+  right: calc(100% + 8px);
+  transform: translateY(-50%);
+  animation: tooltip-in-left 0.18s ease-out forwards;
+}
