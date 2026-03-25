@@ -1,6 +1,6 @@
 :host {
   display: block;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--dcui-font-family);
 }
 
 /* ── Shell ── */
@@ -12,10 +12,10 @@
   padding: 16px 40px;
   box-sizing: border-box;
   width: 100%;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid var(--dcui-color-core-neutral-pale);
 }
 
-.tb--white       { background: #fff; }
+.tb--white       { background: var(--dcui-color-core-global-white); }
 .tb--transparent { background: transparent; }
 
 /* ── Left Side ── */
@@ -54,10 +54,10 @@
   border: none;
   padding: 0 4px;
   cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #d7192f;
+  font-family: var(--dcui-font-family);
+  font-size: var(--dcui-type-scale-base-size);
+  font-weight: var(--dcui-font-weight-bold);
+  color: var(--dcui-color-core-brand-primary);
   line-height: 24px;
   white-space: nowrap;
 }
@@ -67,14 +67,14 @@
 .tb__breadcrumb-sep {
   display: flex;
   align-items: center;
-  color: #c8c9c7;
+  color: var(--dcui-color-core-neutral-light);
 }
 
 .tb__breadcrumb-current {
   padding: 0 4px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #000;
+  font-size: var(--dcui-type-scale-base-size);
+  font-weight: var(--dcui-font-weight-bold);
+  color: var(--dcui-color-core-global-foreground);
   line-height: 24px;
   white-space: nowrap;
 }
@@ -87,10 +87,10 @@
 }
 
 .tb__title {
-  font-size: 19.2px;
-  font-weight: 700;
+  font-size: var(--dcui-type-scale-l-size);
+  font-weight: var(--dcui-font-weight-bold);
   line-height: 28.8px;
-  color: #000;
+  color: var(--dcui-color-core-global-foreground);
   white-space: nowrap;
 }
 
@@ -101,12 +101,12 @@
   justify-content: center;
   height: 20px;
   padding: 0 8px;
-  background: #fecd32;
+  background: var(--dcui-color-core-alert-primary);
   border-radius: 4px;
-  font-size: 11.11px;
-  font-weight: 700;
+  font-size: var(--dcui-type-scale-xs-size);
+  font-weight: var(--dcui-font-weight-bold);
   line-height: 16.67px;
-  color: #000;
+  color: var(--dcui-color-core-global-foreground);
   white-space: nowrap;
 }
 
@@ -129,12 +129,12 @@
   align-items: center;
   height: 24px;
   padding: 0 8px;
-  background: #e0f1cb;
-  border: 1px solid #639522;
+  background: var(--dcui-color-core-success-pale);
+  border: 1px solid var(--dcui-color-core-success-dark);
   border-radius: 2px;
-  font-size: 13.33px;
-  font-weight: 700;
-  color: #639522;
+  font-size: var(--dcui-type-scale-s-size);
+  font-weight: var(--dcui-font-weight-bold);
+  color: var(--dcui-color-core-success-dark);
   white-space: nowrap;
 }
 
@@ -150,15 +150,16 @@
   width: 48px;
   height: 24px;
   border-radius: 12px;
-  background: #97999b;
+  background: var(--dcui-color-core-neutral-primary);
   border: 1px solid #7a7c7e;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing),
+              border-color var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing);
   flex-shrink: 0;
 }
 
 .tb__switch-track--on {
-  background: #d7192f;
-  border-color: #a61121;
+  background: var(--dcui-color-core-brand-primary);
+  border-color: var(--dcui-color-core-brand-dark);
 }
 
 .tb__switch-knob {
@@ -168,28 +169,28 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--dcui-color-core-global-white);
   border: 1px solid #7a7c7e;
-  transition: left 0.2s ease, border-color 0.2s ease;
+  transition: left var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing),
+              border-color var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing);
 }
 
 .tb__switch-knob--on {
   left: 24px;
-  border-color: #a61121;
+  border-color: var(--dcui-color-core-brand-dark);
 }
 
 .tb__switch-label {
-  font-size: 11.11px;
-  font-weight: 700;
+  font-size: var(--dcui-type-scale-xs-size);
+  font-weight: var(--dcui-font-weight-bold);
   line-height: 24px;
-  color: #000;
+  color: var(--dcui-color-core-global-foreground);
   white-space: nowrap;
 }
 
 .tb__divider {
   width: 1px;
   height: 40px;
-  background: #c8c9c7;
+  background: var(--dcui-color-core-neutral-light);
   opacity: 0.5;
 }
-

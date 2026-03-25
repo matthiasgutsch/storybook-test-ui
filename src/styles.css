@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+/* ─────────────────────────────────────────────────────────────────
+   Design-system tokens — CSS custom properties
+   Source: dcui SCSS token map ($dcui-*)
+   ───────────────────────────────────────────────────────────────── */
+:root {
+  /* ── Transitions ── */
+  --dcui-transition-state-default-duration: 0.2s;
+  --dcui-transition-state-default-easing: ease-in-out;
+  --dcui-transition-state-active-duration: 0.05s;
+  --dcui-transition-state-active-easing: cubic-bezier(0.45, 0, 0.55, 1);
+  --dcui-transition-modal-to-visible-duration: 0.4s;
+  --dcui-transition-modal-to-visible-easing: cubic-bezier(0.33, 0.1, 0.68, 1);
+  --dcui-transition-modal-to-hidden-duration: 0.4s;
+  --dcui-transition-modal-to-hidden-easing: cubic-bezier(0.32, 0, 0.67, 0);
+
+  /* ── Global ── */
+  --dcui-color-core-global-white: #ffffff;
+  --dcui-color-core-global-black: #000000;
+  --dcui-color-core-global-foreground: #000000;
+  --dcui-color-core-global-foreground-on: #ffffff;
+  --dcui-color-core-global-background: #ffffff;
+  --dcui-color-core-global-background-on: #000000;
+
+  /* ── Brand ── */
+  --dcui-color-core-brand-dark: #a61121;
+  --dcui-color-core-brand-dark-on: #ffffff;
+  --dcui-color-core-brand-primary: #d7172f;
+  --dcui-color-core-brand-primary-on: #ffffff;
+  --dcui-color-core-brand-light: #ef6577;
+  --dcui-color-core-brand-light-on: #000000;
+  --dcui-color-core-brand-pale: #fce0e4;
+  --dcui-color-core-brand-pale-on: #000000;
+
+  /* ── Neutral ── */
+  --dcui-color-core-neutral-dark: #53565a;
+  --dcui-color-core-neutral-dark-on: #ffffff;
+  --dcui-color-core-neutral-primary: #97999b;
+  --dcui-color-core-neutral-primary-on: #000000;
+  --dcui-color-core-neutral-light: #c8c9c7;
+  --dcui-color-core-neutral-light-on: #000000;
+  --dcui-color-core-neutral-pale: #e6e6e6;
+  --dcui-color-core-neutral-pale-on: #000000;
+  --dcui-color-core-neutral-offwhite: #f5f5f5;
+  --dcui-color-core-neutral-offwhite-on: #000000;
+
+  /* ── Success ── */
+  --dcui-color-core-success-dark: #639522;
+  --dcui-color-core-success-dark-on: #000000;
+  --dcui-color-core-success-primary: #85c72e;
+  --dcui-color-core-success-primary-on: #000000;
+  --dcui-color-core-success-light: #c1e396;
+  --dcui-color-core-success-light-on: #000000;
+  --dcui-color-core-success-pale: #e0f1cb;
+  --dcui-color-core-success-pale-on: #000000;
+
+  /* ── Alert ── */
+  --dcui-color-core-alert-dark: #be9925;
+  --dcui-color-core-alert-dark-on: #000000;
+  --dcui-color-core-alert-primary: #fecd32;
+  --dcui-color-core-alert-primary-on: #000000;
+  --dcui-color-core-alert-light: #fee698;
+  --dcui-color-core-alert-light-on: #000000;
+  --dcui-color-core-alert-pale: #fff3cc;
+  --dcui-color-core-alert-pale-on: #000000;
+
+  /* ── Extended palette ── */
+  --dcui-color-extended-aqua-dark: #037783;
+  --dcui-color-extended-aqua-medium: #00bdd0;
+  --dcui-color-extended-aqua-light: #9af4fd;
+
+  /* ── Surface ── */
+  --dcui-surface-color-base: #ffffff;
+  --dcui-surface-color-divided: #e6e6e6;
+  --dcui-surface-corner: 1px;
+  --dcui-surface-gap: 0.25rem;
+
+  /* ── Shadows (composite) ── */
+  --dcui-shadows-elevation-high-y: 5px;
+  --dcui-shadows-elevation-high-blur: 9px;
+  --dcui-shadows-elevation-high-opacity: 0.4;
+  --dcui-shadows-elevation-low-y: 3px;
+  --dcui-shadows-elevation-low-blur: 7px;
+  --dcui-shadows-elevation-low-opacity: 0.2;
+  --dcui-shadows-color-brand: #a61121;
+  --dcui-shadows-color-neutral: #53565a;
+  /* ready-to-use shadow values */
+  --dcui-shadow-brand-high: 0 5px 9px 0 rgba(166, 17, 33, 0.4);
+  --dcui-shadow-neutral-high: 0 5px 9px 0 rgba(0, 0, 0, 0.4);
+  --dcui-shadow-neutral-low: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
+
+  /* ── Typography ── */
+  --dcui-font-family: "Roboto", Arial, sans-serif;
+  --dcui-font-weight-bold: 700;
+  --dcui-font-weight-regular: 300;
+
+  --dcui-type-scale-xs-size: 0.694rem; /* ≈ 11.11px */
+  --dcui-type-scale-xs-line-height: 1.5;
+  --dcui-type-scale-s-size: 0.833rem; /* ≈ 13.33px */
+  --dcui-type-scale-s-line-height: 1.5;
+  --dcui-type-scale-base-size: 1rem; /* 16px */
+  --dcui-type-scale-base-line-height: 1.5;
+  --dcui-type-scale-l-size: 1.2rem; /* ≈ 19.2px */
+  --dcui-type-scale-l-line-height: 1.5;
+  --dcui-type-scale-xl-size: 1.44rem;
+  --dcui-type-scale-xl-line-height: 1.5;
+
+  /* ── Grid ── */
+  --dcui-grid-size-0-5: 0.25rem;
+  --dcui-grid-size-1: 0.5rem;
+  --dcui-grid-size-2: 1rem;
+  --dcui-grid-size-3: 1.5rem;
+  --dcui-grid-size-4: 2rem;
+  --dcui-grid-size-5: 2.5rem;
+
+  /* ── Icons ── */
+  --dcui-icons-size-base: 1.25rem; /* 20px */
+  --dcui-icons-size-l: 1.563rem;
+}

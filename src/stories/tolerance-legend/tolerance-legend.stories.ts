@@ -18,12 +18,46 @@ Colour-coded tolerance bar with an optional indicator and tooltip.
 | **asymmetric** | green · yellow · red | 120 px |
 
 The **indicator** marks the current value position on the bar.
-The **tooltip** (Neutral, arrow-bottom) floats above the bar right-aligned.
+The **tooltip** (Neutral, arrow-bottom) floats above the indicator on hover with a slide-in animation.
+
+### Usage
+\`\`\`html
+<storybook-tolerance-legend
+  property1="symmetric"
+  [withIndicator]="true"
+  [withTooltip]="true"
+  tooltipSmallLabel="from 0,9 to 1,0"
+  tooltipHeading="Heading / title"
+  tooltipMessage="Message"
+/>
+\`\`\`
+
+### Inputs
+
+| Input | Type | Default | Description |
+|---|---|---|---|
+| \`property1\` | \`'symmetric' \\| 'asymmetric'\` | \`'symmetric'\` | Bar variant |
+| \`withIndicator\` | \`boolean\` | \`true\` | Show current-value indicator circle on the bar |
+| \`withTooltip\` | \`boolean\` | \`true\` | Enable tooltip (shown on bar hover) |
+| \`tooltipSmallLabel\` | \`string\` | \`'from 0,9 to 1,0'\` | Tooltip small label text |
+| \`tooltipHeading\` | \`string\` | \`'Heading / title'\` | Tooltip heading text |
+| \`tooltipMessage\` | \`string\` | \`'Message'\` | Tooltip message text |
         `.trim(),
       },
     },
   },
-  render: (args) => ({ props: { ...args } }),
+  render: (args) => ({
+    props: { ...args },
+    template: `
+<storybook-tolerance-legend
+  [property1]="property1"
+  [withIndicator]="withIndicator"
+  [withTooltip]="withTooltip"
+  [tooltipSmallLabel]="tooltipSmallLabel"
+  [tooltipHeading]="tooltipHeading"
+  [tooltipMessage]="tooltipMessage"
+/>`,
+  }),
   argTypes: {
     property1: {
       control: 'inline-radio',

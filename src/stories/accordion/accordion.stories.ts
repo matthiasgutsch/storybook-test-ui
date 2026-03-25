@@ -14,12 +14,41 @@ const meta: Meta<AccordionComponent> = {
     layout: 'centered',
     docs: {
       description: {
-        component:
-          'Accordion item with animated expand/collapse. Click the header to toggle. Use `<ng-content>` to project content into the body slot. Supports Default and Disabled states.',
+        component: `
+Accordion item with animated expand/collapse. Click the header to toggle.
+Use \`<ng-content>\` to project any content into the expanded body slot.
+
+### Usage
+\`\`\`html
+<storybook-accordion
+  title="Accordion Header"
+  [expanded]="false"
+  [disabled]="false"
+>
+  <!-- projected content goes here -->
+</storybook-accordion>
+\`\`\`
+
+### Inputs
+
+| Input | Type | Default | Description |
+|---|---|---|---|
+| \`title\` | \`string\` | \`'Accordion Header'\` | Header label text |
+| \`expanded\` | \`boolean\` | \`false\` | Start in expanded state |
+| \`disabled\` | \`boolean\` | \`false\` | Disable interaction |
+        `.trim(),
       },
     },
   },
-  render: (args) => ({ props: { ...args } }),
+  render: (args) => ({
+    props: { ...args },
+    template: `
+<storybook-accordion
+  [title]="title"
+  [expanded]="expanded"
+  [disabled]="disabled"
+/>`,
+  }),
   argTypes: {
     title: {
       control: 'text',

@@ -9,12 +9,54 @@ const meta: Meta<TooltipComponent> = {
     layout: 'centered',
     docs: {
       description: {
-        component:
-          'Tooltip with three styles (Neutral, Alert, Success) and four arrow positions (Top, Right, Bottom, Left). Content rows (small label, heading, message) can each be toggled independently.',
+        component: `
+Tooltip with three styles (Neutral, Alert, Success) and four arrow positions (Top, Right, Bottom, Left).
+Content rows (small label, heading, message) can each be toggled independently.
+
+### Usage
+\`\`\`html
+<storybook-tooltip
+  arrowSide="Right"
+  style="Alert"
+  smallLabel="Small Label"
+  heading="Heading / title"
+  message="Message"
+  [showSmallLabel]="true"
+  [showHeading]="true"
+  [showMessage]="true"
+/>
+\`\`\`
+
+### Inputs
+
+| Input | Type | Default | Description |
+|---|---|---|---|
+| \`arrowSide\` | \`'Top' \\| 'Right' \\| 'Bottom' \\| 'Left'\` | \`'Right'\` | Side the arrow appears on |
+| \`style\` | \`'Neutral' \\| 'Alert' \\| 'Success'\` | \`'Alert'\` | Visual style and background colour |
+| \`smallLabel\` | \`string\` | \`'Small Label'\` | Small label above the heading |
+| \`heading\` | \`string\` | \`'Heading / title'\` | Heading text |
+| \`message\` | \`string\` | \`'Message'\` | Body text |
+| \`showSmallLabel\` | \`boolean\` | \`true\` | Toggle small label row |
+| \`showHeading\` | \`boolean\` | \`true\` | Toggle heading row |
+| \`showMessage\` | \`boolean\` | \`true\` | Toggle message row |
+        `.trim(),
       },
     },
   },
-  render: (args) => ({ props: { ...args } }),
+  render: (args) => ({
+    props: { ...args },
+    template: `
+<storybook-tooltip
+  [arrowSide]="arrowSide"
+  [style]="style"
+  [smallLabel]="smallLabel"
+  [heading]="heading"
+  [message]="message"
+  [showSmallLabel]="showSmallLabel"
+  [showHeading]="showHeading"
+  [showMessage]="showMessage"
+/>`,
+  }),
   argTypes: {
     arrowSide: {
       control: 'inline-radio',

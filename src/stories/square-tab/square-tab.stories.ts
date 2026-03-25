@@ -19,11 +19,54 @@ Icon-based square tab used in vertical tab rails.
 
 Three sizes (L, M, S) × four statuses (Default, Active, Hover, Disabled).
 Size L supports a text label; M and S show a tooltip on hover.
+
+### Usage
+\`\`\`html
+<storybook-square-tab
+  size="L"
+  status="Default"
+  label="Label"
+  [showLabel]="true"
+  tooltipSide="right"
+  tooltipStyle="Neutral"
+  tooltipSmallLabel="Small Label"
+  tooltipHeading="Heading"
+  tooltipMessage="Message"
+/>
+\`\`\`
+
+### Inputs
+
+| Input | Type | Default | Description |
+|---|---|---|---|
+| \`size\` | \`'L' \\| 'M' \\| 'S'\` | \`'L'\` | Tab size |
+| \`status\` | \`'Default' \\| 'Active' \\| 'Hover' \\| 'Disabled'\` | \`'Default'\` | Initial visual status |
+| \`label\` | \`string\` | \`'Label'\` | Label text (size L only) |
+| \`showLabel\` | \`boolean\` | \`true\` | Show or hide label (size L only) |
+| \`tooltipSide\` | \`'left' \\| 'right'\` | \`'right'\` | Side tooltip appears on hover (M and S) |
+| \`tooltipStyle\` | \`'Neutral' \\| 'Alert' \\| 'Success'\` | \`'Neutral'\` | Tooltip visual style |
+| \`tooltipSmallLabel\` | \`string\` | \`'Small Label'\` | Tooltip small label text |
+| \`tooltipHeading\` | \`string\` | \`'Heading'\` | Tooltip heading text |
+| \`tooltipMessage\` | \`string\` | \`'Message'\` | Tooltip message text |
         `.trim(),
       },
     },
   },
-  render: (args) => ({ props: { ...args } }),
+  render: (args) => ({
+    props: { ...args },
+    template: `
+<storybook-square-tab
+  [size]="size"
+  [status]="status"
+  [label]="label"
+  [showLabel]="showLabel"
+  [tooltipSide]="tooltipSide"
+  [tooltipStyle]="tooltipStyle"
+  [tooltipSmallLabel]="tooltipSmallLabel"
+  [tooltipHeading]="tooltipHeading"
+  [tooltipMessage]="tooltipMessage"
+/>`,
+  }),
   argTypes: {
     size: {
       control: 'inline-radio',

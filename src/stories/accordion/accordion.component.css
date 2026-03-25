@@ -1,7 +1,7 @@
 :host {
   display: block;
   width: 540px;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--dcui-font-family);
 }
 
 /* ── Shell ── */
@@ -11,16 +11,16 @@
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid #e6e6e6;
-  background: #fff;
+  border: 1px solid var(--dcui-color-core-neutral-pale);
+  background: var(--dcui-color-core-global-white);
 }
 
 .accordion--expanded {
-  background: #fff;
+  background: var(--dcui-color-core-global-white);
 }
 
 .accordion--disabled {
-  background: #f5f5f5;
+  background: var(--dcui-color-core-neutral-offwhite);
 }
 
 /* ── Header ── */
@@ -32,39 +32,39 @@
   height: 48px;
   padding: 12px 16px;
   border: none;
-  background: #fff;
+  background: var(--dcui-color-core-global-white);
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
-  transition: background 0.2s ease;
+  transition: background var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing);
 }
 
 .accordion--expanded .accordion__header {
-  background: #f5f5f5;
-  border-bottom: 1px solid #e6e6e6;
+  background: var(--dcui-color-core-neutral-offwhite);
+  border-bottom: 1px solid var(--dcui-color-core-neutral-pale);
 }
 
 .accordion--disabled .accordion__header {
-  background: #f5f5f5;
+  background: var(--dcui-color-core-neutral-offwhite);
   cursor: not-allowed;
 }
 
 .accordion__header:focus-visible {
-  outline: 2px solid #d7192f;
+  outline: 2px solid var(--dcui-color-core-brand-primary);
   outline-offset: -2px;
 }
 
 /* ── Title ── */
 .accordion__title {
-  font-size: 13.33px;
-  font-weight: 700;
+  font-size: var(--dcui-type-scale-s-size);
+  font-weight: var(--dcui-font-weight-bold);
   line-height: 20px;
-  color: #000;
+  color: var(--dcui-color-core-global-foreground);
   white-space: nowrap;
 }
 
 .accordion--disabled .accordion__title {
-  color: #97999b;
+  color: var(--dcui-color-core-neutral-primary);
 }
 
 /* ── Icon ── */

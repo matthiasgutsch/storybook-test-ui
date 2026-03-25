@@ -139,7 +139,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  display: block;\n  width: 540px;\n  font-family: 'Roboto', sans-serif;\n}\n\n/* ── Shell ── */\n.accordion {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  border-radius: 4px;\n  overflow: hidden;\n  border: 1px solid #e6e6e6;\n  background: #fff;\n}\n\n.accordion--expanded {\n  background: #fff;\n}\n\n.accordion--disabled {\n  background: #f5f5f5;\n}\n\n/* ── Header ── */\n.accordion__header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  height: 48px;\n  padding: 12px 16px;\n  border: none;\n  background: #fff;\n  cursor: pointer;\n  box-sizing: border-box;\n  flex-shrink: 0;\n  transition: background 0.2s ease;\n}\n\n.accordion--expanded .accordion__header {\n  background: #f5f5f5;\n  border-bottom: 1px solid #e6e6e6;\n}\n\n.accordion--disabled .accordion__header {\n  background: #f5f5f5;\n  cursor: not-allowed;\n}\n\n.accordion__header:focus-visible {\n  outline: 2px solid #d7192f;\n  outline-offset: -2px;\n}\n\n/* ── Title ── */\n.accordion__title {\n  font-size: 13.33px;\n  font-weight: 700;\n  line-height: 20px;\n  color: #000;\n  white-space: nowrap;\n}\n\n.accordion--disabled .accordion__title {\n  color: #97999b;\n}\n\n/* ── Icon ── */\n.accordion__icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  width: 20px;\n  height: 20px;\n}\n\n/* ── Body ── */\n.accordion__body {\n  overflow: hidden;\n}\n\n.accordion__content {\n  background: #fafaff;\n  min-height: 240px;\n  width: 100%;\n}\n",
+                    "data": ":host {\n  display: block;\n  width: 540px;\n  font-family: var(--dcui-font-family);\n}\n\n/* ── Shell ── */\n.accordion {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  border-radius: 4px;\n  overflow: hidden;\n  border: 1px solid var(--dcui-color-core-neutral-pale);\n  background: var(--dcui-color-core-global-white);\n}\n\n.accordion--expanded {\n  background: var(--dcui-color-core-global-white);\n}\n\n.accordion--disabled {\n  background: var(--dcui-color-core-neutral-offwhite);\n}\n\n/* ── Header ── */\n.accordion__header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  height: 48px;\n  padding: 12px 16px;\n  border: none;\n  background: var(--dcui-color-core-global-white);\n  cursor: pointer;\n  box-sizing: border-box;\n  flex-shrink: 0;\n  transition: background var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing);\n}\n\n.accordion--expanded .accordion__header {\n  background: var(--dcui-color-core-neutral-offwhite);\n  border-bottom: 1px solid var(--dcui-color-core-neutral-pale);\n}\n\n.accordion--disabled .accordion__header {\n  background: var(--dcui-color-core-neutral-offwhite);\n  cursor: not-allowed;\n}\n\n.accordion__header:focus-visible {\n  outline: 2px solid var(--dcui-color-core-brand-primary);\n  outline-offset: -2px;\n}\n\n/* ── Title ── */\n.accordion__title {\n  font-size: var(--dcui-type-scale-s-size);\n  font-weight: var(--dcui-font-weight-bold);\n  line-height: 20px;\n  color: var(--dcui-color-core-global-foreground);\n  white-space: nowrap;\n}\n\n.accordion--disabled .accordion__title {\n  color: var(--dcui-color-core-neutral-primary);\n}\n\n/* ── Icon ── */\n.accordion__icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-shrink: 0;\n  width: 20px;\n  height: 20px;\n}\n\n/* ── Body ── */\n.accordion__body {\n  overflow: hidden;\n}\n\n.accordion__content {\n  background: #fafaff;\n  min-height: 240px;\n  width: 100%;\n}\n",
                     "styleUrl": "./accordion.component.css"
                 }
             ],
@@ -617,7 +617,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "/* ── Host ── */\n:host {\n  display: inline-block;\n  overflow: visible;\n}\n\n/* ── Base ── */\n.sq-tab {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: visible;\n  border: 1px solid #e6e6e6;\n  border-bottom: 1px solid #e6e6e6;\n  background: #f5f5f5;\n  cursor: pointer;\n  font-family: 'Roboto', sans-serif;\n  box-sizing: border-box;\n}\n\n/* ── Sizes ── */\n.sq-tab--l {\n  flex-direction: column;\n  gap: 12px;\n  width: 120px;\n  height: 112px;\n  padding: 21px 20px;\n}\n\n.sq-tab--m {\n  flex-direction: row;\n  gap: 10px;\n  width: 88px;\n  height: 80px;\n  padding: 12px 14px;\n}\n\n.sq-tab--s {\n  flex-direction: row;\n  gap: 10px;\n  width: 60px;\n  height: 56px;\n  padding: 12px 14px;\n}\n\n/* ── Status: Active ── */\n.sq-tab--active {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Hover ── */\n.sq-tab--hover {\n  background: #fff;\n  border-color: #fff;\n}\n\n/* ── Status: Disabled ── */\n.sq-tab--disabled {\n  background: #f5f5f5;\n  border-color: #e6e6e6;\n  cursor: not-allowed;\n}\n\n/* ── Icon ── */\n.sq-tab__icon {\n  position: relative;\n  flex-shrink: 0;\n  width: 29px;\n  height: 29px;\n}\n\n.sq-tab__icon-mask {\n  display: block;\n  position: absolute;\n  inset: 0;\n  mask-size: 29px 29px;\n  mask-repeat: no-repeat;\n  mask-position: 0 0;\n  -webkit-mask-size: 29px 29px;\n  -webkit-mask-repeat: no-repeat;\n  -webkit-mask-position: 0 0;\n}\n\n/* ── Label (L only) ── */\n.sq-tab__label {\n  font-size: 13.33px;\n  font-weight: 700;\n  line-height: 20px;\n  text-align: center;\n  width: 100%;\n}\n\n/* ── Tooltip (storybook-tooltip host) ── */\n@keyframes tooltip-in-right {\n  from { opacity: 0; transform: translateY(-50%) translateX(-6px); }\n  to   { opacity: 1; transform: translateY(-50%) translateX(0); }\n}\n\n@keyframes tooltip-in-left {\n  from { opacity: 0; transform: translateY(-50%) translateX(6px); }\n  to   { opacity: 1; transform: translateY(-50%) translateX(0); }\n}\n\n.sq-tab__tooltip {\n  position: absolute;\n  top: 50%;\n  z-index: 1000;\n}\n\n.sq-tab__tooltip--right {\n  left: calc(100% + 8px);\n  transform: translateY(-50%);\n  animation: tooltip-in-right 0.18s ease-out forwards;\n}\n\n.sq-tab__tooltip--left {\n  right: calc(100% + 8px);\n  transform: translateY(-50%);\n  animation: tooltip-in-left 0.18s ease-out forwards;\n}\n",
+                    "data": "/* ── Host ── */\n:host {\n  display: inline-block;\n  overflow: visible;\n}\n\n/* ── Base ── */\n.sq-tab {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: visible;\n  border: 1px solid var(--dcui-color-core-neutral-pale);\n  border-bottom: 1px solid var(--dcui-color-core-neutral-pale);\n  background: var(--dcui-color-core-neutral-offwhite);\n  cursor: pointer;\n  font-family: var(--dcui-font-family);\n  box-sizing: border-box;\n}\n\n/* ── Sizes ── */\n.sq-tab--l {\n  flex-direction: column;\n  gap: 12px;\n  width: 120px;\n  height: 112px;\n  padding: 21px 20px;\n}\n\n.sq-tab--m {\n  flex-direction: row;\n  gap: 10px;\n  width: 88px;\n  height: 80px;\n  padding: 12px 14px;\n}\n\n.sq-tab--s {\n  flex-direction: row;\n  gap: 10px;\n  width: 60px;\n  height: 56px;\n  padding: 12px 14px;\n}\n\n/* ── Status: Active ── */\n.sq-tab--active {\n  background: var(--dcui-color-core-global-white);\n  border-color: var(--dcui-color-core-global-white);\n}\n\n/* ── Status: Hover ── */\n.sq-tab--hover {\n  background: var(--dcui-color-core-global-white);\n  border-color: var(--dcui-color-core-global-white);\n}\n\n/* ── Status: Disabled ── */\n.sq-tab--disabled {\n  background: var(--dcui-color-core-neutral-offwhite);\n  border-color: var(--dcui-color-core-neutral-pale);\n  cursor: not-allowed;\n}\n\n/* ── Icon ── */\n.sq-tab__icon {\n  position: relative;\n  flex-shrink: 0;\n  width: 29px;\n  height: 29px;\n}\n\n.sq-tab__icon-mask {\n  display: block;\n  position: absolute;\n  inset: 0;\n  mask-size: 29px 29px;\n  mask-repeat: no-repeat;\n  mask-position: 0 0;\n  -webkit-mask-size: 29px 29px;\n  -webkit-mask-repeat: no-repeat;\n  -webkit-mask-position: 0 0;\n}\n\n/* ── Label (L only) ── */\n.sq-tab__label {\n  font-size: var(--dcui-type-scale-s-size);\n  font-weight: var(--dcui-font-weight-bold);\n  line-height: 20px;\n  text-align: center;\n  width: 100%;\n}\n\n/* ── Tooltip (storybook-tooltip host) ── */\n@keyframes tooltip-in-right {\n  from { opacity: 0; transform: translateY(-50%) translateX(-6px); }\n  to   { opacity: 1; transform: translateY(-50%) translateX(0); }\n}\n\n@keyframes tooltip-in-left {\n  from { opacity: 0; transform: translateY(-50%) translateX(6px); }\n  to   { opacity: 1; transform: translateY(-50%) translateX(0); }\n}\n\n.sq-tab__tooltip {\n  position: absolute;\n  top: 50%;\n  z-index: 1000;\n}\n\n.sq-tab__tooltip--right {\n  left: calc(100% + 8px);\n  transform: translateY(-50%);\n  animation: tooltip-in-right 0.18s ease-out forwards;\n}\n\n.sq-tab__tooltip--left {\n  right: calc(100% + 8px);\n  transform: translateY(-50%);\n  animation: tooltip-in-left 0.18s ease-out forwards;\n}\n",
                     "styleUrl": "./square-tab.component.css"
                 }
             ],
@@ -1024,7 +1024,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  display: block;\n  font-family: 'Roboto', sans-serif;\n}\n\n/* ── Shell ── */\n.tb {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: 72px;\n  padding: 16px 40px;\n  box-sizing: border-box;\n  width: 100%;\n  border-bottom: 1px solid #e6e6e6;\n}\n\n.tb--white       { background: #fff; }\n.tb--transparent { background: transparent; }\n\n/* ── Left Side ── */\n.tb__left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n/* ── Icon Buttons ── */\n.tb__icon-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 20px;\n  height: 20px;\n  background: none;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  flex-shrink: 0;\n}\n\n.tb__icon-btn:hover { opacity: 0.7; }\n\n/* ── Breadcrumb ── */\n.tb__breadcrumb {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  height: 40px;\n}\n\n.tb__breadcrumb-link {\n  background: none;\n  border: none;\n  padding: 0 4px;\n  cursor: pointer;\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  color: #d7192f;\n  line-height: 24px;\n  white-space: nowrap;\n}\n\n.tb__breadcrumb-link:hover { text-decoration: underline; }\n\n.tb__breadcrumb-sep {\n  display: flex;\n  align-items: center;\n  color: #c8c9c7;\n}\n\n.tb__breadcrumb-current {\n  padding: 0 4px;\n  font-size: 16px;\n  font-weight: 700;\n  color: #000;\n  line-height: 24px;\n  white-space: nowrap;\n}\n\n/* ── Title Group ── */\n.tb__title-group {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.tb__title {\n  font-size: 19.2px;\n  font-weight: 700;\n  line-height: 28.8px;\n  color: #000;\n  white-space: nowrap;\n}\n\n/* ── Tag Badge ── */\n.tb__tag {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  height: 20px;\n  padding: 0 8px;\n  background: #fecd32;\n  border-radius: 4px;\n  font-size: 11.11px;\n  font-weight: 700;\n  line-height: 16.67px;\n  color: #000;\n  white-space: nowrap;\n}\n\n/* ── Right Side ── */\n.tb__right {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n/* ── Published ── */\n.tb__published {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n.tb__calibrated-tag {\n  display: inline-flex;\n  align-items: center;\n  height: 24px;\n  padding: 0 8px;\n  background: #e0f1cb;\n  border: 1px solid #639522;\n  border-radius: 2px;\n  font-size: 13.33px;\n  font-weight: 700;\n  color: #639522;\n  white-space: nowrap;\n}\n\n.tb__switch {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n}\n\n.tb__switch-track {\n  position: relative;\n  width: 48px;\n  height: 24px;\n  border-radius: 12px;\n  background: #97999b;\n  border: 1px solid #7a7c7e;\n  transition: background 0.2s ease, border-color 0.2s ease;\n  flex-shrink: 0;\n}\n\n.tb__switch-track--on {\n  background: #d7192f;\n  border-color: #a61121;\n}\n\n.tb__switch-knob {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  background: #fff;\n  border: 1px solid #7a7c7e;\n  transition: left 0.2s ease, border-color 0.2s ease;\n}\n\n.tb__switch-knob--on {\n  left: 24px;\n  border-color: #a61121;\n}\n\n.tb__switch-label {\n  font-size: 11.11px;\n  font-weight: 700;\n  line-height: 24px;\n  color: #000;\n  white-space: nowrap;\n}\n\n.tb__divider {\n  width: 1px;\n  height: 40px;\n  background: #c8c9c7;\n  opacity: 0.5;\n}\n\n",
+                    "data": ":host {\n  display: block;\n  font-family: var(--dcui-font-family);\n}\n\n/* ── Shell ── */\n.tb {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: 72px;\n  padding: 16px 40px;\n  box-sizing: border-box;\n  width: 100%;\n  border-bottom: 1px solid var(--dcui-color-core-neutral-pale);\n}\n\n.tb--white       { background: var(--dcui-color-core-global-white); }\n.tb--transparent { background: transparent; }\n\n/* ── Left Side ── */\n.tb__left {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n/* ── Icon Buttons ── */\n.tb__icon-btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 20px;\n  height: 20px;\n  background: none;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  flex-shrink: 0;\n}\n\n.tb__icon-btn:hover { opacity: 0.7; }\n\n/* ── Breadcrumb ── */\n.tb__breadcrumb {\n  display: flex;\n  align-items: center;\n  gap: 0;\n  height: 40px;\n}\n\n.tb__breadcrumb-link {\n  background: none;\n  border: none;\n  padding: 0 4px;\n  cursor: pointer;\n  font-family: var(--dcui-font-family);\n  font-size: var(--dcui-type-scale-base-size);\n  font-weight: var(--dcui-font-weight-bold);\n  color: var(--dcui-color-core-brand-primary);\n  line-height: 24px;\n  white-space: nowrap;\n}\n\n.tb__breadcrumb-link:hover { text-decoration: underline; }\n\n.tb__breadcrumb-sep {\n  display: flex;\n  align-items: center;\n  color: var(--dcui-color-core-neutral-light);\n}\n\n.tb__breadcrumb-current {\n  padding: 0 4px;\n  font-size: var(--dcui-type-scale-base-size);\n  font-weight: var(--dcui-font-weight-bold);\n  color: var(--dcui-color-core-global-foreground);\n  line-height: 24px;\n  white-space: nowrap;\n}\n\n/* ── Title Group ── */\n.tb__title-group {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n\n.tb__title {\n  font-size: var(--dcui-type-scale-l-size);\n  font-weight: var(--dcui-font-weight-bold);\n  line-height: 28.8px;\n  color: var(--dcui-color-core-global-foreground);\n  white-space: nowrap;\n}\n\n/* ── Tag Badge ── */\n.tb__tag {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  height: 20px;\n  padding: 0 8px;\n  background: var(--dcui-color-core-alert-primary);\n  border-radius: 4px;\n  font-size: var(--dcui-type-scale-xs-size);\n  font-weight: var(--dcui-font-weight-bold);\n  line-height: 16.67px;\n  color: var(--dcui-color-core-global-foreground);\n  white-space: nowrap;\n}\n\n/* ── Right Side ── */\n.tb__right {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n/* ── Published ── */\n.tb__published {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n\n.tb__calibrated-tag {\n  display: inline-flex;\n  align-items: center;\n  height: 24px;\n  padding: 0 8px;\n  background: var(--dcui-color-core-success-pale);\n  border: 1px solid var(--dcui-color-core-success-dark);\n  border-radius: 2px;\n  font-size: var(--dcui-type-scale-s-size);\n  font-weight: var(--dcui-font-weight-bold);\n  color: var(--dcui-color-core-success-dark);\n  white-space: nowrap;\n}\n\n.tb__switch {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  cursor: pointer;\n}\n\n.tb__switch-track {\n  position: relative;\n  width: 48px;\n  height: 24px;\n  border-radius: 12px;\n  background: var(--dcui-color-core-neutral-primary);\n  border: 1px solid #7a7c7e;\n  transition: background var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing),\n              border-color var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing);\n  flex-shrink: 0;\n}\n\n.tb__switch-track--on {\n  background: var(--dcui-color-core-brand-primary);\n  border-color: var(--dcui-color-core-brand-dark);\n}\n\n.tb__switch-knob {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  background: var(--dcui-color-core-global-white);\n  border: 1px solid #7a7c7e;\n  transition: left var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing),\n              border-color var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing);\n}\n\n.tb__switch-knob--on {\n  left: 24px;\n  border-color: var(--dcui-color-core-brand-dark);\n}\n\n.tb__switch-label {\n  font-size: var(--dcui-type-scale-xs-size);\n  font-weight: var(--dcui-font-weight-bold);\n  line-height: 24px;\n  color: var(--dcui-color-core-global-foreground);\n  white-space: nowrap;\n}\n\n.tb__divider {\n  width: 1px;\n  height: 40px;\n  background: var(--dcui-color-core-neutral-light);\n  opacity: 0.5;\n}\n",
                     "styleUrl": "./title-bar.component.css"
                 }
             ],
@@ -1051,6 +1051,175 @@
                 }
             },
             "templateData": "<header class=\"tb\" [class.tb--white]=\"type === 'White'\" [class.tb--transparent]=\"type === 'Transparent'\">\n\n  <!-- ── Left Side ── -->\n  <div class=\"tb__left\">\n\n    <!-- Back Button -->\n    @if (backButton) {\n      <button class=\"tb__icon-btn\" (click)=\"backClick.emit()\" aria-label=\"Go back\">\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M12.5 15L7.5 10L12.5 5\" stroke=\"#000\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </button>\n    }\n\n    <!-- Menu Button -->\n    @if (menuButton) {\n      <button class=\"tb__icon-btn\" (click)=\"menuClick.emit()\" aria-label=\"Open menu\">\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <rect x=\"3\"  y=\"3\"  width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n          <rect x=\"12\" y=\"3\"  width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n          <rect x=\"3\"  y=\"12\" width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n          <rect x=\"12\" y=\"12\" width=\"5\" height=\"5\" rx=\"1\" fill=\"#000\"/>\n        </svg>\n      </button>\n    }\n\n    <!-- Breadcrumb -->\n    @if (breadcrumb) {\n      <nav class=\"tb__breadcrumb\" aria-label=\"Breadcrumb\">\n        @for (item of breadcrumbLinks; track item.label) {\n          <button class=\"tb__breadcrumb-link\" (click)=\"breadcrumbClick.emit(item)\">{{ item.label }}</button>\n          <span class=\"tb__breadcrumb-sep\" aria-hidden=\"true\">\n            <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path d=\"M7.5 5L12.5 10L7.5 15\" stroke=\"#c8c9c7\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n            </svg>\n          </span>\n        }\n        @if (breadcrumbCurrent) {\n          <span class=\"tb__breadcrumb-current\">{{ breadcrumbCurrent.label }}</span>\n        }\n      </nav>\n    }\n\n    <!-- Title + Edit + Tag -->\n    <div class=\"tb__title-group\">\n      @if (showTitle) {\n        <span class=\"tb__title\">{{ title }}</span>\n      }\n\n      @if (editButton) {\n        <button class=\"tb__icon-btn\" (click)=\"editClick.emit()\" aria-label=\"Edit\">\n          <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <path d=\"M14.85 2.85a2 2 0 0 1 2.83 2.83L6.5 16.84 3 17.5l.66-3.5L14.85 2.85Z\" stroke=\"#000\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n          </svg>\n        </button>\n      }\n\n      @if (tag) {\n        <span class=\"tb__tag\">{{ tagLabel }}</span>\n      }\n    </div>\n\n  </div>\n\n  <!-- ── Right Side ── -->\n  <div class=\"tb__right\">\n\n    <!-- Published Toggle + Calibrated -->\n    @if (published) {\n      <div class=\"tb__published\">\n        @if (calibrated) {\n          <span class=\"tb__calibrated-tag\">Calibrated</span>\n        }\n        <div class=\"tb__switch\" (click)=\"togglePublished()\">\n          <div class=\"tb__switch-track\" [class.tb__switch-track--on]=\"isPublished\">\n            <div class=\"tb__switch-knob\" [class.tb__switch-knob--on]=\"isPublished\"></div>\n          </div>\n          <span class=\"tb__switch-label\">Published</span>\n        </div>\n        <div class=\"tb__divider\"></div>\n      </div>\n    }\n\n    <!-- Save Icon -->\n    @if (saveIcon) {\n      <button class=\"tb__icon-btn\" (click)=\"saveClick.emit()\" aria-label=\"Save\">\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M3 3h11l3 3v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3Z\" stroke=\"#000\" stroke-width=\"1.4\" stroke-linejoin=\"round\"/>\n          <rect x=\"7\" y=\"3\" width=\"6\" height=\"4\" rx=\"0.5\" stroke=\"#000\" stroke-width=\"1.4\"/>\n          <rect x=\"5\" y=\"11\" width=\"10\" height=\"6\" rx=\"0.5\" stroke=\"#000\" stroke-width=\"1.4\"/>\n        </svg>\n      </button>\n    }\n\n    <!-- Text Button -->\n    @if (textButton) {\n      <storybook-ui-button type=\"Text\" size=\"Medium\" [label]=\"textButtonLabel\" (clicked)=\"textButtonClick.emit()\" />\n    }\n\n    <!-- Primary Button -->\n    @if (primaryButton) {\n      <storybook-ui-button type=\"Primary\" size=\"Medium\" [label]=\"primaryButtonLabel\" (clicked)=\"primaryButtonClick.emit()\" />\n    }\n\n    <!-- Secondary Button -->\n    @if (secondaryButton) {\n      <storybook-ui-button type=\"Secondary\" size=\"Medium\" [label]=\"secondaryButtonLabel\" (clicked)=\"secondaryButtonClick.emit()\" />\n    }\n\n  </div>\n\n</header>\n"
+        },
+        {
+            "name": "ToleranceLegendComponent",
+            "id": "component-ToleranceLegendComponent-a69baa9c3fedcaba520c60e2a2d7935a0c24afb4fda283e68e2d8dc9373c86d00072c5102d0790802cb5d81ac213c0f45b09ca6b9627c345accef19f2c5bab9e",
+            "file": "src/stories/tolerance-legend/tolerance-legend.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-tolerance-legend",
+            "styleUrls": [
+                "./tolerance-legend.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tolerance-legend.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "property1",
+                    "defaultValue": "'symmetric'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nBar variant",
+                    "description": "<p>Bar variant</p>\n",
+                    "line": 26,
+                    "type": "ToleranceProperty",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipHeading",
+                    "defaultValue": "'Heading / title'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTooltip heading text",
+                    "description": "<p>Tooltip heading text</p>\n",
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipMessage",
+                    "defaultValue": "'Message'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTooltip message text",
+                    "description": "<p>Tooltip message text</p>\n",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipSmallLabel",
+                    "defaultValue": "'from 0,9 to 1,0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nTooltip small-label text",
+                    "description": "<p>Tooltip small-label text</p>\n",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "withIndicator",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nShow the current-value indicator on the bar",
+                    "description": "<p>Show the current-value indicator on the bar</p>\n",
+                    "line": 29,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "withTooltip",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nEnable the tooltip (shown on hover)",
+                    "description": "<p>Enable the tooltip (shown on hover)</p>\n",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_tooltipVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onBarEnter",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onBarLeave",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "TooltipComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "<p>Tolerance Legend — colour-coded tolerance bar with optional indicator and tooltip.</p>\n<table class=\"table table-bordered compodoc-table\">\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>symmetric</strong></td>\n<td>5 segments: red · yellow · green · yellow · red (200 px)</td>\n</tr>\n<tr>\n<td><strong>asymmetric</strong></td>\n<td>3 segments: green · yellow · red (120 px)</td>\n</tr>\n</tbody>\n</table>\n<p>The indicator marks the current value on the bar.\nHovering the bar shows the tooltip with a slide-in animation (arrowSide=Bottom).</p>\n",
+            "rawdescription": "\n\nTolerance Legend — colour-coded tolerance bar with optional indicator and tooltip.\n\n| Property | Description |\n|---|---|\n| **symmetric** | 5 segments: red · yellow · green · yellow · red (200 px) |\n| **asymmetric** | 3 segments: green · yellow · red (120 px) |\n\nThe indicator marks the current value on the bar.\nHovering the bar shows the tooltip with a slide-in animation (arrowSide=Bottom).\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { TooltipComponent } from '../tooltip/tooltip.component';\n\nexport type ToleranceProperty = 'symmetric' | 'asymmetric';\n\n/**\n * Tolerance Legend — colour-coded tolerance bar with optional indicator and tooltip.\n *\n * | Property | Description |\n * |---|---|\n * | **symmetric** | 5 segments: red · yellow · green · yellow · red (200 px) |\n * | **asymmetric** | 3 segments: green · yellow · red (120 px) |\n *\n * The indicator marks the current value on the bar.\n * Hovering the bar shows the tooltip with a slide-in animation (arrowSide=Bottom).\n */\n@Component({\n  selector: 'storybook-tolerance-legend',\n  standalone: true,\n  imports: [TooltipComponent],\n  templateUrl: './tolerance-legend.component.html',\n  styleUrls: ['./tolerance-legend.component.css'],\n})\nexport class ToleranceLegendComponent {\n  /** Bar variant */\n  @Input() property1: ToleranceProperty = 'symmetric';\n\n  /** Show the current-value indicator on the bar */\n  @Input() withIndicator = true;\n\n  /** Enable the tooltip (shown on hover) */\n  @Input() withTooltip = true;\n\n  /** Tooltip small-label text */\n  @Input() tooltipSmallLabel = 'from 0,9 to 1,0';\n\n  /** Tooltip heading text */\n  @Input() tooltipHeading = 'Heading / title';\n\n  /** Tooltip message text */\n  @Input() tooltipMessage = 'Message';\n\n  _tooltipVisible = false;\n\n  onBarEnter(): void { if (this.withTooltip) this._tooltipVisible = true; }\n  onBarLeave(): void { this._tooltipVisible = false; }\n\n  get isSymmetric()  { return this.property1 === 'symmetric'; }\n  get isAsymmetric() { return this.property1 === 'asymmetric'; }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: inline-block;\n  font-family: var(--dcui-font-family);\n}\n\n/* ── Shell ── */\n.tl {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 8px;\n}\n\n/* ── Bar area — hover target, relative anchor for tooltip ── */\n.tl__bar-area {\n  position: relative;\n  /* top padding reserves space so the tooltip doesn't get clipped */\n  padding-top: 96px;\n  cursor: pointer;\n}\n\n/* ── Tooltip: absolutely positioned above indicator, animated ──\n   Centred on indicator: left = indicator centre (147px sym / 67px asym),\n   translateX(-50%) centres the 240px tooltip body over that point.\n   Arrow (arrowSide=Bottom, left:50%) then points straight down to the dot. */\n.tl__tooltip-wrap {\n  position: absolute;\n  /* sit just above the bar (arrow tip clears the bar top) */\n  bottom: calc(100% - 96px + 4px);\n  z-index: 100;\n  pointer-events: none;\n\n  /* hidden state */\n  opacity: 0;\n  transform: translateX(-50%) translateY(8px);\n  transition: opacity 0.18s ease, transform 0.18s ease;\n}\n\n.tl--symmetric  .tl__tooltip-wrap { left: 147px; }\n.tl--asymmetric .tl__tooltip-wrap { left:  67px; }\n\n/* visible state */\n.tl__tooltip-wrap--visible {\n  opacity: 1;\n  transform: translateX(-50%) translateY(0);\n  pointer-events: auto;\n}\n\n/* ── Bar ── */\n.tl__bar {\n  display: flex;\n  margin-top: 2px;\n}\n\n/* Figma: each segment 40 × 8 px */\n.tl__seg {\n  width: 40px;\n  height: 8px;\n  flex-shrink: 0;\n}\n\n.tl__seg--red    { background: var(--dcui-color-core-brand-light); }\n.tl__seg--yellow { background: var(--dcui-color-core-alert-primary); }\n.tl__seg--green  { background: var(--dcui-color-core-success-primary); }\n\n/* ── Indicator circle ──\n   Figma: ml-141px (sym) ml-61px (asym), mt-0, size 12×12px with extended visual.\n   bar: mt-2px h-8px → centre at 6px from bar-area content top (after padding).\n   circle 13px → top = 2 + 4 - 6.5 = -0.5px */\n.tl__indicator {\n  position: absolute;\n  top: calc(96px - 0.5px); /* padding-top offset + bar vertical centre */\n  transform: translateX(-50%);\n}\n\n.tl__indicator--sym  { left: 147px; }\n.tl__indicator--asym { left:  67px; }\n\n/* ── Labels ── */\n.tl__labels {\n  display: flex;\n  margin-top: 2px;\n}\n\n.tl__label {\n  height: 14px;\n  width: 40px;\n  flex-shrink: 0;\n  font-size: var(--dcui-type-scale-xs-size);\n  font-weight: var(--dcui-font-weight-regular);\n  line-height: 16.67px;\n  letter-spacing: 0.22px;\n  color: var(--dcui-color-core-global-foreground);\n  white-space: nowrap;\n}\n\n.tl__label--center { text-align: center; }\n.tl__label--right  { text-align: right;  }\n\n/* invisible spacers align labels to segment edges */\n.tl__label--spacer {\n  width: 20px;\n  opacity: 0;\n}\n\n/* asymmetric: 2 labels centred within the 120px bar */\n.tl--asymmetric .tl__labels {\n  width: 120px;\n  justify-content: center;\n}\n",
+                    "styleUrl": "./tolerance-legend.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "isSymmetric": {
+                    "name": "isSymmetric",
+                    "getSignature": {
+                        "name": "isSymmetric",
+                        "type": "",
+                        "returnType": "",
+                        "line": 48
+                    }
+                },
+                "isAsymmetric": {
+                    "name": "isAsymmetric",
+                    "getSignature": {
+                        "name": "isAsymmetric",
+                        "type": "",
+                        "returnType": "",
+                        "line": 49
+                    }
+                }
+            },
+            "templateData": "<div class=\"tl\" [class.tl--symmetric]=\"isSymmetric\" [class.tl--asymmetric]=\"isAsymmetric\">\n\n  <!-- ── Bar + Indicator (hover triggers tooltip) ── -->\n  <div class=\"tl__bar-area\" (mouseenter)=\"onBarEnter()\" (mouseleave)=\"onBarLeave()\">\n\n    <!-- Tooltip: absolutely centred above the indicator dot, animated -->\n    @if (withTooltip) {\n      <div class=\"tl__tooltip-wrap\" [class.tl__tooltip-wrap--visible]=\"_tooltipVisible\">\n        <storybook-tooltip\n          arrowSide=\"Bottom\"\n          style=\"Neutral\"\n          [smallLabel]=\"tooltipSmallLabel\"\n          [heading]=\"tooltipHeading\"\n          [message]=\"tooltipMessage\"\n          [showSmallLabel]=\"true\"\n          [showHeading]=\"true\"\n          [showMessage]=\"true\"\n        />\n      </div>\n    }\n\n    <!-- colour segments -->\n    <div class=\"tl__bar\">\n      @if (isSymmetric) {\n        <div class=\"tl__seg tl__seg--red\"></div>\n        <div class=\"tl__seg tl__seg--yellow\"></div>\n        <div class=\"tl__seg tl__seg--green\"></div>\n        <div class=\"tl__seg tl__seg--yellow\"></div>\n        <div class=\"tl__seg tl__seg--red\"></div>\n      }\n      @if (isAsymmetric) {\n        <div class=\"tl__seg tl__seg--green\"></div>\n        <div class=\"tl__seg tl__seg--yellow\"></div>\n        <div class=\"tl__seg tl__seg--red\"></div>\n      }\n    </div>\n\n    <!-- indicator circle -->\n    @if (withIndicator) {\n      <div class=\"tl__indicator\"\n           [class.tl__indicator--sym]=\"isSymmetric\"\n           [class.tl__indicator--asym]=\"isAsymmetric\">\n        <svg width=\"13\" height=\"13\" viewBox=\"0 0 13 13\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <circle cx=\"6.5\" cy=\"6.5\" r=\"5.75\" fill=\"white\" stroke=\"#c8c9c7\" stroke-width=\"1.5\"/>\n        </svg>\n      </div>\n    }\n\n  </div>\n\n  <!-- ── Labels ── -->\n  <div class=\"tl__labels\">\n    @if (isSymmetric) {\n      <span class=\"tl__label tl__label--spacer\">-2</span>\n      <span class=\"tl__label tl__label--center\">-1</span>\n      <span class=\"tl__label tl__label--center\">-0.9</span>\n      <span class=\"tl__label tl__label--center\">0.9</span>\n      <span class=\"tl__label tl__label--center\">1</span>\n      <span class=\"tl__label tl__label--spacer tl__label--right\">2</span>\n    }\n    @if (isAsymmetric) {\n      <span class=\"tl__label tl__label--center\">0.9</span>\n      <span class=\"tl__label tl__label--center\">1</span>\n    }\n  </div>\n\n</div>\n"
         },
         {
             "name": "TooltipComponent",
@@ -1177,7 +1346,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  display: inline-block;\n}\n\n/* ── Shell ── */\n.tooltip {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 240px;\n  border-radius: 1px;\n  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);\n  font-family: 'Roboto', sans-serif;\n  box-sizing: border-box;\n  overflow: visible;\n}\n\n/* ── Content ── */\n.tooltip__content {\n  display: flex;\n  flex-direction: column;\n  padding: 16px;\n}\n\n.tooltip__small-label {\n  font-size: 11.11px;\n  font-weight: 300;\n  line-height: 16.67px;\n  letter-spacing: 0.22px;\n  color: #3e4144;\n}\n\n.tooltip__heading {\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 24px;\n  color: #000;\n}\n\n.tooltip__message {\n  font-size: 13.33px;\n  font-weight: 300;\n  line-height: 20px;\n  color: #3e4144;\n}\n\n/* ── Arrow base ── */\n/* Arrow is 16px × 8px per Figma spec; rotated 90deg = 8px wide × 16px tall for Left/Right */\n.tooltip__arrow {\n  position: absolute;\n}\n\n/* Arrow pointing RIGHT (tooltip body is to the left) */\n.tooltip--right .tooltip__arrow {\n  right: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 16px;\n  clip-path: polygon(0 0, 0 100%, 100% 50%);\n}\n\n/* Arrow pointing LEFT (tooltip body is to the right) */\n.tooltip--left .tooltip__arrow {\n  left: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 16px;\n  clip-path: polygon(100% 0, 0 50%, 100% 100%);\n}\n\n/* Arrow pointing UP (tooltip body is below) */\n.tooltip--top .tooltip__arrow {\n  top: -8px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 16px;\n  height: 8px;\n  clip-path: polygon(0 100%, 50% 0, 100% 100%);\n}\n\n/* Arrow pointing DOWN (tooltip body is above) */\n.tooltip--bottom .tooltip__arrow {\n  bottom: -8px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 16px;\n  height: 8px;\n  clip-path: polygon(0 0, 50% 100%, 100% 0);\n}\n",
+                    "data": ":host {\n  display: inline-block;\n}\n\n/* ── Shell ── */\n.tooltip {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 240px;\n  border-radius: var(--dcui-surface-corner);\n  box-shadow: var(--dcui-shadow-neutral-low);\n  font-family: var(--dcui-font-family);\n  box-sizing: border-box;\n  overflow: visible;\n}\n\n/* ── Content ── */\n.tooltip__content {\n  display: flex;\n  flex-direction: column;\n  padding: 16px;\n}\n\n.tooltip__small-label {\n  font-size: var(--dcui-type-scale-xs-size);\n  font-weight: var(--dcui-font-weight-regular);\n  line-height: 16.67px;\n  letter-spacing: 0.22px;\n  color: #3e4144;\n}\n\n.tooltip__heading {\n  font-size: var(--dcui-type-scale-base-size);\n  font-weight: var(--dcui-font-weight-bold);\n  line-height: 24px;\n  color: var(--dcui-color-core-global-foreground);\n}\n\n.tooltip__message {\n  font-size: var(--dcui-type-scale-s-size);\n  font-weight: var(--dcui-font-weight-regular);\n  line-height: 20px;\n  color: #3e4144;\n}\n\n/* ── Arrow base ── */\n/* Arrow is 16px × 8px per Figma spec; rotated 90deg = 8px wide × 16px tall for Left/Right */\n.tooltip__arrow {\n  position: absolute;\n}\n\n/* Arrow pointing RIGHT (tooltip body is to the left) */\n.tooltip--right .tooltip__arrow {\n  right: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 16px;\n  clip-path: polygon(0 0, 0 100%, 100% 50%);\n}\n\n/* Arrow pointing LEFT (tooltip body is to the right) */\n.tooltip--left .tooltip__arrow {\n  left: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 16px;\n  clip-path: polygon(100% 0, 0 50%, 100% 100%);\n}\n\n/* Arrow pointing UP (tooltip body is below) */\n.tooltip--top .tooltip__arrow {\n  top: -8px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 16px;\n  height: 8px;\n  clip-path: polygon(0 100%, 50% 0, 100% 100%);\n}\n\n/* Arrow pointing DOWN (tooltip body is above) */\n.tooltip--bottom .tooltip__arrow {\n  bottom: -8px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 16px;\n  height: 8px;\n  clip-path: polygon(0 0, 50% 100%, 100% 0);\n}\n",
                     "styleUrl": "./tooltip.component.css"
                 }
             ],
@@ -1319,7 +1488,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "/* ── Base ── */\n.btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  border-radius: 1px;\n  font-family: 'Roboto', sans-serif;\n  font-weight: 700;\n  cursor: pointer;\n  transition: background 0.15s ease, border-color 0.15s ease,\n              color 0.15s ease, box-shadow 0.15s ease;\n  white-space: nowrap;\n  line-height: 1;\n  text-decoration: none;\n}\n\n.btn:disabled {\n  cursor: not-allowed;\n}\n\n/* ── Sizes ── */\n.btn--small {\n  height: 32px;\n  padding: 0 16px;\n  gap: 8px;\n  font-size: 13.33px;\n  line-height: 20px;\n}\n\n.btn--medium {\n  height: 40px;\n  padding: 0 24px;\n  gap: 12px;\n  font-size: 16px;\n  line-height: 24px;\n}\n\n.btn--large {\n  height: 56px;\n  padding: 0 32px;\n  gap: 16px;\n  font-size: 19.2px;\n  line-height: 28.8px;\n}\n\n/* ── Primary ── */\n.btn--primary {\n  background: #d7192f;\n  color: #fff;\n  box-shadow: 0 5px 9px 0 rgba(166, 17, 33, 0.4);\n}\n\n.btn--primary:hover:not(:disabled) {\n  background: #a61121;\n  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);\n}\n\n.btn--primary:active:not(:disabled) {\n  background: #a61121;\n  box-shadow: none;\n}\n\n.btn--primary:disabled {\n  background: #c8c9c7;\n  box-shadow: none;\n  color: #fff;\n}\n\n/* ── Secondary ── */\n.btn--secondary {\n  background: #fff;\n  color: #d7192f;\n  border: 1px solid #d7192f;\n  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);\n}\n\n.btn--secondary:hover:not(:disabled) {\n  border-color: #a61121;\n  color: #a61121;\n  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);\n}\n\n.btn--secondary:active:not(:disabled) {\n  border-color: #a61121;\n  color: #a61121;\n  box-shadow: none;\n}\n\n.btn--secondary:disabled {\n  border-color: #c8c9c7;\n  color: #c8c9c7;\n  box-shadow: none;\n}\n\n/* ── Text ── */\n.btn--text {\n  background: none;\n  color: #d7192f;\n  padding-left: 0;\n  padding-right: 0;\n}\n\n.btn--text:hover:not(:disabled) {\n  color: #a61121;\n}\n\n.btn--text:active:not(:disabled) {\n  color: #a61121;\n}\n\n.btn--text:disabled {\n  color: #c8c9c7;\n}\n\n/* ── Icon ── */\n.btn__icon {\n  display: inline-flex;\n  align-items: center;\n  flex-shrink: 0;\n  color: inherit;\n}\n\n.btn__icon svg {\n  width: 20px;\n  height: 20px;\n}\n\n/* ── Label ── */\n.btn__label {\n  color: inherit;\n}\n",
+                    "data": "/* ── Base ── */\n.btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  border-radius: var(--dcui-surface-corner);\n  font-family: var(--dcui-font-family);\n  font-weight: var(--dcui-font-weight-bold);\n  cursor: pointer;\n  transition: background var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing),\n              border-color var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing),\n              color var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing),\n              box-shadow var(--dcui-transition-state-default-duration) var(--dcui-transition-state-default-easing);\n  white-space: nowrap;\n  line-height: 1;\n  text-decoration: none;\n}\n\n.btn:disabled {\n  cursor: not-allowed;\n}\n\n/* ── Sizes ── */\n.btn--small {\n  height: 32px;\n  padding: 0 16px;\n  gap: 8px;\n  font-size: var(--dcui-type-scale-s-size);\n  line-height: 20px;\n}\n\n.btn--medium {\n  height: 40px;\n  padding: 0 24px;\n  gap: 12px;\n  font-size: var(--dcui-type-scale-base-size);\n  line-height: 24px;\n}\n\n.btn--large {\n  height: 56px;\n  padding: 0 32px;\n  gap: 16px;\n  font-size: var(--dcui-type-scale-l-size);\n  line-height: 28.8px;\n}\n\n/* ── Primary ── */\n.btn--primary {\n  background: var(--dcui-color-core-brand-primary);\n  color: var(--dcui-color-core-brand-primary-on);\n  box-shadow: var(--dcui-shadow-brand-high);\n}\n\n.btn--primary:hover:not(:disabled) {\n  background: var(--dcui-color-core-brand-dark);\n  box-shadow: var(--dcui-shadow-neutral-low);\n}\n\n.btn--primary:active:not(:disabled) {\n  background: var(--dcui-color-core-brand-dark);\n  box-shadow: none;\n}\n\n.btn--primary:disabled {\n  background: var(--dcui-color-core-neutral-light);\n  box-shadow: none;\n  color: var(--dcui-color-core-global-foreground-on);\n}\n\n/* ── Secondary ── */\n.btn--secondary {\n  background: var(--dcui-color-core-global-white);\n  color: var(--dcui-color-core-brand-primary);\n  border: 1px solid var(--dcui-color-core-brand-primary);\n  box-shadow: var(--dcui-shadow-neutral-low);\n}\n\n.btn--secondary:hover:not(:disabled) {\n  border-color: var(--dcui-color-core-brand-dark);\n  color: var(--dcui-color-core-brand-dark);\n  box-shadow: var(--dcui-shadow-neutral-low);\n}\n\n.btn--secondary:active:not(:disabled) {\n  border-color: var(--dcui-color-core-brand-dark);\n  color: var(--dcui-color-core-brand-dark);\n  box-shadow: none;\n}\n\n.btn--secondary:disabled {\n  border-color: var(--dcui-color-core-neutral-light);\n  color: var(--dcui-color-core-neutral-light);\n  box-shadow: none;\n}\n\n/* ── Text ── */\n.btn--text {\n  background: none;\n  color: var(--dcui-color-core-brand-primary);\n  padding-left: 0;\n  padding-right: 0;\n}\n\n.btn--text:hover:not(:disabled) {\n  color: var(--dcui-color-core-brand-dark);\n}\n\n.btn--text:active:not(:disabled) {\n  color: var(--dcui-color-core-brand-dark);\n}\n\n.btn--text:disabled {\n  color: var(--dcui-color-core-neutral-light);\n}\n\n/* ── Icon ── */\n.btn__icon {\n  display: inline-flex;\n  align-items: center;\n  flex-shrink: 0;\n  color: inherit;\n}\n\n.btn__icon svg {\n  width: var(--dcui-icons-size-base);\n  height: var(--dcui-icons-size-base);\n}\n\n/* ── Label ── */\n.btn__label {\n  color: inherit;\n}\n",
                     "styleUrl": "./ui-button.component.css"
                 }
             ],
@@ -1424,6 +1593,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"White\" | \"Transparent\"",
                 "file": "src/stories/title-bar/title-bar.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ToleranceProperty",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"symmetric\" | \"asymmetric\"",
+                "file": "src/stories/tolerance-legend/tolerance-legend.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1567,6 +1747,19 @@
                     "kind": 193
                 }
             ],
+            "src/stories/tolerance-legend/tolerance-legend.component.ts": [
+                {
+                    "name": "ToleranceProperty",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"symmetric\" | \"asymmetric\"",
+                    "file": "src/stories/tolerance-legend/tolerance-legend.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
             "src/stories/tooltip/tooltip.component.ts": [
                 {
                     "name": "TooltipArrowSide",
@@ -1599,7 +1792,7 @@
         "children": []
     },
     "coverage": {
-        "count": 17,
+        "count": 19,
         "status": "low",
         "files": [
             {
@@ -1730,6 +1923,25 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "TitleBarType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/tolerance-legend/tolerance-legend.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToleranceLegendComponent",
+                "coveragePercent": 70,
+                "coverageCount": "7/10",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/tolerance-legend/tolerance-legend.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ToleranceProperty",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -11,11 +11,11 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
-  border: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  background: #f5f5f5;
+  border: 1px solid var(--dcui-color-core-neutral-pale);
+  border-bottom: 1px solid var(--dcui-color-core-neutral-pale);
+  background: var(--dcui-color-core-neutral-offwhite);
   cursor: pointer;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--dcui-font-family);
   box-sizing: border-box;
 }
 
@@ -46,20 +46,20 @@
 
 /* ── Status: Active ── */
 .sq-tab--active {
-  background: #fff;
-  border-color: #fff;
+  background: var(--dcui-color-core-global-white);
+  border-color: var(--dcui-color-core-global-white);
 }
 
 /* ── Status: Hover ── */
 .sq-tab--hover {
-  background: #fff;
-  border-color: #fff;
+  background: var(--dcui-color-core-global-white);
+  border-color: var(--dcui-color-core-global-white);
 }
 
 /* ── Status: Disabled ── */
 .sq-tab--disabled {
-  background: #f5f5f5;
-  border-color: #e6e6e6;
+  background: var(--dcui-color-core-neutral-offwhite);
+  border-color: var(--dcui-color-core-neutral-pale);
   cursor: not-allowed;
 }
 
@@ -85,8 +85,8 @@
 
 /* ── Label (L only) ── */
 .sq-tab__label {
-  font-size: 13.33px;
-  font-weight: 700;
+  font-size: var(--dcui-type-scale-s-size);
+  font-weight: var(--dcui-font-weight-bold);
   line-height: 20px;
   text-align: center;
   width: 100%;

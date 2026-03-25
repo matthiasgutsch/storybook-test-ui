@@ -1,3 +1,4 @@
+import '../src/styles.css';
 import { type Preview } from '@analogjs/storybook-angular';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import docJson from '../documentation.json';

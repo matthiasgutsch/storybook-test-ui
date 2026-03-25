@@ -9,12 +9,108 @@ const meta: Meta<TitleBarComponent> = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component:
-          'Top-level page header. Left side: back button, menu button, breadcrumb, title, edit icon, tag badge. Right side: published toggle with calibrated tag, save icon, text/primary/secondary action buttons. Supports `White` and `Transparent` background types.',
+        component: `
+Top-level page header with configurable left and right sections.
+
+**Left side:** back button, menu button, breadcrumb trail, title, edit button, tag badge
+**Right side:** published toggle (with optional calibrated tag), save icon, text / primary / secondary action buttons
+
+Supports \`White\` and \`Transparent\` background types.
+
+### Usage
+\`\`\`html
+<storybook-title-bar
+  type="White"
+  title="Page Title"
+  [showTitle]="true"
+  [backButton]="true"
+  [menuButton]="false"
+  [editButton]="false"
+  [tag]="true"
+  tagLabel="Label"
+  [breadcrumb]="false"
+  [published]="false"
+  [isPublished]="true"
+  [calibrated]="false"
+  [saveIcon]="false"
+  [textButton]="true"
+  textButtonLabel="Cancel"
+  [primaryButton]="true"
+  primaryButtonLabel="Save"
+  [secondaryButton]="false"
+  (backClick)="onBack()"
+  (primaryButtonClick)="onSave()"
+/>
+\`\`\`
+
+### Inputs
+
+| Input | Type | Default | Description |
+|---|---|---|---|
+| \`type\` | \`'White' \\| 'Transparent'\` | \`'White'\` | Background type |
+| \`title\` | \`string\` | \`'Title'\` | Page title text |
+| \`showTitle\` | \`boolean\` | \`true\` | Show / hide the title |
+| \`backButton\` | \`boolean\` | \`true\` | Show back chevron button |
+| \`menuButton\` | \`boolean\` | \`false\` | Show menu grid button |
+| \`editButton\` | \`boolean\` | \`false\` | Show edit pencil icon |
+| \`tag\` | \`boolean\` | \`true\` | Show yellow tag badge |
+| \`tagLabel\` | \`string\` | \`'Label'\` | Tag badge text |
+| \`breadcrumb\` | \`boolean\` | \`false\` | Show breadcrumb trail |
+| \`breadcrumbs\` | \`BreadcrumbItem[]\` | \`[…]\` | Breadcrumb items (last = current) |
+| \`published\` | \`boolean\` | \`false\` | Show published toggle |
+| \`isPublished\` | \`boolean\` | \`true\` | Toggle state |
+| \`calibrated\` | \`boolean\` | \`false\` | Show calibrated tag (requires published) |
+| \`saveIcon\` | \`boolean\` | \`false\` | Show save icon |
+| \`textButton\` | \`boolean\` | \`true\` | Show text button |
+| \`textButtonLabel\` | \`string\` | \`'Label'\` | Text button label |
+| \`primaryButton\` | \`boolean\` | \`true\` | Show primary button |
+| \`primaryButtonLabel\` | \`string\` | \`'Label'\` | Primary button label |
+| \`secondaryButton\` | \`boolean\` | \`true\` | Show secondary button |
+| \`secondaryButtonLabel\` | \`string\` | \`'Label'\` | Secondary button label |
+
+### Outputs
+
+| Output | Payload | Description |
+|---|---|---|
+| \`backClick\` | \`void\` | Back button clicked |
+| \`menuClick\` | \`void\` | Menu button clicked |
+| \`editClick\` | \`void\` | Edit button clicked |
+| \`publishedChange\` | \`boolean\` | Published toggle changed |
+| \`saveClick\` | \`void\` | Save icon clicked |
+| \`textButtonClick\` | \`void\` | Text button clicked |
+| \`primaryButtonClick\` | \`void\` | Primary button clicked |
+| \`secondaryButtonClick\` | \`void\` | Secondary button clicked |
+| \`breadcrumbClick\` | \`BreadcrumbItem\` | Breadcrumb link clicked |
+        `.trim(),
       },
     },
   },
-  render: (args) => ({ props: { ...args } }),
+  render: (args) => ({
+    props: { ...args },
+    template: `
+<storybook-title-bar
+  [type]="type"
+  [title]="title"
+  [showTitle]="showTitle"
+  [backButton]="backButton"
+  [menuButton]="menuButton"
+  [editButton]="editButton"
+  [tag]="tag"
+  [tagLabel]="tagLabel"
+  [breadcrumb]="breadcrumb"
+  [breadcrumbs]="breadcrumbs"
+  [published]="published"
+  [isPublished]="isPublished"
+  [calibrated]="calibrated"
+  [saveIcon]="saveIcon"
+  [textButton]="textButton"
+  [textButtonLabel]="textButtonLabel"
+  [primaryButton]="primaryButton"
+  [primaryButtonLabel]="primaryButtonLabel"
+  [secondaryButton]="secondaryButton"
+  [secondaryButtonLabel]="secondaryButtonLabel"
+/>`,
+  }),
   argTypes: {
     type: {
       control: 'inline-radio',

@@ -19,11 +19,55 @@ Button component with three types, three sizes, and four interactive states.
 | **Text** | No background — tertiary / inline action |
 
 Hover and active states are CSS-driven. Disabled blocks all interaction.
+
+### Usage
+\`\`\`html
+<storybook-ui-button
+  type="Primary"
+  size="Medium"
+  label="Label"
+  [showLabel]="true"
+  [leftIcon]="false"
+  [rightIcon]="false"
+  [disabled]="false"
+  (clicked)="onButtonClick()"
+/>
+\`\`\`
+
+### Inputs
+
+| Input | Type | Default | Description |
+|---|---|---|---|
+| \`type\` | \`'Primary' \\| 'Secondary' \\| 'Text'\` | \`'Primary'\` | Visual style |
+| \`size\` | \`'Small' \\| 'Medium' \\| 'Large'\` | \`'Medium'\` | Size variant |
+| \`label\` | \`string\` | \`'Label'\` | Button label text |
+| \`showLabel\` | \`boolean\` | \`true\` | Show or hide label |
+| \`leftIcon\` | \`boolean\` | \`false\` | Show icon on the left |
+| \`rightIcon\` | \`boolean\` | \`false\` | Show icon on the right |
+| \`disabled\` | \`boolean\` | \`false\` | Disable the button |
+
+### Outputs
+
+| Output | Payload | Description |
+|---|---|---|
+| \`clicked\` | \`void\` | Emitted on button click |
         `.trim(),
       },
     },
   },
-  render: (args) => ({ props: { ...args } }),
+  render: (args) => ({
+    props: { ...args },
+    template: `
+<storybook-ui-button
+  [type]="type"
+  [size]="size"
+  [label]="label"
+  [showLabel]="showLabel"
+  [leftIcon]="leftIcon"
+  [rightIcon]="rightIcon"
+  [disabled]="disabled"
+/>`,
+  }),
   argTypes: {
     type: {
       control: 'inline-radio',
@@ -146,4 +190,3 @@ export const SecondaryLeftIcon: Story = {
 export const IconOnly: Story = {
   args: { type: 'Primary', size: 'Medium', showLabel: false, leftIcon: true },
 };
-
