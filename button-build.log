@@ -1,0 +1,321 @@
+
+> angular-v17-vite-storybook@0.0.0 build-storybook
+> ng run angular-v17-vite-storybook:build-storybook
+
+
+┌  Building Storybook
+│
+│  Generating documentation with Compodoc
+│
+│  Generating documentation with Compodoc:[0m
+│  [0m[0m[0m[0m
+│
+│  Generating documentation with Compodoc: 1.2.1
+
+│  TypeScript version
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: No configuration file fou
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: Using tsconfig file : /Us
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: Including      : /Users/m
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: Excluding      : /Users/m
+│
+│  Generating documentation with Compodoc: [14:04:56] Excluding
+│
+│  Generating documentation with Compodoc: [14:04:56] Including
+│
+│  Generating documentation with Compodoc: [14:04:56] Excluding
+│
+│  Generating documentation with Compodoc: [14:04:56] Excluding
+│
+│  Generating documentation with Compodoc: Excluding      : /Users/m
+│
+│  Generating documentation with Compodoc: [14:04:56] Excluding
+│
+│  Generating documentation with Compodoc: [14:04:56] Excluding
+│
+│  Generating documentation with Compodoc: [14:04:56] Including
+│
+│  Generating documentation with Compodoc: [14:04:56] Including
+│
+│  Generating documentation with Compodoc: Including      : /Users/m
+│
+│  Generating documentation with Compodoc: [14:04:56] Excluding
+│
+│  Generating documentation with Compodoc: [14:04:56] Excluding
+│
+│  Generating documentation with Compodoc: [14:04:56] Including
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: Searching package.json fi
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: package.json file found
+│  [
+│
+│  Generating documentation with Compodoc: [14:04:56] README.md file
+│
+│  Generating documentation with Compodoc: [14:04:56] Error during /
+│
+│  Generating documentation with Compodoc: [14:04:56] Continuing wit
+│
+│  Generating documentation with Compodoc: [14:04:56] Continuing wit
+│
+│  Generating documentation with Compodoc: [14:04:56] Error during /
+│
+│  Generating documentation with Compodoc: [14:04:56] Continuing wit
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: parsing        : /Users/m
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: parsing        : /Users/m
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] parsing
+│
+│  Generating documentation with Compodoc: [14:04:56] Analysing rout
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] parsing
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : User
+│  [14
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : Accordio
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] parsing
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : Dashboar
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : SquareTa
+│
+│  Generating documentation with Compodoc: [14:04:56] parsing
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : TitleBar
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : Toleranc
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : Toleranc
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: found          : TooltipA
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] parsing
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] found
+│
+│  Generating documentation with Compodoc: [14:04:56] --------------
+│
+│  Generating documentation with Compodoc: [14:04:56] Project statis
+│
+│  Generating documentation with Compodoc: - interface    : 2
+│  [14:04
+│
+│  Generating documentation with Compodoc: [14:04:56] Prepare compon
+│
+│  Generating documentation with Compodoc: [14:04:56]  AccordionComp
+│
+│  Generating documentation with Compodoc: [14:04:56]  AccordionComp
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: AppComponent has a templa
+│
+│  Generating documentation with Compodoc: [14:04:56]  CardComponent
+│
+│  Generating documentation with Compodoc: [14:04:56]  DashboardLayo
+│
+│  Generating documentation with Compodoc: [14:04:56]  SidebarCompon
+│
+│  Generating documentation with Compodoc: [14:04:56]  SquareTabComp
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: TitleBarComponent has a t
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: ToleranceLegendComponent
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: TooltipComponent has a te
+│
+│  Generating documentation with Compodoc: [14:04:56]  UiButtonCompo
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: Prepare modules
+│  [14:04:56
+│
+│  Generating documentation with Compodoc: [14:04:56] Prepare interf
+│
+│  Generating documentation with Compodoc: [14:04:56] Prepare miscel
+│
+│  Generating documentation with Compodoc: [14:04:56] Process docume
+│
+│  Generating documentation with Compodoc: [14:04:56] Generating doc
+│
+│  Generating documentation with Compodoc: [14:04:56]
+│
+│  Generating documentation with Compodoc: Documentation generated i
+│
+│  Compodoc finished successfully
+│
+◇  Cleaning outputDir: storybook-static
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+●  Building preview..
+│
+●  Copying static files: public at storybook-static
+│  Vite vite v7.3.1 building client environment for production...
+│  Vite transforming...
+│  Vite ✓ 472 modules transformed.
+│  Vite rendering chunks...
+│  Vite computing gzip size...
+│  Vite storybook-static/assets/context-C0qIqeS4.png
+│  6.12 kB
+│  Vite storybook-static/assets/styling-Bk6zjRzU.png
+│  7.24 kB
+│  Vite storybook-static/iframe.html
+│  18.63 kB │ gzip:   5.25 kB
+│  Vite storybook-static/assets/docs---vsFbMi.png
+│  27.88 kB
+│  Vite storybook-static/assets/share-DGA-UcQf.png
+│  40.77 kB
+│  Vite storybook-static/assets/accessibility-W_h2acOZ.png
+│  42.34 kB
+│  Vite storybook-static/assets/figma-plugin-CH2hELiO.png
+│  44.25 kB
+│  Vite storybook-static/assets/theming-D6WJLNoW.png
+│  44.37 kB
+│  Vite storybook-static/assets/testing-cbzR9l9r.png
+│  49.31 kB
+│  Vite storybook-static/assets/addon-library-BWUCAmyN.png
+│  467.37 kB
+│  Vite storybook-static/assets/iframe-BFDw_cfR.css
+│  3.57 kB │ gzip:   0.84 kB
+│  Vite storybook-static/assets/_commonjsHelpers-CV2jkJYL.js
+│  0.23 kB │ gzip:   0.20 kB
+│  Vite storybook-static/assets/formatter-EIJCOSYU-MP2w32j-.js
+│  0.25 kB │ gzip:   0.21 kB
+│  Vite storybook-static/assets/preload-helper-Cc2_yIPf.js
+│  1.38 kB │ gzip:   0.80 kB
+│  Vite storybook-static/assets/DocsRenderer-LL677BLK-JrsbKYgF.js
+│  1.43 kB │ gzip:   0.80 kB
+│  Vite storybook-static/assets/dashboard-layout.stories-Cr18RJdb.js
+│  2.37 kB │ gzip:   1.01 kB
+│  Vite storybook-static/assets/tooltip.component-ClJuq05K.js
+│  2.83 kB │ gzip:   1.16 kB
+│  Vite storybook-static/assets/tooltip.stories-nEtpwc03.js
+│  3.63 kB │ gzip:   1.25 kB
+│  Vite storybook-static/assets/ui-button.stories-DfP7LbTK.js
+│  4.31 kB │ gzip:   1.44 kB
+│  Vite storybook-static/assets/ui-button.component-lO6MkVgj.js
+│  4.56 kB │ gzip:   1.36 kB
+│  Vite storybook-static/assets/title-bar.stories-BB3-ewQo.js
+│  5.67 kB │ gzip:   1.75 kB
+│  Vite storybook-static/assets/accordion.stories-DuNLeP3o.js
+│  6.15 kB │ gzip:   2.28 kB
+│  Vite storybook-static/assets/tolerance-legend.stories-CjyokzOy.js
+│  7.88 kB │ gzip:   2.53 kB
+│  Vite storybook-static/assets/square-tab.stories-bzqthV_u.js
+│  9.03 kB │ gzip:   3.07 kB
+│  Vite storybook-static/assets/title-bar.component-eSamwZWd.js
+│  9.98 kB │ gzip:   2.51 kB
+│  Vite storybook-static/assets/Configure-BtUFKwcJ.js
+│  25.48 kB │ gzip:  11.05 kB
+│  Vite storybook-static/vite-inject-mocker-entry.js
+│  29.49 kB │ gzip:  10.44 kB
+│  Vite storybook-static/assets/Color-FRDS63T2-D8clwjNZ.js
+│  30.97 kB │ gzip:  11.81 kB
+│  Vite storybook-static/assets/matchers-5TDFFDYO-CgUGrP4b.js
+│  31.49 kB │ gzip:  10.86 kB
+│  Vite storybook-static/assets/WithTooltip-65CFNBJE-B1ekU1jW.js
+│  35.40 kB │ gzip:  12.58 kB
+│  Vite storybook-static/assets/animations-BRg0URxD.js
+│  70.00 kB │ gzip:  21.01 kB
+│  Vite storybook-static/assets/syntaxhighlighter-OH4MV7E3-C2D9xNV5.js
+│  81.08 kB │ gzip:  28.59 kB
+│  Vite storybook-static/assets/axe-Bp6E_cao.js
+│  616.14 kB │ gzip: 172.17 kB
+│  Vite storybook-static/assets/blocks-DcEf8kYx.js
+│  1,007.38 kB │ gzip: 328.38 kB
+│  Vite storybook-static/assets/iframe-Cg6j71mE.js
+│  1,989.77 kB │ gzip: 572.08 kB
+│
+▲  Vite
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rollupOptions.output.manualChunks to improve chunking:
+│  ]8;;https://rollupjs.org/configuration-options/#output-manualchunkshttps://rollupjs.org/configuration-options/#output-manualchunks]8;;
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│  Vite ✓ built in 12.23s
+│
+◇  Output directory:
+│  /Users/matthiasgutsch/Documents/git/angular-vite-storybook/storybook-static
+│
+└  Storybook build completed successfully
+

@@ -1367,7 +1367,7 @@
         },
         {
             "name": "UiButtonComponent",
-            "id": "component-UiButtonComponent-567816cb4ca108ed32e66a39d49c1ca0422e81b760f00eb69da0cccde26f4fe74531d474f4b643db8e728a5b6c146fa4552ba986bc2cb6741bd13430f045d3d8",
+            "id": "component-UiButtonComponent-dee938156bc11f194c576fe850e40b11121188a2aa94437e876bff471ea193efcd9cfbb9dc69a23a7dc387e33e378c8322b29c7bd3069adbc79455d767759941",
             "file": "src/stories/ui-button/ui-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1484,7 +1484,7 @@
             "description": "<p>Button component — three types, three sizes, four interactive states.</p>\n<ul>\n<li><strong>Primary</strong> — filled red background, white text</li>\n<li><strong>Secondary</strong> — white background, red border and text</li>\n<li><strong>Text</strong> — no background or border, red text</li>\n</ul>\n<p>Sizes: Small (32px), Medium (40px), Large (56px).\nHover and Active states are driven by CSS <code>:hover</code> / <code>:active</code>.\nOptional left and right icons flank the label.</p>\n",
             "rawdescription": "\n\nButton component — three types, three sizes, four interactive states.\n\n- **Primary** — filled red background, white text\n- **Secondary** — white background, red border and text\n- **Text** — no background or border, red text\n\nSizes: Small (32px), Medium (40px), Large (56px).\nHover and Active states are driven by CSS `:hover` / `:active`.\nOptional left and right icons flank the label.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\nexport type ButtonType = 'Primary' | 'Secondary' | 'Text';\nexport type ButtonSize = 'Small' | 'Medium' | 'Large';\n\n/**\n * Button component — three types, three sizes, four interactive states.\n *\n * - **Primary** — filled red background, white text\n * - **Secondary** — white background, red border and text\n * - **Text** — no background or border, red text\n *\n * Sizes: Small (32px), Medium (40px), Large (56px).\n * Hover and Active states are driven by CSS `:hover` / `:active`.\n * Optional left and right icons flank the label.\n */\n@Component({\n  selector: 'storybook-ui-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './ui-button.component.html',\n  styleUrls: ['./ui-button.component.css'],\n})\nexport class UiButtonComponent {\n  /** Visual type */\n  @Input() type: ButtonType = 'Primary';\n\n  /** Size variant */\n  @Input() size: ButtonSize = 'Medium';\n\n  /** Button label text */\n  @Input() label = 'Label';\n\n  /** Show label text */\n  @Input() showLabel = true;\n\n  /** Show left icon */\n  @Input() leftIcon = false;\n\n  /** Show right icon */\n  @Input() rightIcon = false;\n\n  /** Disable the button */\n  @Input() disabled = false;\n\n  @Output() clicked = new EventEmitter<void>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\nexport type ButtonType = 'Primary' | 'Secondary' | 'Text';\nexport type ButtonSize = 'Small' | 'Medium' | 'Large';\n\n/**\n * Button component — three types, three sizes, four interactive states.\n *\n * - **Primary** — filled red background, white text\n * - **Secondary** — white background, red border and text\n * - **Text** — no background or border, red text\n *\n * Sizes: Small (32px), Medium (40px), Large (56px).\n * Hover and Active states are driven by CSS `:hover` / `:active`.\n * Optional left and right icons flank the label.\n */\n@Component({\n  selector: 'storybook-ui-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './ui-button.component.html',\n  styleUrls: ['./ui-button.component.css'],\n})\nexport class UiButtonComponent {\n  /** Visual type */\n  @Input() type: ButtonType = 'Primary';\n\n  /** Size variant */\n  @Input() size: ButtonSize = 'Medium';\n\n  /** Button label text */\n  @Input() label = 'Label';\n\n  /** Show label text */\n  @Input() showLabel = true;\n\n  /** Show left icon */\n  @Input() leftIcon = false;\n\n  /** Show right icon */\n  @Input() rightIcon = false;\n\n  /** Disable the button */\n  @Input() disabled = false;\n\n  @Output() clicked = new EventEmitter<void>();\n\n  get showLeadingIcon(): boolean {\n    return this.leftIcon || !this.rightIcon;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1494,7 +1494,18 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<button\n  class=\"btn\"\n  [class]=\"'btn btn--' + type.toLowerCase() + ' btn--' + size.toLowerCase()\"\n  [disabled]=\"disabled\"\n  (click)=\"clicked.emit()\"\n>\n  @if (leftIcon) {\n    <span class=\"btn__icon btn__icon--left\" aria-hidden=\"true\">\n      <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"10\" cy=\"10\" r=\"7\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n        <circle cx=\"10\" cy=\"10\" r=\"2\" fill=\"currentColor\"/>\n      </svg>\n    </span>\n  }\n\n  @if (showLabel) {\n    <span class=\"btn__label\">{{ label }}</span>\n  }\n\n  @if (rightIcon) {\n    <span class=\"btn__icon btn__icon--right\" aria-hidden=\"true\">\n      <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"10\" cy=\"10\" r=\"7\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n        <circle cx=\"10\" cy=\"10\" r=\"2\" fill=\"currentColor\"/>\n      </svg>\n    </span>\n  }\n</button>\n"
+            "accessors": {
+                "showLeadingIcon": {
+                    "name": "showLeadingIcon",
+                    "getSignature": {
+                        "name": "showLeadingIcon",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 48
+                    }
+                }
+            },
+            "templateData": "<button\n  class=\"btn\"\n  [class]=\"'btn btn--' + type.toLowerCase() + ' btn--' + size.toLowerCase()\"\n  [disabled]=\"disabled\"\n  (click)=\"clicked.emit()\"\n>\n  @if (showLeadingIcon) {\n    <span class=\"btn__icon btn__icon--left\" aria-hidden=\"true\">\n      <svg\n        width=\"20\"\n        height=\"20\"\n        viewBox=\"0 0 20 20\"\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <circle\n          cx=\"10\"\n          cy=\"10\"\n          r=\"7\"\n          stroke=\"currentColor\"\n          stroke-width=\"1.5\"\n        />\n        <circle cx=\"10\" cy=\"10\" r=\"2\" fill=\"currentColor\" />\n      </svg>\n    </span>\n  }\n\n  @if (showLabel) {\n    <span class=\"btn__label\">{{ label }}</span>\n  }\n\n  @if (rightIcon) {\n    <span class=\"btn__icon btn__icon--right\" aria-hidden=\"true\">\n      <svg\n        width=\"20\"\n        height=\"20\"\n        viewBox=\"0 0 20 20\"\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <circle\n          cx=\"10\"\n          cy=\"10\"\n          r=\"7\"\n          stroke=\"currentColor\"\n          stroke-width=\"1.5\"\n        />\n        <circle cx=\"10\" cy=\"10\" r=\"2\" fill=\"currentColor\" />\n      </svg>\n    </span>\n  }\n</button>\n"
         }
     ],
     "modules": [],
