@@ -1,0 +1,74 @@
+
+Chromatic CLI v16.6.0
+https://www.chromatic.com/docs/cli
+
+Authenticating with Chromatic
+    → Connecting to https://index.chromatic.com
+Authenticated with Chromatic
+    → Using project token '****************068b'
+Retrieving git information
+Found 8 changed files:
+  build-storybook.log
+  chromatic-run-node20.exit
+  chromatic-run-node20.log
+  chromatic-upgrade.exit
+  chromatic-upgrade.log
+  node-env-check.log
+  package-lock.json
+  package.json
+Retrieved git information
+    → Commit '6462736' on branch 'main'; found 1 parent build and 8 changed files
+Collecting Storybook metadata
+No viewlayer package listed in dependencies. Checking transitive dependencies.
+Collected Storybook metadata
+    → Storybook 10.3.3; using the @analogjs/storybook-angular builder (2.3.1); no supported addons found
+Initializing build
+Initialized build
+    → Build 4 initialized
+Building your Storybook
+    → Running command: npm run build-storybook -- --output-dir=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--36672-jMCqmpSZRQlP --stats-json=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--36672-jMCqmpSZRQlP
+    → [*                   ]
+    → [ *                  ]
+    → [  *                 ]
+Storybook built in 21 seconds
+    → View build log at /Users/matthiasgutsch/Documents/git/angular-vite-storybook/build-storybook.log
+Prepare your built Storybook
+    → Validating Storybook files
+Prepare your built Storybook
+    → Calculating file hashes
+Preparation complete
+    → Storybook files validated and prepared for upload
+Publishing your built Storybook
+    → Starting publish
+    → [====================] 100%
+Publishing your built Storybook
+    → Finalizing upload
+Publish complete in 4 seconds
+    → Uploaded 1 file (718 B), skipped 67 files
+Verifying your Storybook
+    → This may take a few minutes
+    → [*                   ]
+⚠ TurboSnap not available for your account
+To ensure your project is fully setup and baselines are properly established,
+TurboSnap is not available until at least 10 builds are created from CI.
+
+ℹ Review your TurboSnap availability on the Manage screen:
+https://www.chromatic.com/manage?appId=69f086d767d215be03234c52
+✔ Storybook published
+We found 7 components with 51 stories.
+ℹ View your Storybook at https://69f086d767d215be03234c52-mfviojytzn.chromatic.com/
+Started build 4
+    → View build details at https://www.chromatic.com/build?appId=69f086d767d215be03234c52&number=4
+Running 51 tests
+    → This may take a few minutes
+    → [=                   ] 2/51  
+    → [====                ] 10/51  
+    → [=========           ] 22/51  
+    → [=============       ] 34/51  
+    → [==================  ] 46/51  
+    → [====================] 52/51  
+✔ Build 4 passed!
+No changes were found in this build.
+ℹ View build details at https://www.chromatic.com/build?appId=69f086d767d215be03234c52&number=4
+Build 4 passed!
+    → Tested 51 stories across 7 components; captured 51 snapshots in 1 minute 30 seconds
