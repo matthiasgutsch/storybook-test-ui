@@ -14,14 +14,20 @@ import { TitleBarComponent } from '../title-bar/title-bar.component';
       <app-sidebar></app-sidebar>
 
       <main class="content">
-        <storybook-title-bar type="White" title="Dashboard" [backButton]="false" [primaryButton]="true" primaryButtonLabel="Save"></storybook-title-bar>
+        <storybook-title-bar
+          type="White"
+          title="Dashboard"
+          [backButton]="false"
+          [primaryButton]="true"
+          primaryButtonLabel="Save"
+        ></storybook-title-bar>
 
         <div class="grid-wrapper">
-        <section class="grid">
-          <app-card title="Sales"></app-card>
-          <app-card title="Users"></app-card>
-          <app-card title="Performance"></app-card>
-        </section>
+          <section class="grid">
+            <app-card title="Sales"></app-card>
+            <app-card title="Users"></app-card>
+            <app-card title="Performance"></app-card>
+          </section>
         </div>
       </main>
     </div>
@@ -31,6 +37,7 @@ import { TitleBarComponent } from '../title-bar/title-bar.component';
       .dashboard {
         display: flex;
         height: 100vh;
+        font-family: Arial, sans-serif;
       }
 
       .content {

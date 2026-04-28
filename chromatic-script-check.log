@@ -1,4 +1,8 @@
 
+> angular-v17-vite-storybook@0.0.0 chromatic
+> npx chromatic --project-token=chpt_d667c350d16068b
+
+
 Chromatic CLI v16.6.0
 https://www.chromatic.com/docs/cli
 
@@ -7,30 +11,25 @@ Authenticating with Chromatic
 Authenticated with Chromatic
     → Using project token '****************068b'
 Retrieving git information
-Found 9 changed files:
+Found 3 changed files:
   build-storybook.log
   button-build.exit
-  button-build.log
-  chromatic-final.exit
-  chromatic-final.log
-  documentation.json
-  src/stories/ui-button/ui-button.component.html
-  src/stories/ui-button/ui-button.component.ts
-  src/stories/ui-button/ui-button.stories.ts
+  chromatic-auth-check.log
 Retrieved git information
-    → Commit '12cb2fc' on branch 'main'; found 1 parent build and 9 changed files
+    → Commit '05ca373' on branch 'main'; found 1 parent build and 3 changed files
 Collecting Storybook metadata
 No viewlayer package listed in dependencies. Checking transitive dependencies.
 Collected Storybook metadata
     → Storybook 10.3.3; using the @analogjs/storybook-angular builder (2.3.1); no supported addons found
 Initializing build
 Initialized build
-    → Build 6 initialized
+    → Build 7 initialized
 Building your Storybook
-    → Running command: npm run build-storybook -- --output-dir=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--58898-Kp67Zah4Fsv9 --stats-json=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--58898-Kp67Zah4Fsv9
+    → Running command: npm run build-storybook -- --output-dir=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--60578-C9g0lj1MMaVJ --stats-json=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--60578-C9g0lj1MMaVJ
     → [*                   ]
     → [ *                  ]
-Storybook built in 19 seconds
+    → [  *                 ]
+Storybook built in 21 seconds
     → View build log at /Users/matthiasgutsch/Documents/git/angular-vite-storybook/build-storybook.log
 Prepare your built Storybook
     → Validating Storybook files
@@ -40,11 +39,11 @@ Preparation complete
     → Storybook files validated and prepared for upload
 Publishing your built Storybook
     → Starting publish
-    → [=                   ] 6%
+    → [====================] 100%
 Publishing your built Storybook
     → Finalizing upload
-Publish complete in 7 seconds
-    → Uploaded 21 files (1.01 MB), skipped 47 files
+Publish complete in 4 seconds
+    → Uploaded 1 file (718 B), skipped 67 files
 Verifying your Storybook
     → This may take a few minutes
     → [*                   ]
@@ -56,17 +55,21 @@ TurboSnap is not available until at least 10 builds are created from CI.
 https://www.chromatic.com/manage?appId=69f086d767d215be03234c52
 ✔ Storybook published
 We found 7 components with 51 stories.
-ℹ View your Storybook at https://69f086d767d215be03234c52-ykuwytqjbx.chromatic.com/
-Started build 6
-    → View build details at https://www.chromatic.com/build?appId=69f086d767d215be03234c52&number=6
+ℹ View your Storybook at https://69f086d767d215be03234c52-wtsgduclkv.chromatic.com/
+Started build 7
+    → View build details at https://www.chromatic.com/build?appId=69f086d767d215be03234c52&number=7
 Running 51 tests
     → This may take a few minutes
-    → [=                   ] 3/51  
+    → [=                   ] 2/51  
     → [=====               ] 13/51  
-    → [============        ] 30/51  
-    → [====================] 50/51  
-✔ Build 6 passed!
-51 visual changes were found in this build.
-ℹ View build details at https://www.chromatic.com/build?appId=69f086d767d215be03234c52&number=6
-Build 6 completed
-    → Tested 51 stories across 7 components; captured 102 snapshots in 39 seconds
+    → [============        ] 31/51  
+    → [=================== ] 49/51  
+✖ Found 19 visual changes
+
+Review the changes at https://www.chromatic.com/build?appId=69f086d767d215be03234c52&number=7
+
+ℹ For CI/CD use cases, this command failed with exit code 1
+Pass --exit-zero-on-changes to succeed this command regardless of changes.
+Pass --auto-accept-changes to succeed and automatically accept any changes.
+Build 7 completed
+    → Tested 51 stories across 7 components; captured 102 snapshots in 42 seconds
