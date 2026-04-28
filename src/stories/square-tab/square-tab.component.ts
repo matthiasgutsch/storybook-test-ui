@@ -1,10 +1,8 @@
 import { Component, Input, HostListener } from '@angular/core';
 import { TooltipComponent, TooltipStyle } from '../tooltip/tooltip.component';
 
-export type SquareTabSize   = 'L' | 'M' | 'S';
+export type SquareTabSize = 'L' | 'M' | 'S';
 export type SquareTabStatus = 'Default' | 'Active' | 'Hover' | 'Disabled';
-
-const ICON_MASK = 'https://www.figma.com/api/mcp/asset/93cb51c2-4f62-4764-9c12-48cb85cef5f9';
 
 /**
  * Square Tab component — icon-based navigation tab used in vertical tab rails.
@@ -50,9 +48,7 @@ export class SquareTabComponent {
   @Input() tooltipMessage = 'Message';
 
   private _hovered = false;
-  private _active  = false;
-
-  readonly iconMask = ICON_MASK;
+  private _active = false;
 
   @HostListener('mouseenter')
   onMouseEnter(): void {
@@ -73,16 +69,16 @@ export class SquareTabComponent {
 
   get effectiveStatus(): SquareTabStatus {
     if (this.status === 'Disabled') return 'Disabled';
-    if (this._active)  return 'Active';
+    if (this._active) return 'Active';
     if (this._hovered) return 'Hover';
     return this.status === 'Active' ? 'Active' : 'Default';
   }
 
   get iconColor(): string {
     const map: Record<SquareTabStatus, string> = {
-      Default:  '#000000',
-      Active:   '#d7192f',
-      Hover:    '#ef6577',
+      Default: '#000000',
+      Active: '#d7192f',
+      Hover: '#ef6577',
       Disabled: '#97999b',
     };
     return map[this.effectiveStatus];
@@ -90,9 +86,9 @@ export class SquareTabComponent {
 
   get labelColor(): string {
     const map: Record<SquareTabStatus, string> = {
-      Default:  '#53565a',
-      Active:   '#d7192f',
-      Hover:    '#ef6577',
+      Default: '#53565a',
+      Active: '#d7192f',
+      Hover: '#ef6577',
       Disabled: '#97999b',
     };
     return map[this.effectiveStatus];

@@ -1,20 +1,41 @@
 <div
   class="sq-tab"
-  [class]="'sq-tab sq-tab--' + size.toLowerCase() + ' sq-tab--' + effectiveStatus.toLowerCase()"
+  [class]="
+    'sq-tab sq-tab--' +
+    size.toLowerCase() +
+    ' sq-tab--' +
+    effectiveStatus.toLowerCase()
+  "
 >
-
   <!-- Icon -->
   <span class="sq-tab__icon">
-    <span
-      class="sq-tab__icon-mask"
-      [style.background-color]="iconColor"
-      [style.-webkit-mask-image]="'url(' + iconMask + ')'"
-      [style.mask-image]="'url(' + iconMask + ')'"
-    ></span>
+    <svg
+      class="sq-tab__icon-svg"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      [style.color]="iconColor"
+      aria-hidden="true"
+    >
+      <path
+        d="M3 14.75V17h2.25L15.75 6.5l-2.25-2.25L3 14.75Z"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.75 5.25 15 7.5"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </span>
 
   <!-- Label (L size only) -->
-  @if (size === 'L' && showLabel) {
+  @if (size === "L" && showLabel) {
     <span class="sq-tab__label" [style.color]="labelColor">{{ label }}</span>
   }
 
@@ -31,5 +52,4 @@
       [message]="tooltipMessage"
     />
   }
-
 </div>
