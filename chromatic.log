@@ -1,0 +1,67 @@
+12:16:16.778 Chromatic CLI v13.3.5
+             https://www.chromatic.com/docs/cli 
+ 
+12:16:16.819 Authenticating with Chromatic 
+12:16:16.820     → Connecting to https://index.chromatic.com
+12:16:17.258 Authenticated with Chromatic
+                 → Using project token '****************068b'
+12:16:17.259 Retrieving git information
+12:16:17.260 execGitCommand: git --version
+12:16:17.265 execGitCommand error: events.addAbortListener is not a function
+12:16:17.266     → events.addAbortListener is not a function
+
+12:16:17.280 ✖ Failed to retrieve git information
+             events.addAbortListener is not a function
+             → View the full stacktrace below
+             
+             If you need help, please chat with us at https://www.chromatic.com/docs/cli for the fastest response.
+             You can also email the team at support@chromatic.com if chat is not an option.
+             
+             Please provide us with the above CLI output and the following info:
+             {
+               "timestamp": "2026-04-28T10:16:17.276Z",
+               "sessionId": "7892c94a-8c3a-43d9-b860-4b206021a4d9",
+               "nodePlatform": "darwin",
+               "nodeVersion": "18.17.0",
+               "packageName": "chromatic",
+               "packageVersion": "13.3.5",
+               "flags": {
+                 "debug": true,
+                 "outputDir": [],
+                 "storybookBuildDir": [],
+                 "externals": [],
+                 "onlyStoryFiles": [],
+                 "onlyStoryNames": [],
+                 "untraced": [],
+                 "fileHashing": true,
+                 "interactive": true
+               },
+               "configuration": {
+                 "configFile": "chromatic.config.json",
+                 "projectId": "Project:696fa2fa51c80bf65c3085dc",
+                 "onlyChanged": true,
+                 "zip": true
+               },
+               "buildScript": "ng run angular-v17-vite-storybook:build-storybook",
+               "exitCode": 0,
+               "exitCodeKey": "OK",
+               "errorType": "TypeError",
+               "errorMessage": "✖ Failed to retrieve git information"
+             }
+             
+             TypeError: events.addAbortListener is not a function
+                 at od (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:19385)
+                 at t5 (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:36367)
+                 at Fd (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:35297)
+                 at s5 (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:38488)
+                 at Object.i [as g] (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:38092)
+                 at zr (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-HZVCNUTP.js:366:201)
+                 at Object.u2t [as h] (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-HZVCNUTP.js:366:1449)
+                 at rNr (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-5UGEKUXY.js:879:169)
+                 at t3.task (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-5UGEKUXY.js:639:2671)
+                 at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+12:16:18.177 ⚠ Using outdated package
+             You are using an outdated version of the Chromatic CLI (v13.3.5).
+             A new major version is available (v16.6.0).
+             Run yarn upgrade chromatic --latest to upgrade.
+12:16:18.180 ℹ Wrote Chromatic diagnostics report to chromatic-diagnostics.json

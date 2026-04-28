@@ -10,7 +10,7 @@
     "storybook": "ng run angular-v17-vite-storybook:storybook",
     "build-storybook": "ng run angular-v17-vite-storybook:build-storybook",
     "test-storybook": "ng run angular-v17-vite-storybook:test-storybook",
-    "chromatic": "npx chromatic --project-token=chpt_c7ad898ee226a93"
+    "chromatic": "npx chromatic --project-token=chpt_d667c350d16068b"
   },
   "private": true,
   "dependencies": {
