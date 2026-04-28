@@ -1,0 +1,68 @@
+
+Chromatic CLI v13.3.5
+https://www.chromatic.com/docs/cli
+
+Authenticating with Chromatic
+    → Connecting to https://index.chromatic.com
+⚠ Using outdated package
+You are using an outdated version of the Chromatic CLI (v13.3.5).
+A new major version is available (v16.6.0).
+Run npm install chromatic@latest --save-dev to upgrade.
+Authenticated with Chromatic
+    → Using project token '****************068b'
+Retrieving git information
+Retrieved git information
+    → Commit 'c104abd' on branch 'main'; no ancestor found; TurboSnap disabled
+Collecting Storybook metadata
+No viewlayer package listed in dependencies. Checking transitive dependencies.
+Collected Storybook metadata
+    → Storybook 10.3.3; using the @analogjs/storybook-angular builder (2.3.1); no supported addons found
+Initializing build
+Initialized build
+    → Build 1 initialized
+Building your Storybook
+    → Running command: npm run build-storybook -- --output-dir=/var/folders/z4/m6s72pns1wv40mqhx_lcbb5c0000gn/T/chromatic--25436-iAV8vhLpn3pI
+    → [*                   ]
+    → [ *                  ]
+Storybook built in 19 seconds
+    → View build log at /Users/matthiasgutsch/Documents/git/angular-vite-storybook/build-storybook.log
+Prepare your built Storybook
+    → Validating Storybook files
+Prepare your built Storybook
+    → Calculating file hashes
+Preparation complete
+    → Storybook files validated and prepared for upload
+Publishing your built Storybook
+    → Starting publish
+    → [                    ] 2%
+    → [=========           ] 44%
+Publishing your built Storybook
+    → Finalizing upload
+Publish complete in 17 seconds
+    → Uploaded 68 files (3.91 MB)
+Verifying your Storybook
+    → This may take a few minutes
+    → [*                   ]
+⚠ TurboSnap not available for your account
+To ensure your project is fully setup and baselines are properly established,
+TurboSnap is not available until at least 10 builds are created from CI.
+
+ℹ Review your TurboSnap availability on the Manage screen:
+https://www.chromatic.com/manage?appId=69f086d767d215be03234c52
+✔ Storybook published
+We found 7 components with 51 stories.
+ℹ View your Storybook at https://69f086d767d215be03234c52-ksyooeeseh.chromatic.com/
+Started build 1
+    → Continue setup at https://www.chromatic.com/setup?appId=69f086d767d215be03234c52
+Running 51 tests
+    → This may take a few minutes
+    → [=                   ] 2/51  
+    → [=====               ] 13/51  
+    → [==========          ] 25/51  
+    → [===============     ] 37/51  
+    → [==================  ] 47/51  
+✔ Build passed. Welcome to Chromatic!
+We found 7 components with 51 stories and took 51 snapshots.
+ℹ Please continue setup at https://www.chromatic.com/setup?appId=69f086d767d215be03234c52
+Build 1 auto-accepted
+    → Tested 51 stories across 7 components; captured 51 snapshots in 1 minute 9 seconds
