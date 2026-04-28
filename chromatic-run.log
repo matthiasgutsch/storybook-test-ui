@@ -1,0 +1,64 @@
+
+Chromatic CLI v13.3.5
+https://www.chromatic.com/docs/cli
+
+Authenticating with Chromatic
+    → Connecting to https://index.chromatic.com
+⚠ Using outdated package
+You are using an outdated version of the Chromatic CLI (v13.3.5).
+A new major version is available (v16.6.0).
+Run yarn upgrade chromatic --latest to upgrade.
+Authenticated with Chromatic
+    → Using project token '****************068b'
+Retrieving git information
+    → events.addAbortListener is not a function
+
+✖ Failed to retrieve git information
+events.addAbortListener is not a function
+→ View the full stacktrace below
+
+If you need help, please chat with us at https://www.chromatic.com/docs/cli for the fastest response.
+You can also email the team at support@chromatic.com if chat is not an option.
+
+Please provide us with the above CLI output and the following info:
+{
+  "timestamp": "2026-04-28T10:17:17.238Z",
+  "sessionId": "b408d9b2-8179-4ca2-b3fa-50f8282ee938",
+  "nodePlatform": "darwin",
+  "nodeVersion": "18.17.0",
+  "packageName": "chromatic",
+  "packageVersion": "13.3.5",
+  "flags": {
+    "outputDir": [],
+    "storybookBuildDir": [],
+    "externals": [],
+    "onlyStoryFiles": [],
+    "onlyStoryNames": [],
+    "untraced": [],
+    "fileHashing": true,
+    "interactive": true
+  },
+  "configuration": {
+    "configFile": "chromatic.config.json",
+    "projectId": "Project:696fa2fa51c80bf65c3085dc",
+    "onlyChanged": true,
+    "zip": true
+  },
+  "buildScript": "ng run angular-v17-vite-storybook:build-storybook",
+  "exitCode": 0,
+  "exitCodeKey": "OK",
+  "errorType": "TypeError",
+  "errorMessage": "✖ Failed to retrieve git information"
+}
+
+TypeError: events.addAbortListener is not a function
+    at od (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:19385)
+    at t5 (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:36367)
+    at Fd (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:35297)
+    at s5 (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:38488)
+    at Object.i [as g] (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-F6FLWRPJ.js:98:38092)
+    at zr (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-HZVCNUTP.js:366:201)
+    at Object.u2t [as h] (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-HZVCNUTP.js:366:1449)
+    at rNr (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-5UGEKUXY.js:879:169)
+    at t3.task (/Users/matthiasgutsch/Documents/git/angular-vite-storybook/node_modules/chromatic/dist/chunk-5UGEKUXY.js:639:2671)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
