@@ -4,11 +4,23 @@
   [disabled]="disabled"
   (click)="clicked.emit()"
 >
-  @if (leftIcon) {
+  @if (showLeadingIcon) {
     <span class="btn__icon btn__icon--left" aria-hidden="true">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="10" cy="10" r="2" fill="currentColor"/>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="7"
+          stroke="currentColor"
+          stroke-width="1.5"
+        />
+        <circle cx="10" cy="10" r="2" fill="currentColor" />
       </svg>
     </span>
   }
@@ -19,9 +31,21 @@
 
   @if (rightIcon) {
     <span class="btn__icon btn__icon--right" aria-hidden="true">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="10" cy="10" r="2" fill="currentColor"/>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="7"
+          stroke="currentColor"
+          stroke-width="1.5"
+        />
+        <circle cx="10" cy="10" r="2" fill="currentColor" />
       </svg>
     </span>
   }

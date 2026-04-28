@@ -19,6 +19,9 @@ Button component with three types, three sizes, and four interactive states.
 | **Text** | No background — tertiary / inline action |
 
 Hover and active states are CSS-driven. Disabled blocks all interaction.
+Buttons always render one default icon; \
+\`rightIcon\` adds a trailing icon, and \
+\`leftIcon\` keeps the leading icon visible when both sides are used.
 
 ### Usage
 \`\`\`html
@@ -42,8 +45,8 @@ Hover and active states are CSS-driven. Disabled blocks all interaction.
 | \`size\` | \`'Small' \\| 'Medium' \\| 'Large'\` | \`'Medium'\` | Size variant |
 | \`label\` | \`string\` | \`'Label'\` | Button label text |
 | \`showLabel\` | \`boolean\` | \`true\` | Show or hide label |
-| \`leftIcon\` | \`boolean\` | \`false\` | Show icon on the left |
-| \`rightIcon\` | \`boolean\` | \`false\` | Show icon on the right |
+| \`leftIcon\` | \`boolean\` | \`false\` | Keep the leading icon when using icons on both sides |
+| \`rightIcon\` | \`boolean\` | \`false\` | Add a trailing icon on the right |
 | \`disabled\` | \`boolean\` | \`false\` | Disable the button |
 
 ### Outputs
@@ -93,12 +96,13 @@ Hover and active states are CSS-driven. Disabled blocks all interaction.
     },
     leftIcon: {
       control: 'boolean',
-      description: 'Show icon on the left side.',
+      description:
+        'Keep the leading icon visible when using icons on both sides.',
       table: { defaultValue: { summary: 'false' } },
     },
     rightIcon: {
       control: 'boolean',
-      description: 'Show icon on the right side.',
+      description: 'Add a trailing icon on the right side.',
       table: { defaultValue: { summary: 'false' } },
     },
     disabled: {
@@ -178,7 +182,13 @@ export const TextDisabled: Story = {
 // ── With Icons ──
 /** Primary with left and right icons. */
 export const WithIcons: Story = {
-  args: { type: 'Primary', size: 'Medium', label: 'Label', leftIcon: true, rightIcon: true },
+  args: {
+    type: 'Primary',
+    size: 'Medium',
+    label: 'Label',
+    leftIcon: true,
+    rightIcon: true,
+  },
 };
 
 /** Secondary with left icon only. */

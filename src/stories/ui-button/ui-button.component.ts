@@ -44,4 +44,8 @@ export class UiButtonComponent {
   @Input() disabled = false;
 
   @Output() clicked = new EventEmitter<void>();
+
+  get showLeadingIcon(): boolean {
+    return this.leftIcon || !this.rightIcon;
+  }
 }
